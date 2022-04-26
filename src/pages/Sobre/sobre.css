@@ -1,0 +1,39 @@
+.newUser {
+  flex: 8;
+}
+
+.menuSobre {
+  text-align: center;
+}
+
+.menuSobre ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.menuSobre li {
+  list-style: none;
+  padding: 20px;
+}
+
+.menuSobre li > a {
+  text-decoration: none;
+  color: gray;
+}
+
+.sobreOvandja {
+  margin-bottom: 25px;
+}
+
+.sobreOvandja h1 {
+  margin-bottom: 20px;
+}
+
+.sobreOvandja h3 {
+  margin-bottom: 20px;
+}
+
+.conteudo {
+  padding: 50px;
+}
