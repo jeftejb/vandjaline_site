@@ -30,7 +30,7 @@ const Produtos = ({cat,filters,sort}) => {
    useEffect(()=> {
       const getProduto = async ()=>{
           try{
-              const res = await axios.get(cat ? `http://localhost:8080/api/produtos?categoria=${cat}` : "http://localhost:8080/api/produtos");
+              const res = await axios.get(cat ? `https://vandjaline-f.herokuapp.com/api/produtos?categoria=${cat}` : `https://vandjaline-f.herokuapp.com/api/produtos`);
               setProdutos(res.data);
           }catch(err){
           }
