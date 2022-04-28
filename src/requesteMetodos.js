@@ -1,10 +1,5 @@
 import axios from 'axios';
-const TOKEN = ()=>{ 
-    return localStorage.getItem("persist:root")?.user?.currentUser?.acessoToken ?
-    
-    JSON.parse(JSON.parse(localStorage.getItem("persist:root"))?.user)?.currentUser?.acessoToken 
-        : {}
-    }
+const TOKEN = ()=>{ return localStorage.getItem("persist:root")?.user?.currentUser?.acessoToken }
 /*
 if(localStorage.getItem("persist:root")!== null){
     var TOKEN =  current?.acessoToken
@@ -13,11 +8,11 @@ if(localStorage.getItem("persist:root")!== null){
    };
    */
 
-const BASE_URL = "https://vandjaline-f.herokuapp.com/api/" //"http://localhost:8080/api/" ;
+const BASE_URL = "https://vandjaline-f.herokuapp.com/api/" // "http://localhost:8080/api/" ;
 export const publicRequest = axios.create({
     baseURL:BASE_URL,
 });
 export const userRequest = axios.create({
     baseURL:BASE_URL,
-    headers:{token:`Bearer ${TOKEN()!== undefined? TOKEN(): ""}`}
+    headers:{token:`Bearer ${TOKEN()}`}
 });
