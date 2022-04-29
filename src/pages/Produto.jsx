@@ -10,6 +10,8 @@ import { addProduto } from "../redux/carrinhoRedux"
 import { publicRequest, userRequest } from "../requesteMetodos"
 import { mobile } from "../responsive"
 import {useDispatch} from "react-redux"
+import {addUsuario} from  "./../redux/apiCalls"
+import {actPontos} from "./../redux/apiCalls"
 //import { useLocation } from "react-router-dom"
 
 const Container = styled.div``
@@ -139,6 +141,7 @@ const Produto = () => {
     const [tamanho , setTamanho] = useState("")
     const dispatch = useDispatch()
     const user = JSON?.parse(JSON?.parse(localStorage?.getItem("persist:root")).user)?.currentUser 
+    const id_user = JSON?.parse(JSON?.parse(localStorage?.getItem("persist:root")).user)?.currentUser?._id
     
     useEffect(()=>{
         const getProduto = async ()=>{
@@ -178,6 +181,40 @@ const Produto = () => {
         
     }
 
+    const handleClickRecomendar = (e) =>{
+        e.preventDefault()
+     
+if(user){
+const pontos = produto?.rec ;
+const pontosAct = Number(pontos) + 1
+const rec = {rec : pontosAct}
+const ids = produto?.userRec
+
+
+if(ids.indexOf(id_user) === -1){
+    const idList =  produto?.userRec
+    idList.push({id_usuario:id_user})
+
+    const actualizarPontos = async ()=>{
+        actPontos(_id, rec)
+    }
+    const adicionarIdUsuario = async () =>{
+        addUsuario(_id, idList)
+    }
+    
+    actualizarPontos();
+    adicionarIdUsuario();
+
+}else{
+    alert("Esteproduto ja foi recomedado")
+}
+
+
+}else{
+    alert("Por favor faça o login para poder recomendar este produto")
+}
+    }
+
     const handleClickPubli = () => {
         const url =  String(location.pathname.split("/", 3))
         const url_fin = url.replace(/,/g, "/")
@@ -203,6 +240,8 @@ const Produto = () => {
         addProPubli();
     }
 
+
+
     return (
         <Container>
              <ElementOne/>
@@ -215,6 +254,7 @@ const Produto = () => {
                        <Titulo>Nome: {produto?.titulo}</Titulo>
                        <Desc>Desacricao: {produto?.descricao}</Desc>
                        <Desc>Disponivel: {produto?.quanti}</Desc>
+                       <Desc>Recomendações: {produto?.rec}</Desc>
                        <Preco> Preco: {Number(produto?.preco).toFixed(2)}kz</Preco>
                        <Loja>Loja: {produto?.loja}</Loja>
                        <FilterContainer>
@@ -242,7 +282,7 @@ const Produto = () => {
                            </QuantidadeContainer>
                            <Button onClick = {handleClick} >Adicionar ao Carrinho</Button>
                            {user?.confirmado === true? <Button onClick = {handleClickPubli} >Publicitar</Button> : ""}
-
+                           <Button onClick = {handleClickRecomendar} >Recomendar</Button>
                        </AddContainer>
                    </InfoContainer>
                </Wrapper>

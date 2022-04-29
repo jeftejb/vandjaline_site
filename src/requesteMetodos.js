@@ -1,5 +1,7 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
 
+dotenv.config();
 /*
 if(localStorage.getItem("persist:root")!== null){
     var TOKEN =  current?.acessoToken
@@ -7,12 +9,15 @@ if(localStorage.getItem("persist:root")!== null){
        TOKEN =" "   
    };
    */
-const TOKEN =  localStorage.getItem("persist:root")?.user?.currentUser?.acessoToken ;
-const BASE_URL = "https://vandjaline-f.herokuapp.com/api/" // "http://localhost:8080/api/" ;
+
+const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root"))?.user)?.currentUser?.acessoToken ;
+const URL = process.env.REACT_APP_API_URL;
+
 export const publicRequest = axios.create({
-    baseURL:BASE_URL,
+    baseURL:URL,
+    
 });
 export const userRequest = axios.create({
-    baseURL:BASE_URL,
+    baseURL:URL,
     headers:{token:`Bearer ${TOKEN}`}
 });

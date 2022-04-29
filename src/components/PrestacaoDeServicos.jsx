@@ -27,14 +27,14 @@ const Button = styled.button`
 margin:4px;
 `
 
-const  Estabelecimentos = () => {
+const  PrestacaoDeServicos = () => {
 const [loja, getLoja] = useState([])
 
 
 useEffect(()=>{
    const  getLojas = async ()=>{
        try{
-        const res = await publicRequest.get("/estabelecimento/site/pro")
+        const res = await publicRequest.get("/estabelecimento/site/pro/servicos")
         getLoja(res.data)
        }catch{}
       
@@ -67,4 +67,4 @@ return(
 
 }
 
-export default Estabelecimentos
+export default PrestacaoDeServicos

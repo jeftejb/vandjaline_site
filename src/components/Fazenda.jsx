@@ -27,14 +27,14 @@ const Button = styled.button`
 margin:4px;
 `
 
-const  Estabelecimentos = () => {
+const  Fazenda = () => {
 const [loja, getLoja] = useState([])
 
 
 useEffect(()=>{
    const  getLojas = async ()=>{
        try{
-        const res = await publicRequest.get("/estabelecimento/site/pro")
+        const res = await publicRequest.get("/estabelecimento/site/pro/fazenda")
         getLoja(res.data)
        }catch{}
       
@@ -56,7 +56,7 @@ return(
   <Containe>
         <Container>
              {currentitens.map((item, i)=>(
-              <Estabelecimento item={item} key={i} />
+              <Estabelecimento  item={item} key={i} />
             ))}
         </Container>
         <Div>{Array.from(Array(pages), (i, index)=>{
@@ -67,4 +67,4 @@ return(
 
 }
 
-export default Estabelecimentos
+export default Fazenda

@@ -83,7 +83,29 @@ await publicRequest.post("/autenticacao/registro/estabelecimento", estabelecimen
 
 
 
+//recomedar produto actualizar
 
+export const actPontos = async (id, rec)=>{
+  try{
+  await userRequest.put("/produtos/recomendacoes/"+id, rec)
+  }catch(erro){
+    alert("Erro ao cadastrar Já existe um cadastro feitos com estes dados !! ",+erro)
+  }
+  
+  }
+
+  //adicionar usuario que recomedou o produtpo
+
+  export const addUsuario = async (id, idList)=>{
+    try{
+      const dados ={userRec:idList}
+    await userRequest.put("/produtos/adicionar/id/"+id, dados)
+      alert("Produto recomedado  com sucesso!")
+    }catch(erro){
+      alert("Erro ao cadastrar Já existe um cadastro feitos com estes dados !! ",+erro)
+    }
+    
+    }
 
 
 

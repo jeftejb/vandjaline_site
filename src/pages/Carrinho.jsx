@@ -272,7 +272,7 @@ const Carrinho = () => {
                                   <ProdutosQuantidade>{produto?.quantidade}</ProdutosQuantidade>
                          <Delete onClick={()=>handelDelite({id:produto?._id, preco:produto?.preco, quantidade:produto?.quantidade})}/>
                               </ProdutoPagamento>
-                              <ProdutoPreco>AKZ {produto?.preco*produto?.quantidade}</ProdutoPreco>
+                              <ProdutoPreco>AKZ {Number(produto?.preco*produto?.quantidade).toFixed(2)}</ProdutoPreco>
                           </PrecoDetalhes>
                       </Produto>
                       
@@ -284,7 +284,7 @@ const Carrinho = () => {
                       <ResumoTitulo>Resumo</ResumoTitulo>
                       <ResumoItem>
                           <ResumoItemText>Subtotal</ResumoItemText>
-                          <ResumoItemText>Kz {parseFloat(carrinho.total)}</ResumoItemText>
+                          <ResumoItemText>Kz {Number(carrinho.total).toFixed(2)}</ResumoItemText>
                       </ResumoItem>
                       <ResumoItem>
                           <ResumoItemText>Desconto</ResumoItemText>

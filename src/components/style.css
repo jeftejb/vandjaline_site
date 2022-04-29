@@ -79,3 +79,8 @@ body {
   max-width: 400px;
   line-height: 1.3;
 }
+
+.textNav{
+  text-decoration:none;
+   color: #042940;
+}

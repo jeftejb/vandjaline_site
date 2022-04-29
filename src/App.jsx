@@ -7,6 +7,8 @@ import Produto from './pages/Produto';
 import RegistroUsuario from './pages/RegistroUsuario';
 import Estabelecimentos from './pages/ListaDeEstabelecimentos';
 import Estabelecimento from './pages/Estabelecimento';
+import Servicos from './pages/ListPrestacao';
+import Fazenda from './pages/ListFazenda';
 import PerfilUser from './pages/user/User';
 import Confirm from './pages/Confirm';
 import Sobre from './pages/Sobre/sobre';
@@ -22,6 +24,9 @@ import { useSelector } from 'react-redux';
 const  App = ()=> {
   const [user,setUser] = useState({})
   const result = useSelector((state)=>state.user?.currentUser)
+
+  
+
 
   useEffect(()=>{
     const getUser = ()=>{
@@ -47,6 +52,8 @@ const  App = ()=> {
           <Route exact path="/estabelecimento/:id" element={<Estabelecimento/>}/>
           <Route exact path="/carrinho/:id" element={<Carrinho/>}/>
           <Route exact path="/sobre" element={<Sobre/>}/>
+          <Route exact path="/fazendas" element={<Fazenda/>}/>
+          <Route exact path="/servicos" element={<Servicos/>}/>
           <Route exact path="/recuperar/senha" element={<RecuperaEmail/>}/>
           <Route exact path="/recuperar/senha/mudar/:email" element={<RecuperaEmailFim/>}/>
           <Route exact path="/perfilUser/:i/:cod"   element={ user ? <PerfilUser/> : <Navigate to ={`/login`}/> }/>

@@ -4,6 +4,7 @@ import ElementOne from '../components/ElementOne'
 import Navbar from '../components/Navbar'
 import NovasLetras from '../components/NovasLetras'
 import Produtos from '../components/Produtos'
+import ProdutoCampo from '../components/ProdutoCampo'
 import Rodape from '../components/Rodape'
 import Slide from '../components/Slide'
 import styled from "styled-components"
@@ -99,7 +100,7 @@ const Link = styled.a``
           <LineOne/> 
           <LineDois/> 
           </ContainerLine>
-               <Text>PRODUTOS</Text>
+               <Text>PRODUTOS DIVREÇOS</Text>
                <ContainerLine>
           <LineOne/> 
           <LineDois/> 
@@ -112,6 +113,20 @@ const Link = styled.a``
           <Desc>  Faça o cadastro como usuário e comesse a ganhar dinheiro convidado mais pessoas no site e ajudando a publicitar os produtos do site. <Link href="/sobre">Saber mais </Link> </Desc>
             </ContainerSlider>
 
+                
+            <Container>
+                <ContainerLine>
+          <LineOne/> 
+          <LineDois/> 
+          </ContainerLine>
+               <Text>PRODUTOS DO CAMPO</Text>
+               <ContainerLine>
+          <LineOne/> 
+          <LineDois/> 
+          </ContainerLine>
+            </Container>
+            <ProdutoCampo/>
+           
 
             <Container>
                 <ContainerLine>

@@ -53,9 +53,9 @@ const NovasLetras = () => {
     return (
         <Container>
             <Titulo>Envia-nos uma mensagem </Titulo>
-            <Description>Envia-nos uma mensagem(Sujestão, Critica ou Reclamacão)</Description>
+            <Description>Envia-nos uma mensagem(Sujestão, Critica ou Reclamação)</Description>
             <InputContainer>
-            <Input placeholder="Teu Email" />
+            <Input placeholder="Email" />
             <Button>
                 <Send/>
             </Button>

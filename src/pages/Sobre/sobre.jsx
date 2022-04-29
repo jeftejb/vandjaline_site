@@ -157,7 +157,7 @@ export default function Sobre() {
               A traves  do IBAM fornecido pelo usuário no momento de criação da conta
               </li>
               <li>
-              Através da carteira virtual Kamba  que poderás efectuar o download do app através do link : 
+              Através da carteira virtual Kamba  que poderás efectuar o download do app através do link : {process.env.REACT_APP_SITE_LINK_KAMBA}
               </li>
             </ul>
             

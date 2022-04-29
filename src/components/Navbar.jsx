@@ -11,6 +11,7 @@ import{useSelector} from "react-redux"
 import  {Link}  from 'react-router-dom'
 
 
+
 const Container = styled.div`
 height:60px;
 ${mobile({ height: "50px" })}
@@ -124,18 +125,20 @@ const Navbar = () => {
           
             </Left>
            
-            <Center> <Center> <Link to ="/"> <Logo>Vandjaline</Logo> </Link> </Center>  </Center> 
+            <Center> <Center> <Link className='textNav' to ="/"> <Logo>Vandjaline</Logo> </Link> </Center>  </Center> 
             <RightMenu className={`app-menu ${isMenuOpen ? "menu-open" : ""}`}>
-                <Link to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
-                <Link to ="/estabelecimentos"> <MenuItem>lojas</MenuItem></Link>
-            <Link to ="/registro/:%d"> <MenuItem>Cadastro</MenuItem> </Link>
-            <Link to="/sobre"><MenuItem>Sobre</MenuItem></Link>
+                <Link className='textNav' to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
+                <Link className='textNav' to ="/estabelecimentos"> <MenuItem>Lojas</MenuItem></Link>
+                <Link className='textNav' to ="/serrvicos"> <MenuItem>Serviços</MenuItem></Link>
+                <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
+            <Link className='textNav' to ="/registro/:%d"> <MenuItem>Cadastro</MenuItem> </Link>
+            <Link className='textNav' to="/sobre"><MenuItem>Sobre</MenuItem></Link>
             {currentUser? <MenuItem> <Link to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
                 {currentUserD?.confirmado===true? `${currentUserD.nomeUsuario}(V:${currentUserD?.pontos}Akz)` : currentUserD.nomeUsuario }</Link></MenuItem>
-            : <Link to ="/login"> <MenuItem>Entrar</MenuItem></Link>
+            : <Link className='textNav' to ="/login"> <MenuItem>Entrar</MenuItem></Link>
             }
                 
-                <Link to="/carrinho">
+                <Link className='textNav' to="/carrinho">
                 <MenuItem>
                 <Badge badgeContent = {quantidade} color="primary" >
                     <ShoppingCartOutlined/>
@@ -147,20 +150,22 @@ const Navbar = () => {
                 <Right >
                 <Somem>
                
-                <Link to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
-                <Link to ="/estabelecimentos"> <MenuItem>lojas</MenuItem></Link>
+                <Link className='textNav' to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
+                <Link className='textNav' to ="/estabelecimentos"> <MenuItem>lojas</MenuItem></Link>
+                <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
+                <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
                
                 </Somem>
 
                 <NaoSomem>
-                <Link to="/sobre"><MenuItem>Sobre</MenuItem></Link>
-                <Link to ="/registro/:"> <MenuItem>Cadastro</MenuItem> </Link>
-            {currentUser? <MenuItem> <Link to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
+                <Link className='textNav' to="/sobre"><MenuItem>Sobre</MenuItem></Link>
+                <Link className='textNav' to ="/registro/:"> <MenuItem>Cadastro</MenuItem> </Link>
+            {currentUser? <MenuItem> <Link className='textNav' to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
                 {currentUserD?.confirmado===true? `${currentUserD.nomeUsuario}(V:${currentUserD?.pontos}Akz)` : currentUserD.nomeUsuario }</Link></MenuItem>
-            : <Link to ="/login"> <MenuItemFi>Entrar</MenuItemFi></Link>
+            : <Link className='textNav' to ="/login"> <MenuItemFi>Entrar</MenuItemFi></Link>
             }
                 
-                <Link to="/carrinho">
+                <Link className='textNav' to="/carrinho">
                 <MenuItemFi>
                 <Badge badgeContent = {quantidade} color="primary" >
                     <ShoppingCartOutlined/>

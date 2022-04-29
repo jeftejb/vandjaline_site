@@ -103,10 +103,8 @@ const Rodape = () => {
        <ContainerRodape>
            <Left>
                <Logo>Vandjaline</Logo>
-               <Desc>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, fugiat eius, 
-                   ducimus accusamus quas, modi exercitationem amet doloribus veritatis ea dol
-                   oremque tempora? Harum quis officiis quod doloribus placeat 
-                   repudiandae consectetur?</Desc>
+               <Desc> O vandjaline  é um projeto criado com o intuito de facilitar a vida de fornecedores , revendedores  
+            e compradores de produtos diversos tanto produtos digitais como produtos físicos</Desc>
 
                    <SocialContainer>
                        <SocialIcon color="3B5999">
@@ -138,8 +136,8 @@ const Rodape = () => {
            </Center>
            <Right>
                <Titulo>Contatos</Titulo>
-               <ContatoItem><Phone/>+244 929 312 201 / +244 929 312 201</ContatoItem>
-               <ContatoItem><MailOutline/>contatoVandja@gmail.com</ContatoItem>
+               <ContatoItem><Phone/>+244 948 992 170</ContatoItem>
+               <ContatoItem><MailOutline/>uservandja@gmail.com</ContatoItem>
                <Pagamento src="/image/payment.png"/>
 
               

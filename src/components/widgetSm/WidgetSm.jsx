@@ -61,7 +61,7 @@ export default function WidgetSm() {
           </button>
           </form>
           </div>
-          Link : http://localhost:3000{pro?.url_pro}/{codigoInter}
+          Link : {process.env.REACT_APP_SITE_LINK}{pro?.url_pro}/{codigoInter}
          
         </li>
       

@@ -17,6 +17,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../components/Navbar";
 import { logaut } from './../../redux/userRedux'
 import Rodape from "../../components/Rodape";
+import dotenv from "dotenv"
+
 
 
 export default function User() {
@@ -30,7 +32,7 @@ export default function User() {
   const [pagamento, getPagamento] = useState();
   const imagem = "https://firebasestorage.googleapis.com/v0/b/vandja-6d839.appspot.com/o/avatar%2Fkindpng_786207.png?alt=media&token=a59d158e-d6b7-459c-b760-002177d9f886"
 
-  
+dotenv.config();  
 
   useEffect(()=>{
     const getUser = ()=>{
@@ -51,7 +53,7 @@ export default function User() {
   const usuario = {...updateDados}
 
   const handelClick = (e)=>{
-
+  e.preventDefault();
      updateUsuario( usuario, id_user )
   }
 
@@ -227,7 +229,7 @@ const nadelClickEmail = (dados)=>{
             
             <div className="userShowInfo">
             <h6>Convidar amigo: 
-             <span className="userShowInfoTitle">http://localhost:3000/registro/{id_user}</span>
+             <span className="userShowInfoTitle">{process.env.REACT_APP_SITE_LINK}/registro/{id_user}</span>
              </h6> 
            </div>
           </div>
@@ -322,7 +324,7 @@ const nadelClickEmail = (dados)=>{
                 </form>
                 </>
                 : ""}
-                <span>A carteira digital "Kamba" é um aplicativo inovador 100% angolano que permite efectuar varios tipos de operações na internet como pagamentos transferencias e outros, link para fazer o download: <a href="https://m.usekamba.com/convite/86C210"> Clique aqui para baixar o App</a> </span>
+                <span>A carteira digital "Kamba" é um aplicativo inovador 100% angolano que permite efectuar varios tipos de operações na internet como pagamentos transferencias e outros, link para fazer o download: <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App</a> </span>
         </div>
       </div>
 
