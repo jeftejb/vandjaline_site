@@ -87,9 +87,6 @@ const Confirm = () => {
                
                  await userRequest.put(`/users/${id}`, {codigoConfirm: codigoConfirm})
 
-                const enviar = ()=> {
-                  
-
                     var transporter = nodemailer.createTransport({
                       service: 'smtp.gmail.com',
                       port: 587,
@@ -114,9 +111,9 @@ const Confirm = () => {
                         console.log('Email sent: ' + info.response);
                       }
                     });
-                }
+                
 
-                enviar();
+           
                
             }catch{}
         }
