@@ -97,20 +97,15 @@ const Confirm = () => {
                       }
                     });
                     
-                    var mailOptions = {
-                      from: 'uservandja@gmail.com',
-                      to: 'jeftesambangojb@gmail.com',
-                      subject: 'Sending Email using Node.js',
-                      text: 'That was easy!'
-                    };
-                    
-                    transporter.sendMail(mailOptions, function(error, info){
-                      if (error) {
-                        console.log(error);
-                      } else {
-                        console.log('Email sent: ' + info.response);
-                      }
-                    });
+                   await transporter.sendMail({
+                        from: '"Fred Foo 👻" uservandja@gmail.com>', // sender address
+                        to: "jeftesambangojb@gmail.com", // list of receivers
+                        subject: "Hello ✔", // Subject line
+                        text: "Hello world?", // plain text body
+                        html: "<b>Hello world?</b>", // html body
+                      });
+                  
+            
                 
 
            
