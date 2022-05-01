@@ -9,8 +9,9 @@ if(localStorage.getItem("persist:root")!== null){
        TOKEN =" "   
    };
    */
-
-const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root"))?.user)?.currentUser?.acessoToken ;
+if (localStorage.getItem("persist:root")){
+var TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root"))?.user)?.currentUser?.acessoToken ;
+}
 const URL = process.env.REACT_APP_API_URL;
 
 export const publicRequest = axios.create({

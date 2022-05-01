@@ -33,7 +33,7 @@ const ProdutosCampo = ({id}) => {
           }
       }
       getProduto()
-   }, []);
+   }, [id]);
   
 
    SwiperCore.use([Autoplay])
