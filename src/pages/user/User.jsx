@@ -125,6 +125,20 @@ const nadelClickEmail = (dados)=>{
   enviarEmail().catch(console.error());
 }
 
+/*
+const nadelClickEmail = ()=>{
+
+  try{
+  const enviarEmail = async ()=>{
+     await userRequest.put(`/users/${id_user}`, {confirmEmail:true})
+  }
+  enviarEmail().catch(console.error());
+  alert("Conta confirmada com sucesso! por favor reinicie o login para continuar")
+  }catch(err){
+    console.log(err)
+  }
+}
+*/
 
   return (
     <div>

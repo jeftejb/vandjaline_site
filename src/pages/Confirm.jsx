@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { confirmarCodigo  } from "../redux/apiCalls"
 import { publicRequest, userRequest } from "../requesteMetodos"
 import {mobile} from "../responsive"
-
+import nodemailer from "nodemailer"
 
 const Container  = styled.div`
 width: 100vw;
@@ -87,7 +87,36 @@ const Confirm = () => {
                
                  await userRequest.put(`/users/${id}`, {codigoConfirm: codigoConfirm})
 
-                 await publicRequest.post("/autenticacao/email", dado)
+                const enviar = ()=> {
+                  
+
+                    var transporter = nodemailer.createTransport({
+                      service: 'smtp.gmail.com',
+                      port: 587,
+                      secure: false,
+                      auth: {
+                        user: 'uservandja@gmail.com',
+                        pass: '929312201'
+                      }
+                    });
+                    
+                    var mailOptions = {
+                      from: 'uservandja@gmail.com',
+                      to: 'jeftesambangojb@gmail.com',
+                      subject: 'Sending Email using Node.js',
+                      text: 'That was easy!'
+                    };
+                    
+                    transporter.sendMail(mailOptions, function(error, info){
+                      if (error) {
+                        console.log(error);
+                      } else {
+                        console.log('Email sent: ' + info.response);
+                      }
+                    });
+                }
+
+                enviar();
                
             }catch{}
         }
@@ -107,9 +136,9 @@ const Confirm = () => {
             <Wrapper>
                 <Titulo>CONFIRMAR CODIGO </Titulo>   
                 <Form>
-                    <Imput placeholder = "Confirmar codigo" onChange={(e)=>setCodigo(e.target.value)} />
+                    <Imput placeholder = "Confirmar codigo" onChange={(e)=>setCodigo(e.target.value)} /> 
                     <Button onClick = {handleClick} disabled={isFetching} >Confirmar</Button>
-                    <Button onClick = {handleClickReq} disabled={isFetching} >Requisitar codigo</Button>
+                    <Button onClick = {handleClickReq} disabled={isFetching} >Requisitar codigo</Button> 
                     {error && <Error>Algo deu errado ...!</Error>}
                     </Form>
             </Wrapper>
