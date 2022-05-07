@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-
 import "./confirmarEmail/user.css";
-
 import Navbar from "./../components/Navbar";
-
 import Rodape from "./../components/Rodape";
 import { publicRequest } from './../requesteMetodos';
-
 
 
  const RecuperaEmail = () => {
@@ -27,7 +23,7 @@ if(dados !== undefined){
 
     try{
          await publicRequest.post(`/autenticacao/email/recuperacao`, dados)
-
+          
          alert("Email enviado com sucesso!")
          
     }catch(erro){

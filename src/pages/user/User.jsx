@@ -11,13 +11,14 @@ import "./user.css";
 import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import { useEffect, useState } from "react";
-import { publicRequest, userRequest } from "./../../requesteMetodos"
+import { userRequest, publicRequest } from "./../../requesteMetodos"
 import { updateUsuario } from "../../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../components/Navbar";
 import { logaut } from './../../redux/userRedux'
 import Rodape from "../../components/Rodape";
 import dotenv from "dotenv"
+//import {confirmarEmailCadastro} from "./../../data" 
 
 
 
@@ -120,7 +121,9 @@ if(Number(pagamento.valor) <= Number(dados?.pontos)){
 const nadelClickEmail = (dados)=>{
   const email ={email: dados , id:id_user}
   const enviarEmail = async ()=>{
-     await publicRequest.post(`/autenticacao/email/confirmacao`, email)
+   await publicRequest.post(`/autenticacao/email/confirmacao`, email)
+    //confirmarEmailCadastro(email);
+
   }
   enviarEmail().catch(console.error());
 }

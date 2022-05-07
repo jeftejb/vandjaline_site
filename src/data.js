@@ -1,48 +1,56 @@
+/*
+import nodemailer from 'nodemailer-react'
+import {userRequest} from './requesteMetodos'
+import dotenv from 'dotenv'
+const EMAIL_USER = "uservandja@gmail.com"
+const PASS_USER = "929312201"
+
+dotenv.config();
+*/
+
 export const sliderItemns = [
-{
-    id:1, 
-    img:"/image/baner-1.jpg", 
-    titulo:"Vandjaline", 
-    desc: "Pare de sonhar com o sucesso, com dinheiro e realizações o tempo esta passando ninguém quer saber dos teus sonhos! Comesse a materializa-los lute por eles e comesse hoje !! ",
-    bg:""
-}, 
-{
-    id:2, 
-    img:"/image/baner-2.jpg", 
-    titulo:"Vandjaline", 
-    desc: "Todos os seus sonhos podem se tornar realidade se você tem coragem para persegui-los. Walt Disney",
-    bg:""
-}, 
-{
-    id:3, 
-    img:"/image/baner-3.jpg", 
-    titulo:"Vandjaline", 
-    desc: "Comece de onde você está. Use o que você tiver. Faça o que você puder. Arthur Ashe",
-    bg:""
-}, 
-{
-    id:4, 
-    img:"/image/baner-4.jpg", 
-    titulo:"Vandjaline", 
-    desc: "Seja você mesmo independente  mente das dificuldade que estiveres a passar nunca perca o sua identidade.",
-    bg:""
-},
-{
-    id:5, 
-    img:"/image/baner-5.jpg", 
-    titulo:"Vandjaline", 
-    desc: "Para de perseguir o dinheiro e comece a perseguir o sucesso. Tony Hsieh",
-    bg:""
-},{
-    id:6, 
-    img:"/image/baner-6.jpg", 
-    titulo:"Vandjaline", 
-    desc: "Se você quiser crescer, terá que fazer algo diferente do que a maioria das outras pessoas está fazendo. Lakshmi Mittal",
-    bg:""
-}
+        {
+            id:1, 
+            img:"/image/baner-1.jpg", 
+            titulo:"Vandjaline", 
+            desc: "Pare de sonhar com o sucesso, com dinheiro e realizações o tempo esta passando ninguém quer saber dos teus sonhos! Comesse a materializa-los lute por eles e comesse hoje !! ",
+            bg:""
+        }, 
+        {
+            id:2, 
+            img:"/image/baner-2.jpg", 
+            titulo:"Vandjaline", 
+            desc: "Todos os seus sonhos podem se tornar realidade se você tem coragem para persegui-los. Walt Disney",
+            bg:""
+        }, 
+        {
+            id:3, 
+            img:"/image/baner-3.jpg", 
+            titulo:"Vandjaline", 
+            desc: "Comece de onde você está. Use o que você tiver. Faça o que você puder. Arthur Ashe",
+            bg:""
+        }, 
+        {
+            id:4, 
+            img:"/image/baner-4.jpg", 
+            titulo:"Vandjaline", 
+            desc: "Seja você mesmo independente  mente das dificuldade que estiveres a passar nunca perca o sua identidade.",
+            bg:""
+        },
+        {
+            id:5, 
+            img:"/image/baner-5.jpg", 
+            titulo:"Vandjaline", 
+            desc: "Para de perseguir o dinheiro e comece a perseguir o sucesso. Tony Hsieh",
+            bg:""
+        },{
+            id:6, 
+            img:"/image/baner-6.jpg", 
+            titulo:"Vandjaline", 
+            desc: "Se você quiser crescer, terá que fazer algo diferente do que a maioria das outras pessoas está fazendo. Lakshmi Mittal",
+            bg:""
+        }
 ]
-
-
 
 export const Paises =[
     {
@@ -53,74 +61,74 @@ export const Paises =[
 ]
 
 export const ProvinciasAngola = [
-{id:1,
-titulo:"Província do Bengo"
-}, 
+        {id:1,
+        titulo:"Província do Bengo"
+        }, 
 
-{id:2,
-titulo:"Província de Benguela"
-},
-    
-{id:3,
-titulo:"Província do Bié"
-}
-,{id:4,
-titulo:" Província de Cabinda"
-},
- {id:5,
- titulo:"Província do Cuando-Cubango "
- },
-                 
- {id:6,
- titulo:"Província do Cunene"
-  }, 
-  {id:7,
- titulo:"Província do Huambo"
- }, 
+        {id:2,
+        titulo:"Província de Benguela"
+        },
+            
+        {id:3,
+        titulo:"Província do Bié"
+        }
+        ,{id:4,
+        titulo:" Província de Cabinda"
+        },
+        {id:5,
+        titulo:"Província do Cuando-Cubango "
+        },
+                        
+        {id:6,
+        titulo:"Província do Cunene"
+        }, 
+        {id:7,
+        titulo:"Província do Huambo"
+        }, 
 
-      {id:8,
- titulo:"Província da Huíla"
- }, 
+            {id:8,
+        titulo:"Província da Huíla"
+        }, 
 
-  {id:9,
-  titulo:"Província do Kwanza Sul"
-  }, 
+        {id:9,
+        titulo:"Província do Kwanza Sul"
+        }, 
 
-{id:10,
- titulo:"Província do Kwanza Norte"
- } ,
+        {id:10,
+        titulo:"Província do Kwanza Norte"
+        } ,
 
- {id:11,
-titulo:"Província de Luanda"
-}, 
+        {id:11,
+        titulo:"Província de Luanda"
+        }, 
 
- {id:12,
- titulo:"Província da Lunda Norte"
-}, 
+        {id:12,
+        titulo:"Província da Lunda Norte"
+        }, 
 
- {id:13,
- titulo:"Província da Lunda Sul"
- }, 
+        {id:13,
+        titulo:"Província da Lunda Sul"
+        }, 
 
- {id:14,
- titulo:"Província de Malanje"
- }, 
+        {id:14,
+        titulo:"Província de Malanje"
+        }, 
 
-{id:15,
- titulo:"Província do Moxico"
- }, 
+        {id:15,
+        titulo:"Província do Moxico"
+        }, 
 
- {id:16,
- titulo:"Província do Namibe"
- }, 
+        {id:16,
+        titulo:"Província do Namibe"
+        }, 
 
- {id:17,
- titulo:"Província do Uíge"
-  }, 
+        {id:17,
+        titulo:"Província do Uíge"
+        }, 
 
-  {id:18,
-  titulo:"Província do Zaire"
-  }
+        {id:18,
+        titulo:"Província do Zaire"
+        }
 
 ]
 
@@ -836,3 +844,224 @@ export const  MunicipiosAngola = [
 
 
 ]
+
+/*
+
+export const confirmarEmailIntermediario = async (dado)=>{
+
+    try{
+               
+        await userRequest.put(`/users/${dado.id}`, {codigoConfirm: dado.codigoConfirm})
+        // create reusable transporter object using the default SMTP transport
+        let transporter = nodemailer.createTransport({
+          host: "smtp.gmail.com",
+          port: 587,
+          secure: false, // true for 465, false for other ports
+          auth: {
+            user: EMAIL_USER, // generated ethereal user
+            pass: PASS_USER, // generated ethereal password
+          },
+        });
+      
+        // send mail with defined transport object
+        let info = await transporter.sendMail({
+          from: `"Fred Foo 👻" <${EMAIL_USER}>`, // sender address
+          to: dado.email, // list of receivers
+          subject: "Hello ✔", // Subject line
+          text: "Hello world?", // plain text body
+          html: "<b>Hello world?</b>", // html body
+        });
+      
+        console.log("Message sent: %s", info.messageId);
+        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+      
+        // Preview only available when sending through an Ethereal account
+        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+      
+   }catch{ 
+       console.log("nao foi possivel enviar o email")
+   }
+
+}
+
+
+
+
+// email de confirmacao
+export const confirmarEmailCadastro  = async (email)=>{
+   
+    try{
+    
+         // create reusable transporter object using the default SMTP transport
+         let transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false, // true for 465, false for other ports
+            auth: {
+              user: EMAIL_USER, // generated ethereal user
+              pass: PASS_USER, // generated ethereal password
+            },
+          });
+          // send mail with defined transport object
+             await transporter.sendMail({
+            from: `"Vandjaline👻" <${EMAIL_USER}>`, // sender address
+            to: email.email, // list of receivers
+            subject: "Saudações vandja✔", // Subject line
+            text: "Seja bem vindo", // plain text body
+            html: `
+            
+            <b>Muito obrigado por se inscrever no nosso site, esperamos que tenha uma boa esperiencia navegando no nosso site, mas para concluir o cadastro por favor clique em confirmar cadastro</b>
+            <a href ="${process.env.REACT_APP_SITE_BASE}/confirmar/${email.id}" >Confirmar cadastro <a/>
+            `, // html body
+          });
+        
+    
+    
+    }catch(erro){
+        console.log(erro)
+    
+    }
+    
+}
+//email de recuperacao de senha
+export const emailRecuperacaoDeSenha = async ( dados)=>{
+   
+        try{
+        
+             // create reusable transporter object using the default SMTP transport
+        let transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false, // true for 465, false for other ports
+            auth: {
+              user: EMAIL_USER, // generated ethereal user
+              pass: PASS_USER, // generated ethereal password
+            },
+          });
+              // send mail with defined transport object
+                 await transporter.sendMail({
+                from: `"Vandjaline👻" <${EMAIL_USER}>`, // sender address
+                to: dados.email, // list of receivers
+                subject: "Saudações vandja Recuperação de senha ✔", // Subject line
+                text: "Seja bem vindo", // plain text body
+                html: `
+                
+                <b>Email de recuperação de senha, clica no link  "recuperar" para finalizar o processo obrigado. </b>
+                <a href ="${process.env.REACT_APP_SITE_LINK}/recuperar/senha/mudar/${dados.email}" >Recuperar<a/>
+                `, // html body
+              });
+            
+        
+        
+        }catch(erro){
+            console.log(erro)
+        
+        }
+        
+}
+        //email pagamento
+export const emailFatura = async (dados)=>{
+            try{
+                // create reusable transporter object using the default SMTP transport
+        let transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false, // true for 465, false for other ports
+            auth: {
+              user: EMAIL_USER, // generated ethereal user
+              pass: PASS_USER, // generated ethereal password
+            },
+          });
+                  // send mail with defined transport object
+                     await transporter.sendMail({
+                    from: `"Vandjaline👻" <${EMAIL_USER}>`, // sender address
+                    to: dados.email, // list of receivers
+                    subject: "Saudações vandja✔", // Subject line
+                    text: "Seja bem vindo", // plain text body
+                    html: `
+
+                    <b>Solicitacao de pagamento da loja ${dados.nome} </b><br/><br/>
+                    <b>Muito obrigado por usares  no nosso site, esperamos que continues a usar o nosso tite </b><br/><br/>
+
+                    <table style=>
+                    <thead>
+                    <tr className="widgetLgTr">
+                      <th className="widgetLgTh">Produto</th>
+                      <th className="widgetLgTh">Quantidade</th>
+                      <th className="widgetLgTh">Valor</th>
+                     
+                    </tr>
+                    </thead>
+                    <tbody>
+                    ${dados.produtos.map((fatura, i)=>(
+                    `
+                    <tr className="widgetLgTr" key=${i}>
+                    
+                      <td className="widgetLgUser">
+                        <span className="widgetLgName">${fatura?.titulo }</span>
+                      </td>
+                      <td className="widgetLgDate">${fatura?.quantidade}</td>
+                      <td className="widgetLgAmount">${fatura?.preco}</td>
+                    </tr>
+                `
+                    ))}
+                    </tbody>
+                  </table><br/><br/>
+                  Valor a se pagar  :${Number(dados.total).toFixed(2)} <br/> <br/>
+                  <a href="${dados.url}" >Efectuar Pagamento</a>
+
+                   Contactos da loja : <br/>
+                   Telefone: ${dados.telefone}<br/>
+                   email: ${dados.emailLoja}<br/><br/>
+
+                   
+                    `, // html body
+                  });
+                
+            
+            
+            }catch(erro){
+                console.log(erro)
+            
+            }
+            
+}
+// email de canselamento de pedido
+export const emailDeCanselamento = async (dados)=>{
+    try{
+    
+       // create reusable transporter object using the default SMTP transport
+       let transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+          user: EMAIL_USER, // generated ethereal user
+          pass: PASS_USER, // generated ethereal password
+        },
+      });
+        
+          // send mail with defined transport object
+             await transporter.sendMail({
+            from: `"Vandjaline👻" <${EMAIL_USER}>`, // sender address
+            to: dados.email, // list of receivers
+            subject: "Saudações vandja , Aviso de canselamento !!", // Subject line
+            text: "Emial de canselamento", // plain text body
+            html: `
+            
+            <b>Email de canselamento a Loja ${dados.loja} canselou o seu pedido </b><br/><br/>
+            <a href ="${process.env.REACT_APP_SITE_LINK}/login" >Ir para o site<a/>
+            `, // html body
+          });
+        
+    
+    
+    }catch(erro){
+        console.log(erro)
+    
+    }
+    
+}
+
+*/

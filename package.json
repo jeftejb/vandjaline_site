@@ -16,6 +16,7 @@
     "firebase": "^9.6.10",
     "node": "^16.13.2",
     "nodemailer": "^6.7.2",
+    "nodemailer-react": "^1.0.2",
     "pdfmake": "^0.2.4",
     "react": "^17.0.2",
     "react-dimmer": "^1.0.7",

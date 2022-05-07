@@ -3,9 +3,10 @@ import { useState } from "react"
 import {  useSelector } from "react-redux"
 import styled from "styled-components"
 import { confirmarCodigo  } from "../redux/apiCalls"
-import { publicRequest, userRequest } from "../requesteMetodos"
+import { publicRequest} from "../requesteMetodos"
 import {mobile} from "../responsive"
-import nodemailer from "nodemailer"
+
+
 
 const Container  = styled.div`
 width: 100vw;
@@ -83,35 +84,14 @@ const Confirm = () => {
         const  min = 50000
         const codigoConfirm = Math.floor(Math.random() * (max - min) + min)
         const dado = {email:email, conteudo:codigoConfirm}
-            try{
-               
-                 await userRequest.put(`/users/${id}`, {codigoConfirm: codigoConfirm})
-
-                    var transporter = nodemailer.createTransport({
-                      service: 'smtp.gmail.com',
-                      port: 587,
-                      secure: false,
-                      auth: {
-                        user: 'uservandja@gmail.com',
-                        pass: '929312201'
-                      }
-                    });
-                    
-                   await transporter.sendMail({
-                        from: '"Fred Foo 👻" uservandja@gmail.com>', // sender address
-                        to: "jeftesambangojb@gmail.com", // list of receivers
-                        subject: "Hello ✔", // Subject line
-                        text: "Hello world?", // plain text body
-                        html: "<b>Hello world?</b>", // html body
-                      });
-                  
-            
-                
-
            
-               
-            }catch{}
-        }
+         try {
+             await publicRequest.post("/autenticacao/email", dado)
+
+         }catch(erro){
+             console.log(erro)
+         }
+         }
         updateCod()
     }
     
@@ -128,9 +108,9 @@ const Confirm = () => {
             <Wrapper>
                 <Titulo>CONFIRMAR CODIGO </Titulo>   
                 <Form>
-                    <Imput placeholder = "Confirmar codigo" onChange={(e)=>setCodigo(e.target.value)} /> 
+                    <Imput placeholder = "Confirmar codigo" onChange={(e)=>setCodigo(e.target.value)} />
                     <Button onClick = {handleClick} disabled={isFetching} >Confirmar</Button>
-                    <Button onClick = {handleClickReq} disabled={isFetching} >Requisitar codigo</Button> 
+                    <Button onClick = {handleClickReq} disabled={isFetching} >Requisitar codigo</Button>
                     {error && <Error>Algo deu errado ...!</Error>}
                     </Form>
             </Wrapper>

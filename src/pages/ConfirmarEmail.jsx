@@ -1,12 +1,11 @@
 import React from 'react';
 import {useLocation } from "react-router-dom";
 import "./confirmarEmail/user.css";
-
 import {userRequest } from "./../requesteMetodos";
-
 import Navbar from "./../components/Navbar";
-
 import Rodape from "./../components/Rodape";
+
+
 
 
  const ConfirmarEmail = () => {
@@ -15,10 +14,22 @@ import Rodape from "./../components/Rodape";
   
 const nadelClickTerminar = ()=>{
 
+  
   const enviarEmail = async ()=>{
      await userRequest.put(`/users/${id_user}`, {confirmEmail:true})
   }
   enviarEmail().catch(console.error());
+  
+/*
+  const enviarEmail = async ()=>{
+    confirmarEmailCadastro({confirmEmail:true})
+  }
+
+  enviarEmail();
+  
+ */
+
+  alert("Conta confirmada com sucesso ! por favor reinicie sua conta para gravar as alterações")
 }
 
   return (
