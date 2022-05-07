@@ -3,7 +3,7 @@ import { useState } from "react"
 import {  useSelector } from "react-redux"
 import styled from "styled-components"
 import { confirmarCodigo  } from "../redux/apiCalls"
-import { publicRequest} from "../requesteMetodos"
+import { publicRequest, userRequest} from "../requesteMetodos"
 import {mobile} from "../responsive"
 
 
@@ -86,6 +86,7 @@ const Confirm = () => {
         const dado = {email:email, conteudo:codigoConfirm}
            
          try {
+            await userRequest.put(`/users/${dado.id}`, {codigoConfirm: dado.conteudo})
              await publicRequest.post("/autenticacao/email", dado)
 
          }catch(erro){
