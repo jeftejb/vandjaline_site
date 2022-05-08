@@ -86,7 +86,7 @@ const Confirm = () => {
         const dado = {email:email, conteudo:codigoConfirm}
            
          try {
-            await userRequest.put(`/users/${dado.id}`, {codigoConfirm: dado.conteudo})
+            await userRequest.put(`/users/${id}`, {codigoConfirm: dado.conteudo})
              await publicRequest.post("/autenticacao/email", dado)
 
          }catch(erro){
