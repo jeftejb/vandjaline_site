@@ -12,7 +12,7 @@ const Container = styled.div`
 `
 const ContainerImagem = styled.div`
 width: 100%;
-height: 20vh;
+height: 50vh;
 
 position: relative;
 overflow: hidden;
@@ -48,6 +48,7 @@ margin-bottom: 5px;
 
 const Img = styled.img`
 width: 100%;
+height: 50vh;
 `
 const Titulo = styled.h1`
 margin-bottom: 10px;
@@ -114,7 +115,7 @@ getItem()
             <ElementOne/>
             <Navbar/>
             <ContainerImagem>
-                <Img src ="/image/blog-1.jpg"/>
+                <Img src ={loja?.imagem}/>
             </ContainerImagem>
             <Inf>
                 <DescContainer>

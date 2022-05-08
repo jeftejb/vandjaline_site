@@ -15,7 +15,7 @@ ${tablet({fontSize:"20px"})}
 
 `
 
-const Estabelecimento = ()=>{
+const ListFazenda = ()=>{
     return(
         <Container>
         <ElementOne/>
@@ -27,4 +27,4 @@ const Estabelecimento = ()=>{
     )
 }
 
-export default Estabelecimento
+export default ListFazenda

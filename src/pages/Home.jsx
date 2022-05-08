@@ -4,7 +4,7 @@ import ElementOne from '../components/ElementOne'
 import Navbar from '../components/Navbar'
 import NovasLetras from '../components/NovasLetras'
 import Produtos from '../components/Produtos'
-import ProdutoCampo from '../components/ProdutoCampo'
+import ProdutoCampoTodos from '../components/ProdutoCampoTodos'
 import Rodape from '../components/Rodape'
 import Slide from '../components/Slide'
 import styled from "styled-components"
@@ -125,7 +125,7 @@ const Link = styled.a``
           <LineDois/> 
           </ContainerLine>
             </Container>
-            <ProdutoCampo/>
+            <ProdutoCampoTodos/>
            
 
             <Container>

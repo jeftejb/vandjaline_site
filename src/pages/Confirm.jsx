@@ -1,6 +1,5 @@
 
 import { useState } from "react"
-import {  useSelector } from "react-redux"
 import styled from "styled-components"
 import { confirmarCodigo  } from "../redux/apiCalls"
 import { publicRequest, userRequest} from "../requesteMetodos"
@@ -62,15 +61,11 @@ margin-bottom: 10px;
 }
 `
 
-const Error = styled.span`
-color :red;
-`
 
 
 
 const Confirm = () => {
     const [confirm_codigo, setCodigo] = useState("")
-    const {isFetching,error} = useSelector((state)=>state.user)
     const currentUser = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)?.currentUser
     const id = currentUser._id
     const email = currentUser.email
@@ -110,9 +105,9 @@ const Confirm = () => {
                 <Titulo>CONFIRMAR CODIGO </Titulo>   
                 <Form>
                     <Imput placeholder = "Confirmar codigo" onChange={(e)=>setCodigo(e.target.value)} />
-                    <Button onClick = {handleClick} disabled={isFetching} >Confirmar</Button>
-                    <Button onClick = {handleClickReq} disabled={isFetching} >Requisitar codigo</Button>
-                    {error && <Error>Algo deu errado ...!</Error>}
+                    <Button onClick = {handleClick}  >Confirmar</Button>
+                    <Button onClick = {handleClickReq}  >Requisitar codigo</Button>
+                   
                     </Form>
             </Wrapper>
 

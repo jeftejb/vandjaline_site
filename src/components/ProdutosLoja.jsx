@@ -3,8 +3,8 @@ import { useState, useEffect } from "react"
 import styled from "styled-components"
 import Produto from "./Produto"
 
-import SwiperCore,{ EffectFade, Autoplay} from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+//import SwiperCore,{ EffectFade, Autoplay} from 'swiper';
+//import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import { publicRequest } from "../requesteMetodos";
@@ -16,6 +16,21 @@ display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 `
+
+const Containe = styled.div`
+padding:20px;
+
+`
+const Button = styled.button`
+margin:4px;
+`
+
+const Div = styled.div`
+justify-content: space-between;
+text-align: center;
+`
+
+
 
 
 
@@ -36,41 +51,34 @@ const ProdutosLoja = ({id}) => {
    }, [id]);
   
 
-   SwiperCore.use([Autoplay])
+   const [itensPerPage]  = useState(5)
+   const [currentPage , setcurrentPage] = useState(0)
+  
+   const pages = Math.ceil(produtos.length / itensPerPage )
+    const startIndex = currentPage*itensPerPage
+    const endIndex = startIndex+itensPerPage
+    const currentitens =  produtos.slice(startIndex,endIndex )
+
+   //SwiperCore.use([Autoplay])
   
     return (
+      <Containe>
         <Container>
-        <Swiper
-        modules={[ EffectFade, Autoplay]}
        
-      spaceBetween={50}
-      
-      breakpoints= {{
-        0: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        1020: {
-          slidesPerView: 3,
-        },
-      }}
-      autoplay={ {
-        delay: 2500,
-        disableOnInteraction: false,
-    }}
-        className="mySwiper"
-      >
-            {  produtos?
-            produtos.map((item, i)=>(
-            <SwiperSlide key={i}>  <Produto item={item} key={item._id}/></SwiperSlide>
-        ))  : ""
+              
+          
+          {currentitens.map((item, i)=>(
+             <Produto item={item} key={item._id}/>
+          ))}
+          </Container>
             
-            }
+            <Div>{Array.from(Array(pages), (i, index)=>{
+     return <Button value={index} onClick={(e)=>setcurrentPage(Number(e.target.value))} key={index}>{index +1}</Button>
+      })}</Div>
 
-       </Swiper>
-       </Container>
+      
+     
+       </Containe>
     )
 }
 
