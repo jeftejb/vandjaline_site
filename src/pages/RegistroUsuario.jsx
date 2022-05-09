@@ -303,7 +303,7 @@ const RegistroUsuario = () => {
         <Container>
        
             <Wrapper>
-                <Titulo>{dados? "CONTA DE USUAÁIO   Convite feito por: "+dados.nomeCompleto :"CONTA DE USUÁRIO" }</Titulo>
+                <Titulo>{dados? "CONTA DE USUÁIO Convite feito por: "+dados.nomeCompleto :"CONTA DE USUÁRIO" }</Titulo>
                 <Form>
                     <Imput name="nomeCompleto" placeholder = "Primeiro e segundo nome" onChange={handelChangeUser} required/>
                     <Imput name="email" type="email" placeholder = "Email" onChange={handelChangeUser} required/>
