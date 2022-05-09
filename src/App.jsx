@@ -57,7 +57,7 @@ const  App = ()=> {
           <Route exact path="/recuperar/senha" element={<RecuperaEmail/>}/>
           <Route exact path="/recuperar/senha/mudar/:email" element={<RecuperaEmailFim/>}/>
           <Route exact path="/perfilUser/:i/:cod"   element={ user ? <PerfilUser/> : <Navigate to ={`/login`}/> }/>
-          <Route exact path="/confirmar/:id" element={confirmarEmail === true? <Navigate to ={'/login'}/> : <Confirmar/>}/>
+          <Route exact path="/confirmar/:id" element={confirmarEmail === true|| result === null? <Navigate to ={'/login'}/> : <Confirmar/>}/>
        
         </Routes>
     </Router>

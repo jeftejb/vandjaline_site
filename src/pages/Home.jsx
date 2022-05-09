@@ -26,7 +26,7 @@ const Text = styled.h1`
 margin: 10px;
 color:${color_text};
 size: 20px;
-font-size: 30px;
+font-size: 20px;
 
 `
 
@@ -55,7 +55,7 @@ flex-direction: column;
 const Desc = styled.p`
 text-align:center ;
 padding:20px ;
-  font-size:20px ;
+  font-size:15px ;
   font-weight:1000;
   color: ${color_text};
 `
@@ -74,8 +74,6 @@ const Link = styled.a``
             <Navbar/>
             <Slide/>
           
-
-       
             <Container>
                 <ContainerLine>
           <LineOne/> 

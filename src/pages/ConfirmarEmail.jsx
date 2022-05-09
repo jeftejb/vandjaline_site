@@ -4,6 +4,8 @@ import "./confirmarEmail/user.css";
 import {userRequest } from "./../requesteMetodos";
 import Navbar from "./../components/Navbar";
 import Rodape from "./../components/Rodape";
+import { useDispatch } from 'react-redux';
+import { logaut } from './../redux/userRedux'
 
 
 
@@ -11,6 +13,7 @@ import Rodape from "./../components/Rodape";
  const ConfirmarEmail = () => {
   const location = useLocation();
   const id_user = location?.pathname.split("/")[2];
+  const dispach = useDispatch()
   
 const nadelClickTerminar = ()=>{
 
@@ -32,9 +35,19 @@ const nadelClickTerminar = ()=>{
   alert("Conta confirmada com sucesso ! por favor reinicie sua conta para gravar as alterações")
 }
 
+const SairUs = ()=>{
+  dispach(logaut())
+
+}
+
   return (
     <div>
   <Navbar/>
+  <div className='botaoSair'>
+  <button  onClick={SairUs}>
+          Sair
+        </button>
+  </div>
     <div className="user">
 <div className="confirEmail">
 <h1>Ultimo passo !</h1>

@@ -15,9 +15,16 @@ import {
 } from "./carrinhoRedux"
 
 
+
+
 import {publicRequest ,userRequest} from "../requesteMetodos"
 
 
+
+
+const refresh = ()=>{
+  window.location.reload();
+}
 //usuario
 export const loginUser = async (dispatch,user)=>{
     dispatch(loginStart()); 
@@ -50,6 +57,7 @@ export const novoUsuario = async (usuario)=>{
     }else{
         await publicRequest.post("/autenticacao/registro/usuario", usuario);
         alert("Cadastro feito com sucesso!")
+        refresh();
     }
   }catch(erro){
     alert("Erro ao cadastrar  já existe um cadastro feito com estes dados!! ",+erro)

@@ -13,7 +13,7 @@ import WidgetLg from "../../components/widgetLg/WidgetLg";
 import { useEffect, useState } from "react";
 import { userRequest, publicRequest } from "./../../requesteMetodos"
 import { updateUsuario } from "../../redux/apiCalls";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Navbar from "../../components/Navbar";
 import { logaut } from './../../redux/userRedux'
 import Rodape from "../../components/Rodape";
@@ -22,11 +22,11 @@ import dotenv from "dotenv"
 
 
 
-export default function User() {
-  const result = useSelector((state)=>state.user.currentUser)
+const  User = ()=> {
+  //const result = useSelector((state)=>state.user.currentUser)
   const location = useLocation()
    const  dispatch = useDispatch()
-  const [dados, setUser] = useState(result);
+  const [dados, setUser] = useState([]);
   const id_user = location?.pathname.split("/")[2] 
   const [updateDados , getUpdateDados] = useState();
   const [dadosInter , getDadosInter] = useState();
@@ -36,12 +36,14 @@ export default function User() {
 dotenv.config();  
 
   useEffect(()=>{
-    const getUser = ()=>{
-     setUser(dados)
+
+    const getUser = async ()=>{
+      const result =  await publicRequest.get("/users/"+id_user)
+     setUser(result.data)
     }
     getUser()
  
-  }, [ dados])
+  }, [id_user])
  
  
 
@@ -53,8 +55,8 @@ dotenv.config();
   
   const usuario = {...updateDados}
 
-  const handelClick = (e)=>{
-  e.preventDefault();
+  const handelClick = ()=>{
+
      updateUsuario( usuario, id_user )
   }
 
@@ -64,8 +66,8 @@ getDadosInter((prev)=>{
 })
   }
 
-  const handelIntermediario = (e)=>{
-    e.preventDefault()
+  const handelIntermediario = ()=>{
+  
     const max = 1000000
     const  min = 50000
     const codigoInter = Math.floor(Math.random() * (max - min) + min)
@@ -143,6 +145,8 @@ const nadelClickEmail = ()=>{
 }
 */
 
+if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
+
   return (
     <div>
   
@@ -156,8 +160,7 @@ const nadelClickEmail = ()=>{
           Sair
         </button>
       </div>
-      {dados?.confirmEmail === true ?
-       <>
+      
       <div className="userContainer">
         <div className="userShow">
           <div className="userShowTop">
@@ -245,7 +248,7 @@ const nadelClickEmail = ()=>{
             </div>
             
             <div className="userShowInfo">
-            <h6>Convidar amigo: 
+            <h6>Convidar :
              <span className="userShowInfoTitle">{process.env.REACT_APP_SITE_LINK}/registro/{id_user}</span>
              </h6> 
            </div>
@@ -310,8 +313,7 @@ const nadelClickEmail = ()=>{
                   onChange={handelChange}
                 />
               </div>
-            </div>
-            <div className="userUpdateRight">
+
               <div>
                 <label htmlFor="file">
                   <Publish className="userUpdateIcon" />
@@ -320,6 +322,9 @@ const nadelClickEmail = ()=>{
               </div>
              
               <button onClick={handelClick} className="userUpdateButton">Actualizar</button>
+            </div>
+            <div className="userUpdateRight">
+              
             </div>
           </form>
           {dados?.intermediario !== "Pendente" && dados?.intermediario !== "Aceite" ?
@@ -349,21 +354,42 @@ const nadelClickEmail = ()=>{
       {dados?.confirmado === true ? <WidgetSm/>:""}
         <WidgetLg/>
       </div>
-      </>
- : 
-<>
-<div className="confirEmail">
-<h1>Confirmar Email</h1>
- <span>Enviamos um email de confirmacao no seu email, caso nao receberes o email por favor clique no botao confirmar email obrigado.</span>
- <button onClick={()=>nadelClickEmail(dados?.email)} >Confirmar email</button>
- </div>
- </>
- }
-
-
+    
 
     </div>
     <Rodape/> 
        </div>
   );
+
 }
+else{
+  return(
+    <div>
+    <div className="user">
+        
+    <Navbar/>
+
+    <div className="userTitleContainer">
+        <h1 className="userTitle">Perfil Usuario</h1>
+        <button onClick={SairUs}>
+          Sair
+        </button>
+      </div>
+
+<div className="confirEmail">
+<h1>Confirmar Email</h1>
+ <span>Enviamos um email de confirmacao no seu email, caso nao receberes o email por favor clique no botao confirmar email obrigado.</span>
+ <button onClick={()=>nadelClickEmail(dados?.email)} >Confirmar email</button>
+ </div>
+
+ </div>
+ <Rodape/> 
+ </div>
+  );
+}
+
+ 
+}
+
+
+export default User

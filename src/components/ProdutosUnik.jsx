@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react"
 import styled from "styled-components"
 import Produto from "./Produto"
-import axios from "axios"
+//import axios from "axios"
+import { publicRequest } from "../requesteMetodos"
 
 
 
@@ -33,18 +34,21 @@ margin:4px;
 const ProdutosUnik = ({cat,filters,sort}) => {
    const [produtos , setProdutos] = useState([]);
    const [filterProdutos , setFilterProdutos] = useState([]);
+  
+
+
    useEffect(()=> {
       const getProduto = async ()=>{
           try{
               if (cat ){
-                const res = await axios.get(`http://localhost:8080/api/produtos?categoria=${cat}`);
+                const res = await publicRequest.get(`produtos?categoria=${cat}`);
                 setProdutos(res.data);
 
               }else if (filters.categoria){
-                const res = await axios.get(`http://localhost:8080/api/produtos?categoria=${filters?.categoria}`);
+                const res = await publicRequest.get(`produtos?categoria=${filters?.categoria}`);
                 setProdutos(res.data);
               }else{
-                const res = await axios.get("http://localhost:8080/api/produtos");
+                const res = await publicRequest.get(`produtos`);
                 setProdutos(res.data);
                 
               }

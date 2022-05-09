@@ -1,9 +1,10 @@
 .user {
   flex: 4;
-  padding: 20px;
+  padding: 5px;
 }
 
 .userTitleContainer {
+  flex:0.3;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,7 +39,7 @@
   padding: 20px;
   -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .userShowTop {
@@ -90,6 +91,7 @@
 
 .userShowInfoTitle {
   margin-left: 10px;
+  flex-wrap: wrap;
 }
 
 .userUpdateTitle {
@@ -156,7 +158,7 @@
 
 .homeWidgets {
   display: flex;
-  margin: 20px;
+  margin: 10px;
   flex-wrap: wrap;
 }
 

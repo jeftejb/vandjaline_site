@@ -36,11 +36,11 @@ cursor: pointer;
 
 const Container = styled.div`
 flex:1;
-margin:5px;
-min-width: 350px;
-height: 270px;
+margin-top:5px;
+margin-bottom:10px;
+min-width: 280px;
+height: 300px;
 display: flex;
-
 text-align:center;
 justify-content: center;
 background-color: #f5fbfd;

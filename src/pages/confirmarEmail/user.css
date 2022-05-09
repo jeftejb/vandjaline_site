@@ -74,3 +74,12 @@
   flex-direction: column;
   align-items: center;
 }
+
+
+.botaoSair{
+  flex-wrap: wrap;
+  text-align: right;
+  
+  margin-right: 30px;
+
+}

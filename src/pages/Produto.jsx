@@ -146,7 +146,7 @@ const Produto = () => {
     useEffect(()=>{
         const getProduto = async ()=>{
             try{
-                const res = await publicRequest.get("/produtos/" + _id)
+                const res = await publicRequest.get("/produtos/"+_id)
                 setProduto(res.data)
                  if(codigo_inter!==isNaN){
                 const proPub= await publicRequest.get(`/publicitar/buscaCod/inter/?cod=${codigo_inter_fim}`)

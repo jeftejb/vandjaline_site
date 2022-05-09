@@ -2,16 +2,17 @@
 import { useState, useEffect } from "react"
 import styled from "styled-components"
 import Produto from "./Produto"
-import axios from "axios"
+//import axios from "axios"
 import SwiperCore,{ EffectFade, Autoplay} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
+import { publicRequest } from "../requesteMetodos";
 
 
 const Container = styled.div`
 
-padding:20px;
+
 display: flex;
 flex-wrap: wrap;
 justify-content:space-between;
@@ -30,7 +31,7 @@ const Produtos = ({cat,filters,sort}) => {
    useEffect(()=> {
       const getProduto = async ()=>{
           try{
-              const res = await axios.get(`${process.env.REACT_APP_BASE_URL}produtos`);
+              const res = await publicRequest.get(`produtos`);
               setProdutos(res.data);
           }catch(err){
           }
@@ -67,7 +68,7 @@ const Produtos = ({cat,filters,sort}) => {
         delay: 2500,
         disableOnInteraction: false,
     }}
-        //className="mySwiper"
+        className="mySwiper"
       >
               
             {cat? filterProdutos.splice.map((item,i)=>(
