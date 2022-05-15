@@ -51,9 +51,16 @@ export const novoUsuario = async (usuario)=>{
   try{
     const dados = {pontos :25, produtosVendidos:0}
     if(usuario.id){
-     await publicRequest.post("/autenticacao/registro/usuario", usuario);
-     await userRequest.put(`/users/${usuario.id}`, dados) 
+      const inserir = ()=>{
+        await publicRequest.post("/autenticacao/registro/usuario", usuario);
+    };
+      const actualizar = ()=>{
+        await publicRequest.put(`/users/${usuario.id}`, dados) 
+      };
+    inserir();
+    actualizar()
      alert("Cadastro feito com sucesso!")
+     refresh();
     }else{
         await publicRequest.post("/autenticacao/registro/usuario", usuario);
         alert("Cadastro feito com sucesso!")
@@ -83,6 +90,7 @@ export const novoEstabelecimento = async ( estabelecimento)=>{
 try{
 await publicRequest.post("/autenticacao/registro/estabelecimento", estabelecimento)
   alert("Cadastro feito com sucesso!")
+  refresh();
 }catch(erro){
   alert("Erro ao cadastrar Já existe um cadastro feitos com estes dados !! ",+erro)
 }
