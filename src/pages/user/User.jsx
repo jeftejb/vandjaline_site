@@ -228,10 +228,12 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
             {dados?.confirmado !== false && <div className="userShowInfo">
               <span className="userShowInfoTitle">Valor Actual :{dados?.pontos < 0 ? 0 : dados?.pontos}Kz
               <form action="">
-              { dados?.pontos >= 30 ?
+              { dados?.pontos >= 10 ?
               <>
                   <select name="valor" onChange={handelChangePagamento}>
                   <option >Retirar</option>
+                  <option value={10} >30 Akz</option>
+                  <option value={15} >30 Akz</option>
                  <option value={30} >30 Akz</option>
                  <option value={50} >50 Akz</option>
                  <option value={70} >70 Akz</option>
