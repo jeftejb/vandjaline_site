@@ -49,7 +49,7 @@ export const confirmarCodigo = async (user)=>{
 
 export const novoUsuario = async (usuario)=>{
   try{
-    const dados = {pontos :10, produtosVendidos:0}
+    const dados = {pontos :30, produtosVendidos:0}
     if(usuario.id){
      await publicRequest.post("/autenticacao/registro/usuario", usuario);
      await userRequest.put(`/users/${usuario.id}`, dados) 
