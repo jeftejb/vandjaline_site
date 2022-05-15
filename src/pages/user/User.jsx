@@ -232,8 +232,8 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
               <>
                   <select name="valor" onChange={handelChangePagamento}>
                   <option >Retirar</option>
-                  <option value={10} >30 Akz</option>
-                  <option value={15} >30 Akz</option>
+                  <option value={10} >10 Akz</option>
+                  <option value={15} >15 Akz</option>
                  <option value={30} >30 Akz</option>
                  <option value={50} >50 Akz</option>
                  <option value={70} >70 Akz</option>

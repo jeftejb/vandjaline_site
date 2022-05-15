@@ -32,7 +32,7 @@ const nadelClickTerminar = ()=>{
   
  */
 
-  alert("Conta confirmada com sucesso ! por favor reinicie sua conta para gravar as alterações")
+  alert("Conta confirmada com sucesso ! por favor reinicie sua conta para gravar as alterações, clicando no botão 'sair' ")
 }
 
 const SairUs = ()=>{
