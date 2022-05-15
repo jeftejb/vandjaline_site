@@ -47,9 +47,9 @@ padding: 10px;
 
 
 const Button  = styled.button`
-width: 40%;
+width: 100%;
 border:none;
-padding: 15px 20px;
+padding: 15px 15px;
 background-color: teal ;
 cursor: pointer;
 color: white;
@@ -94,12 +94,21 @@ const Confirm = () => {
     
     const handleClick = (e)=>{
         e.preventDefault()
+        const alerta = ()=>{
+            alert("Confirmação feita com sucesso !")
+        }
         confirmarCodigo({confirm_codigo, id})
+        alerta()
+       
     }
 
   
 
+
     return (
+
+        
+
         <Container>
             <Wrapper>
                 <Titulo>CONFIRMAR CODIGO </Titulo>   
@@ -114,6 +123,8 @@ const Confirm = () => {
             
         </Container>
     )
+
+
 }
 
 export default Confirm

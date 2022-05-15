@@ -539,7 +539,7 @@ const RegistroUsuario = () => {
                 <Form>
                     <Imput name ="nomeLoja" placeholder = "Nome da empresa/ Estabelecimento comercial" onChange={handelChangeEstabelecimento} required/>
                     <Imput name = "gerenteLoja" placeholder = "Nome do dono /Gerente" onChange={handelChangeEstabelecimento} required/>
-                    <Imput name="nifLoja" placeholder = "Numero de Identificacao fiscal" onChange={handelChangeEstabelecimento} required/>
+                    <Imput name="nifLoja" placeholder = "Numero de do BI" onChange={handelChangeEstabelecimento} required/>
                     <Imput name="emailLoja" type="email" placeholder = "Email" onChange={handelChangeEstabelecimento} required/>
                     <Imput name="telefoneLoja" type = "number" placeholder = "Numero de Telefone" onChange={handelChangeEstabelecimento} required/>
                     <Imput name="enderecoLoja" placeholder = "Endereco" onChange={handelChangeEstabelecimento} required/>

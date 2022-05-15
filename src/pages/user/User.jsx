@@ -11,13 +11,14 @@ import "./user.css";
 import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import { useEffect, useState } from "react";
-import { userRequest, publicRequest } from "./../../requesteMetodos"
+import { userRequest, publicRequest } from "./../../requesteMetodos";
 import { updateUsuario } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
 import Navbar from "../../components/Navbar";
 import { logaut } from './../../redux/userRedux'
 import Rodape from "../../components/Rodape";
-import dotenv from "dotenv"
+import dotenv from "dotenv";
+import copy from "copy-to-clipboard"
 //import {confirmarEmailCadastro} from "./../../data" 
 
 
@@ -145,6 +146,22 @@ const nadelClickEmail = ()=>{
 }
 */
 
+
+const funcaoCopiar = ()=>{
+const copiar  = ()=>{
+  const url  = process.env.REACT_APP_SITE_LINK+"/registro/"+id_user
+  copy(url)
+}
+  const aviso = ()=>{
+    alert("Link copiado com sucesso")
+  }
+
+  copiar ();
+  aviso();
+  
+
+}
+
 if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
 
   return (
@@ -170,7 +187,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
               className="userShowImg"
             />
             <div className="userShowTopTitle">
-              <span className="userShowUsername">{String(dados?.login)}</span>
+              <span className="userShowUsername">{String(dados?.nomeUsuario)}</span>
               <span className="userShowUserTitle">intermediario : {dados?.intermediario} </span>
            
   
@@ -209,7 +226,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
             </div> 
             }
             {dados?.confirmado !== false && <div className="userShowInfo">
-              <span className="userShowInfoTitle">Valor Actual :{dados?.pontos}Kz
+              <span className="userShowInfoTitle">Valor Actual :{dados?.pontos < 0 ? 0 : dados?.pontos}Kz
               <form action="">
               { dados?.pontos >= 30 ?
               <>
@@ -248,9 +265,9 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
             </div>
             
             <div className="userShowInfo">
-            <h6>Convidar :
-             <span className="userShowInfoTitle">{process.env.REACT_APP_SITE_LINK}/registro/{id_user}</span>
-             </h6> 
+            <h5 className="linkDePartilha"><button onClick={funcaoCopiar}>Convidar Amigos</button>
+             <p>Para poder partihlar o link por favor primerio active a opção de intermediario para seres remunerado </p>
+             </h5> 
            </div>
           </div>
         </div>
