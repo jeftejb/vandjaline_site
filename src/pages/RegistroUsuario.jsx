@@ -344,7 +344,7 @@ const RegistroUsuario = () => {
                     <Imput name ="municipio" placeholder="Municipio" onChange={handelChangeUser} required/>
                        
                         
-                   
+                    <label>Data de nascimento</label>
                     <Imput type="date" name="dataNascimento" placeholder="Data de Nascimento " onChange={handelChangeUser} required/>
                     <Div> Genero
                     <label style={{fontSize:"15px", marginTop:"30px", size:"150"}}>Femenino</label>
