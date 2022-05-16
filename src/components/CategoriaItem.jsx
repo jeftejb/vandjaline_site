@@ -24,7 +24,7 @@ text-align:center;
 `
 const Img = styled.img`
     margin:2rem 0;
-    height:10rem;
+    height:100%;
 
 object-fit: cover;
 ${mobile({ height: "30hv" })}
