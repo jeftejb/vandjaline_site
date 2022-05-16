@@ -23,8 +23,8 @@ text-align:center;
 }
 `
 const Img = styled.img`
-    margin:2rem 0;
-    width:100%;
+  width: 100%;
+height: 30vh;
 
 object-fit: cover;
 ${mobile({ height: "30hv" })}
