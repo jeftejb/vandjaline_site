@@ -25,7 +25,7 @@ text-align:center;
 const Img = styled.img`
   width: 100%;
 height: 30vh;
-
+border-radius:3%;
 object-fit: cover;
 ${mobile({ height: "30hv" })}
 `
@@ -47,7 +47,7 @@ margin-bottom: 20px;
 const Button = styled.button`
 border: none;
 padding: 20px;
-background-color: #f5efef;
+background-color: transparent;
 color: grey;
 cursor: pointer;
 font-weight: 600;
