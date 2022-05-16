@@ -24,7 +24,7 @@ text-align:center;
 `
 const Img = styled.img`
     margin:2rem 0;
-    height:100%;
+    width:100%;
 
 object-fit: cover;
 ${mobile({ height: "30hv" })}
@@ -41,7 +41,7 @@ align-items: center;
 justify-content: center;
 `
 const Titulo = styled.h1`
-color:#130f40;
+color:rgb(255, 165, 0);
 margin-bottom: 20px;
 `
 const Button = styled.button`
@@ -52,7 +52,7 @@ color: grey;
 cursor: pointer;
 font-weight: 600;
 &:hover{
-    background-color: orange;
+    background-color: rgb(255, 165, 0);
 }
 `
 
