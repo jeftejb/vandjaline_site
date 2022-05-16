@@ -129,7 +129,7 @@ const Navbar = () => {
             <RightMenu className={`app-menu ${isMenuOpen ? "menu-open" : ""}`}>
                 <Link className='textNav' to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
                 <Link className='textNav' to ="/estabelecimentos"> <MenuItem>Lojas</MenuItem></Link>
-                <Link className='textNav' to ="/serrvicos"> <MenuItem>Serviços</MenuItem></Link>
+                <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
                 <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
             <Link className='textNav' to ="/registro/:%d"> <MenuItem>Cadastro</MenuItem> </Link>
             <Link className='textNav' to="/sobre"><MenuItem>Sobre</MenuItem></Link>

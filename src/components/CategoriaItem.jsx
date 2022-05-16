@@ -61,10 +61,10 @@ const CategoriaItem = ({item}) => {
         
         <Container>
             <Link to={`/produtos/${item.nomeCat}`}>
-            <Img src={item?.img} />
+            <Img src={item?.imagemCat} />
             <Info>
                 <Titulo>{item?.nomeCat}</Titulo>
-                <Button>Ver Loja </Button>
+                <Button>Ver Produtos </Button>
             </Info>
             </Link>
         </Container>
