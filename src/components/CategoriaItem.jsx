@@ -41,7 +41,7 @@ align-items: center;
 justify-content: center;
 `
 const Titulo = styled.h1`
-color:rgb(255, 165, 0);
+color:rgb(248, 247, 244);
 margin-bottom: 20px;
 `
 const Button = styled.button`
