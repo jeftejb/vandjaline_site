@@ -13,7 +13,7 @@ position: relative;
 outline:1px solid black;
 outline-offset: -1rem;
 border-radius: 3%;
-background-color: white;
+background-color: #ffffffc3;
 align-items: center;
 justify-content: center;
 text-align:center;
