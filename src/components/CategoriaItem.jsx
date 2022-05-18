@@ -41,7 +41,7 @@ align-items: center;
 justify-content: center;
 `
 const Titulo = styled.h1`
-color:rgb(177, 176, 173);
+color:rgb(255, 165, 0);
 margin-bottom: 20px;
 font-size:25px;
 font-weight:bold;
