@@ -4,16 +4,16 @@ import { mobile } from "../responsive"
 
 const Container = styled.div`
 height: 60vh;
-background-color: #D6D58E;
+background-color: #759EB8;
 display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
 `
 const Titulo = styled.h1`
-font-size: 70px;
+font-size: 15px;
 margin-bottom: 20px;
-font-size: 25px;
+
 `
 const InputContainer = styled.div`
 width: 50%;
@@ -24,7 +24,7 @@ justify-content: space-between;
 ${mobile({ width: "80%" })}
 `
 const Description = styled.div`
-font-size: 20px;
+font-size: 12px;
 font-weight: 300;
 margin-bottom: 20px;
 ${mobile({ textAlign: "center" })}

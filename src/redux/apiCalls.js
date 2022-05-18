@@ -48,6 +48,7 @@ export const confirmarCodigo = async (user)=>{
 
 
 export const novoUsuario = async (usuario)=>{
+  console.log(usuario)
   try{
     const dados = {pontos :25, produtosVendidos:0}
     if(usuario.id){

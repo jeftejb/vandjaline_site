@@ -7,13 +7,13 @@ import 'swiper/swiper.min.css'
 
 
 const Container = styled.div`
-padding:20px;
+padding:15px;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 `
 const Containe = styled.div`
-padding:20px;
+
 
 
 `

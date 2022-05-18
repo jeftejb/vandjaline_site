@@ -11,6 +11,7 @@ import app from "./../firebase";
 
 
 
+
 const DivNormal = styled.div``
 const DivImagem = styled.div`
 width: 250px;
@@ -25,17 +26,27 @@ width: 100%;
 
 position: relative;
 background: url("");
-background: grey;
+background: #C5D5EA;
 display:flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 `
 
+
+
+const TextLabel = styled.span`
+
+margin-bottom:150px ;
+position: absolute;
+color:#948f8f ;
+`
+
 const Wrapper  = styled.div`
 width: 50%;
 padding: 20px;
-background: white;
+background: #C5D5EA;
+box-shadow: 20px 15px 15px black;
 margin-top: 25px;
 margin-bottom: 20px;
 ${mobile({ width: "75%" })}
@@ -52,13 +63,17 @@ flex-wrap: wrap;
 text-align:center ;
 
 
+
 `
 
 const Imput  = styled.input`
 flex:1;
-min-width: 40%;
+min-width: 80%;
 margin: 20px 10px 0px 0px;
 padding: 10px;
+border-radius: 5px;
+background-color:transparent;
+border:3px solid #000;
 `
 
 const TextArea  = styled.textarea`
@@ -66,12 +81,18 @@ flex:1;
 min-width: 80%;
 margin: 20px 10px 0px 0px;
 padding: 10px;
+border-radius: 5px;
+border:3px solid #000;
+background-color: transparent;
 `
 const Select = styled.select`
 flex:1;
 min-width: 40%;
 margin: 20px 10px 0px 0px;
 padding: 10px;
+border-radius: 5px;
+border:3px solid #000;
+background-color: transparent ;
 `
 
 const Selecta = styled.select`
@@ -79,6 +100,8 @@ flex:1;
 min-width: 80%;
 margin: 20px 10px 0px 0px;
 padding: 10px;
+background-color: transparent ;
+
 `
 
 const Option = styled.option``
@@ -88,15 +111,15 @@ const Option = styled.option``
 
 
 const Agradecimento  = styled.span`
-font-size: 20px;
+font-size: 15px;
 margin:20px 0px;
 `
 
 const Button  = styled.button`
-width: 30%;
+width: 100%;
 border:none;
-margin:30px;
-padding: 10px 15px;
+margin-bottom:5px;
+padding: 10px 0px;
 background-color: teal ;
 cursor: pointer;
 color: white;
@@ -105,11 +128,11 @@ ${tablet({ width: "100%" })}
 `
 
 const ButtonCon  = styled.div`
-width: 30%;
+width: 100%;
 border:none;
 margin-top: 30px;
-margin-bottom: 30px;
-padding: 10px 15px;
+margin-bottom: 5px;
+padding: 10px 10px;
 background-color: teal ;
 text-align:center ;
 cursor: pointer;
@@ -133,11 +156,19 @@ flex:1;
 min-width: 5%;
 margin: 35px 10px 0px 0px;
 padding: 10px;
+background-color: transparent ;
 
 `
 
 const Img = styled.img`
       width: 100%;
+`
+
+const DivRorm = styled.div`
+display:flex ;
+width: 50% ;
+${mobile({ width: "100%" })}
+${tablet({ width: "100%" })}
 `
 
 const RegistroUsuario = () => {
@@ -149,6 +180,8 @@ const RegistroUsuario = () => {
     const [passErro, setConfirmPassErro] = useState();
     const [passLoja, setConfirmLoja] = useState();
     const [passErroLoja, setConfirmPassErroLoja] = useState();
+    const [vasio, setVasio] = useState();
+    const [vasioLoja, setVasioLoja] = useState();
     const location = useLocation();
     const [progress ,  getProgress] = useState(0)
     const [file, setFile] = useState(null)
@@ -192,20 +225,46 @@ const RegistroUsuario = () => {
     const handelClickUser = async (e)=>{
       e.preventDefault();
         const imagem = "https://firebasestorage.googleapis.com/v0/b/vandja-6d839.appspot.com/o/avatar%2Fkindpng_786207.png?alt=media&token=a59d158e-d6b7-459c-b760-002177d9f886"
-        if (inputUser?.password === pass?.confirmPass ){
-            try {
-                const usuario = id_user !== ":" ? {...inputUser, id:id_user, imagem: imagem} :  {...inputUser, imagem:imagem};
-               await novoUsuario(usuario)
+             if(
+              inputUser?.nomeCompleto === undefined || 
+              inputUser?.email === undefined || 
+              inputUser?.numeroTelefone === undefined || 
+              inputUser?.pais === undefined || 
+              inputUser?.provincia === undefined || 
+              inputUser?.municipio === undefined || 
+              inputUser?.dataNascimento === undefined || 
+              inputUser?.sexo === undefined || 
+              inputUser?.endereco === undefined || 
+              inputUser?.nomeUsuario === undefined ||
+              inputUser?.nomeCompleto === "" || 
+              inputUser?.email === "" || 
+              inputUser?.numeroTelefone === "" || 
+              inputUser?.pais === "" || 
+              inputUser?.provincia === "" || 
+              inputUser?.municipio === "" || 
+              inputUser?.dataNascimento === "" || 
+              inputUser?.sexo === "" || 
+              inputUser?.endereco === "" || 
+              inputUser?.nomeUsuario === "" 
+             ){
+              setVasio({state:"red"})
+             }
+           else{
+         if (inputUser?.password !== pass?.confirmPass){
+          setConfirmPassErro({state:"red"})
             
-            }catch{
-                alert("Erro ao Cadastrar")
-            }
         }else{ 
-            alert("Erro ao cadastrar Palvra passe incopativel!!")
-            setConfirmPassErro({state:"red"})
+          try {
+            const usuario = id_user !== ":" ? {...inputUser, id:id_user, imagem: imagem} :  {...inputUser, imagem:imagem};
+           await novoUsuario(usuario)
+        
+        }catch{
+            alert("Erro ao Cadastrar")
+        }
+           
            }
          
-      
+          }
       
     }
 
@@ -230,6 +289,31 @@ const RegistroUsuario = () => {
         const fileName = new Date().getTime()+ file?.name;
         const storage = getStorage(app)
         const storageRef = ref (storage, `filesLoja/${fileName}`)
+
+        if(
+          inputEstabelecimento?.nomeLoja === undefined || 
+          inputEstabelecimento?.gerenteLoja === undefined || 
+          inputEstabelecimento?.telefoneLoja === undefined || 
+          inputEstabelecimento?.enderecoLoja === undefined || 
+          inputEstabelecimento?.nifLoja === undefined || 
+          inputEstabelecimento?.emailLoja === undefined || 
+          inputEstabelecimento?.pais === undefined || 
+          inputEstabelecimento?.provincia === undefined || 
+          inputEstabelecimento?.municipio === undefined || 
+          inputEstabelecimento?.actuacao === undefined ||
+          inputEstabelecimento?.nomeLoja === "" || 
+          inputEstabelecimento?.gerenteLoja === "" || 
+          inputEstabelecimento?.telefoneLoja === "" || 
+          inputEstabelecimento?.enderecoLoja === "" || 
+          inputEstabelecimento?.nifLoja === "" || 
+          inputEstabelecimento?.emailLoja === "" || 
+          inputEstabelecimento?.pais === "" || 
+          inputEstabelecimento?.provincia === "" || 
+          inputEstabelecimento?.municipio === "" || 
+          inputEstabelecimento?.actuacao === "" 
+         ){
+          setVasioLoja({state:"red"})
+         }else{
 
   if (inputEstabelecimento?.password === passLoja?.confirmPassLoja){
             try{
@@ -292,8 +376,11 @@ const RegistroUsuario = () => {
             setConfirmPassErroLoja({state:"red"})
             
            }
-     
+
+          }
     }
+
+
 
 
     return (
@@ -305,9 +392,25 @@ const RegistroUsuario = () => {
             <Wrapper>
                 <Titulo>{dados? "CONTA DE USUÁRIO Convite feito por: "+dados.nomeCompleto :"CONTA DE USUÁRIO" }</Titulo>
                 <Form>
-                    <Imput name="nomeCompleto" placeholder = "Primeiro e segundo nome" onChange={handelChangeUser} required/>
-                    <Imput name="email" type="email" placeholder = "Email" onChange={handelChangeUser} required/>
+                <DivRorm>
+                <TextLabel>Primeiro e segundo nome</TextLabel> 
+                    <Imput name="nomeCompleto"  placeholder = "Primeiro e segundo nome" onChange={handelChangeUser} />
+                    </DivRorm>
+
+                    <DivRorm>
+               <TextLabel>E-mail</TextLabel> 
+                    <Imput name="email" type="email" placeholder = "E-mail" onChange={handelChangeUser} />
+                    </DivRorm>
+
+                    <DivRorm>
+                     <TextLabel>Numero de telefone</TextLabel> 
+                   
                     <Imput name="numeroTelefone"  type="number" max={10} placeholder = "Numero de telefone"onChange={handelChangeUser} required/>
+                    </DivRorm>
+
+                    <DivRorm>
+                    <TextLabel>Pais</TextLabel> 
+           
                     <Select name = "pais" onChange={handelChangeUser} required>
                     <Option disable >
                          Pais
@@ -316,11 +419,16 @@ const RegistroUsuario = () => {
                          Angola
                            </Option>     
                     </Select>
+                    </DivRorm>
+
+                    <DivRorm>
+                     <TextLabel>Província</TextLabel> 
+  
                     <Select name = "provincia" onChange={handelChangeUser } required>
                             <Option disable>
-                         Provincia
+                         Província
                             </Option>
-                                <Option value = "Província_do_Bengo">"Província do Bengo</Option>
+                                <Option value = "Província_do_Bengo">Província do Bengo</Option>
                                 <Option value = "Província_de_Benguela">Província de Benguela</Option>
                                 <Option value = "Província_do_Bié">Província do Bié</Option>
                                 <Option value = "Província_de_Cabinda">Província de Cabinda</Option>
@@ -341,24 +449,52 @@ const RegistroUsuario = () => {
 
 
                     </Select>
-                    <Imput name ="municipio" placeholder="Municipio" onChange={handelChangeUser} required/>
-                       
+                    </DivRorm>
+
+                    <DivRorm>
+                   <TextLabel>Município</TextLabel> 
+                  
+                    <Imput name ="municipio" placeholder="Munícipio" onChange={handelChangeUser} required/>
+                    </DivRorm>
                         
-                    <label>Data de nascimento</label>
+
+                    <DivRorm>
+              <TextLabel>Data de nascimento</TextLabel> 
+                    
                     <Imput type="date" name="dataNascimento" placeholder="Data de Nascimento " onChange={handelChangeUser} required/>
-                    <Div> Genero
+                    </DivRorm>
+
+                   
+                    <Div>
+                       Genero
                     <label style={{fontSize:"15px", marginTop:"30px", size:"150"}}>Femenino</label>
                     <Imputr type="radio" name="sexo" value="Femenino"  onChange={handelChangeUser} required/>
                     <label style={{fontSize:"15px", marginTop:"30px"}}>Masculino</label>
                     <Imputr type="radio" name="sexo" value="Masculino" onChange={handelChangeUser}required/>
                     </Div>
-                    <Imput name="endereco" placeholder = "Endereco" onChange={handelChangeUser} required/>
-                    <Imput name="nomeUsuario" placeholder = "Nome de usuario" onChange={handelChangeUser} required/>
-                    <Imput name="password" type="password" placeholder = "Palavra passe "onChange={handelChangeUser}required/>
-                    <Imput name="confirmPass" type="password" placeholder = "Confirmar palavra passe " onChange = {handelChangeCOnfr} required/>
-                   { passErro ?  <label className="label" style={{ color: passErro?.state}} htmlFor="">Palavra passe incopativel</label> : ""
+                     
+                    <DivRorm>
+                    <TextLabel>Endereço</TextLabel> 
+                    <Imput name="endereco" placeholder = "Endereço" onChange={handelChangeUser} required/>
+                    </DivRorm>
+
+                    <DivRorm>
+                  <TextLabel>Nome de usuário</TextLabel> 
                    
-                   } 
+                    <Imput name="nomeUsuario" placeholder = "Nome de usuário" onChange={handelChangeUser} required/>
+                    </DivRorm>
+
+                    <DivRorm>
+                    <TextLabel>Palavra passe</TextLabel> 
+                    <Imput name="password" type="password" placeholder = "Palavra passe "onChange={handelChangeUser}required/>
+                    </DivRorm>
+
+                    <DivRorm>
+                    <TextLabel>Confirmar palavra passe</TextLabel>
+                    <Imput name="confirmPass" type="password" placeholder = "Confirmar palavra passe " onChange = {handelChangeCOnfr} required/> 
+                   </DivRorm>
+                    { passErro ?  <label className="label" style={{ color: passErro?.state}} htmlFor="">Palavra passe incopativel.</label> : ""}
+                   { vasio ?  <label className="label" style={{ color: vasio?.state}} htmlFor="">Nao pode existir campos vasios</label> : ""}
                     <Agradecimento>
                       A conta de usuário te permite efectuar pesquisa de preços, criar a sua lista de compras,  efectuar reservas e pagamento de produtos.<br/>
                       Os pagamentos são efectuados atraves da carteira virtual kamba <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App Kamba</a>  
@@ -371,13 +507,38 @@ const RegistroUsuario = () => {
             <Wrapper>
                 <Titulo>CONTA DE COMERCIANTE</Titulo>
                 <Form>
+                <DivRorm>
+                     <TextLabel>Nome da loja </TextLabel> 
                     <Imput name ="nomeLoja" placeholder = "Nome da empresa/ Estabelecimento comercial" onChange={handelChangeEstabelecimento} required/>
+                    </DivRorm>
+
+                    <DivRorm>
+                     <TextLabel>Gerente/Dono da loja</TextLabel> 
                     <Imput name = "gerenteLoja" placeholder = "Nome do dono /Gerente" onChange={handelChangeEstabelecimento} required/>
+                    </DivRorm>
+
+                    <DivRorm>
+                     <TextLabel>Numero do BI</TextLabel> 
                     <Imput name="nifLoja" placeholder = "Numero de do BI" onChange={handelChangeEstabelecimento} required/>
+                    </DivRorm>
+                    
+                    <DivRorm>
+                     <TextLabel>E-mail</TextLabel> 
                     <Imput name="emailLoja" type="email" placeholder = "Email" onChange={handelChangeEstabelecimento} required/>
+                    </DivRorm>
+
+                    <DivRorm>
+                     <TextLabel>Numero de telefone</TextLabel> 
                     <Imput name="telefoneLoja" type = "number" placeholder = "Numero de Telefone" onChange={handelChangeEstabelecimento} required/>
+                    </DivRorm>
+
+                    <DivRorm>
+                     <TextLabel>Endereço da loja</TextLabel> 
                     <Imput name="enderecoLoja" placeholder = "Endereco" onChange={handelChangeEstabelecimento} required/>
-                   
+                   </DivRorm>
+
+                   <DivRorm>
+                     <TextLabel>Pais</TextLabel> 
                     <Select name = "pais" onChange={handelChangeEstabelecimento} required>
                     <Option disable >
                          Pais
@@ -386,11 +547,16 @@ const RegistroUsuario = () => {
                          Angola
                            </Option>     
                     </Select>
+                     </DivRorm>
+
+
+                     <DivRorm>
+                     <TextLabel>Província</TextLabel> 
                     <Select name = "provincia" onChange={handelChangeEstabelecimento } required>
                             <Option disable>
-                         Provincia
+                         Província
                             </Option>
-                                <Option value = "Província_do_Bengo">"Província do Bengo</Option>
+                                <Option value = "Província_do_Bengo">Província do Bengo</Option>
                                 <Option value = "Província_de_Benguela">Província de Benguela</Option>
                                 <Option value = "Província_do_Bié">Província do Bié</Option>
                                 <Option value = "Província_de_Cabinda">Província de Cabinda</Option>
@@ -411,9 +577,15 @@ const RegistroUsuario = () => {
 
 
                     </Select>
-                    <Imput name ="municipio" placeholder="Municipio" onChange={handelChangeEstabelecimento} required/>
-                   
+                    </DivRorm>
 
+                    <DivRorm>
+                     <TextLabel>Município</TextLabel> 
+                    <Imput name ="municipio" placeholder="Município" onChange={handelChangeEstabelecimento} required/>
+                   </DivRorm>
+
+                   <DivRorm>
+                     <TextLabel>Tipo de negócio</TextLabel> 
                     <Selecta name="actuacao" onChange={handelChangeEstabelecimento} required>
                         <Option disable>
                    Tipo de Negócio
@@ -473,13 +645,23 @@ const RegistroUsuario = () => {
                         Diverços 
                         </Option>
                     </Selecta>
+                      </DivRorm>
+
+                      <DivRorm>
+                     <TextLabel>Palavra passe</TextLabel> 
                     <Imput type="password" name="password" placeholder = "Palavra Passe" onChange={handelChangeEstabelecimento} required/>
+                   </DivRorm>
+
+                    <DivRorm>
+                     <TextLabel>Confirmar palavra passe</TextLabel> 
                     <Imput name="confirmPassLoja" type="password" placeholder = "Confirmar palavra passe " onChange = {handelChangeCOnfrLoja}required/>
-                   { passErroLoja ?  <label className="label" style={{ color: passErroLoja?.state}} htmlFor="">Palavra passe incopativel</label> : ""
-                   
-                   } 
-                  <TextArea name="descricao" placeholder="Descricao do Estabelecimento" onChange={handelChangeEstabelecimento} required ></TextArea>
-                   
+                   </DivRorm>
+                  
+                 
+                  <DivRorm>
+                     <TextLabel>Descrição</TextLabel> 
+                  <TextArea name="descricao" placeholder="Descrição do Estabelecimento" onChange={handelChangeEstabelecimento} required ></TextArea>
+                   </DivRorm>
 
                   <DivImagem>
                   
@@ -492,6 +674,9 @@ const RegistroUsuario = () => {
         
 
                   </DivImagem>
+
+                  { passErroLoja ?  <label className="label" style={{ color: passErroLoja?.state}} htmlFor="">Palavra passe incopativel</label> : "" } 
+                  { vasioLoja ?  <label className="label" style={{ color: vasioLoja?.state}} htmlFor="">Nao pode existir campos vasios</label> : ""}
                   <Agradecimento>
                      A conta de comerciante te permite criar uma pequena loja virtual com varias opções como: cadastrar, editar e eliminar produtos, ainda podes receber pagamentos e partilhar o link da sua loja nas tuas redes sociais e muito mais.<br/>  
                      Os pagamentos são efectuados atraves da carteira virtual kamba <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App Kamba</a>   

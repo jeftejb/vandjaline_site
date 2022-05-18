@@ -11,7 +11,7 @@ const Container  = styled.div`
 width: 100vw;
 height: 100vh;
 background: url("");
-background: grey;
+background: #C5D5EA;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -21,7 +21,8 @@ justify-content: center;
 const Wrapper  = styled.div`
 width: 25%;
 padding: 20px;
-background: white;
+background: #C5D5EA;
+box-shadow: 20px 15px 15px black;
 margin-bottom: 20px;
 ${mobile({ width: "75%" })}
 `

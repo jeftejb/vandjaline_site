@@ -28,6 +28,17 @@ color:${color_text};
 size: 20px;
 font-size: 20px;
 
+animation:go-back 1s;
+
+@keyframes go-back {
+  from {
+    transform: translateX(200px);
+  }
+  to {
+    transform: translateX(0);
+  }
+} 
+
 `
 
 const LineOne = styled.div`
@@ -45,7 +56,8 @@ border: 2px solid #9FC131;
 
 const ContainerSlider = styled.div`
 height: 60vh;
-background-color: #D6D58E;
+background-color: #7392B7;
+box-shadow: 20px 15px 15px black;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -61,7 +73,19 @@ padding:20px ;
 `
 
 
-const ContainerLine = styled.div``
+const ContainerLine = styled.div`
+animation:go-back 1s;
+
+@keyframes go-back {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(0);
+  }
+} 
+ 
+`
 
 const Link = styled.a``
 

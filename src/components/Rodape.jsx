@@ -7,7 +7,7 @@ const color = "white";
 const ContainerRodape = styled.div`
 display: flex;
 
-background-color:#042940 ;
+background-color:#759EB8 ;
 ${mobile({ flexWrap:'wrap'  })}
 
 `
@@ -18,7 +18,7 @@ color:${color};
 
 
 const Left = styled.div`
-background-color:#042940 ;
+
 flex: 1;
 display: flex;
 flex-direction: column;
@@ -26,10 +26,14 @@ padding: 20px;
 color:${color};
 `
 
-const Logo = styled.h1``
+const Logo = styled.h1`
+size:20;
+font-size:15px;
+`
 
 const Desc = styled.p`
-margin:20px 0px;
+margin:15px 0px;
+font-size: 12px;
 `
 
 const SocialContainer = styled.h1`
@@ -37,8 +41,8 @@ display: flex;
 `
 
 const SocialIcon = styled.span`
-width: 40px;
-height: 40px;
+width: 25px;
+height: 25px;
 border-radius: 50%;
 color:${color};
 background-color: #${props=>props.color};
@@ -58,6 +62,8 @@ ${tablet({ display:"none" })}
 
 `
 const Titulo = styled.h3`
+size:20 ;
+font-size:15px ;
 margin-bottom: 30px;
 color:${color};
 
@@ -74,11 +80,12 @@ flex-wrap: wrap;
 const ListItem = styled.li`
 width: 50%;
 margin-bottom: 10px;
+font-size:12px;
 
 `
 
 const Right = styled.div`
-background-color:#042940 ;
+
 flex: 1;
 padding: 20px;
 color:${color};
@@ -89,9 +96,11 @@ margin-bottom: 20px;
 display: flex;
 align-items: center;
 color:${color};
+font-size:12px ;
 `
 const Pagamento = styled.img`
-width: 50%;
+width: 30%;
+
 `
 
 

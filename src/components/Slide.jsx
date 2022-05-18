@@ -61,10 +61,9 @@ opacity:8;
 
 `
 const Image = styled.img`
-width:100%;
-height: 80%;
-
-
+margin-top:250px ;
+width: 50%;
+height: 412px ;
 `
 const InfoContainer = styled.div`
 position: absolute ;

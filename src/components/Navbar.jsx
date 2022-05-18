@@ -14,6 +14,9 @@ import  {Link}  from 'react-router-dom'
 
 const Container = styled.div`
 height:60px;
+margin-top: 30px ;
+margin-bottom:30px ;
+align-items:center ;
 ${mobile({ height: "50px" })}
 `
 const Wrapper = styled.div`
@@ -44,8 +47,10 @@ ${tablet({  display:"flex" })}
 const Center = styled.div`
 flex: 1;
 text-align: center;
+display:flex ;
 ${tablet({ flex: 2,  justifyContent: "center" })}
 `
+/*
 const Logo = styled.h1`
 font-weight: bold;
 font-size:20px;
@@ -53,6 +58,7 @@ padding:0px 8px;
 ${mobile({ fontSize: "5px" })}
 ${tablet({ fontSize: "17px"})}
 `
+*/
 
 
 const Right = styled.div`
@@ -125,7 +131,43 @@ const Navbar = () => {
           
             </Left>
            
-            <Center> <Center> <Link className='textNav' to ="/"> <Logo>Vandjaline</Logo> </Link> </Center>  </Center> 
+            <Center> <Center>
+                
+                
+            <Link className='textNav' to="/"><MenuItem>Home</MenuItem></Link>
+                 <Somem>
+               
+               <Link className='textNav' to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
+               <Link className='textNav' to ="/estabelecimentos"> <MenuItem>lojas</MenuItem></Link>
+               <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
+               <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
+              
+               </Somem>
+
+               <NaoSomem>
+             
+               <Link className='textNav' to="/sobre"><MenuItem>Sobre</MenuItem></Link>
+               <Link className='textNav' to ="/registro/:"> <MenuItem>Cadastro</MenuItem> </Link>
+           {currentUser? <MenuItem> <Link className='textNav' to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
+               {currentUserD?.confirmado===true? `${currentUserD.nomeUsuario}(V:${currentUserD?.pontos}Akz)` : currentUserD.nomeUsuario }</Link></MenuItem>
+           : <Link className='textNav' to ="/login"> <MenuItemFi>Entrar</MenuItemFi></Link>
+           }
+               
+               <Link className='textNav' to="/carrinho">
+               <MenuItemFi>
+               <Badge badgeContent = {quantidade} color="primary" >
+                   <ShoppingCartOutlined/>
+               </Badge>
+               </MenuItemFi>
+               </Link>
+               </NaoSomem>
+
+              
+
+                 </Center>  </Center> 
+
+                 
+
             <RightMenu className={`app-menu ${isMenuOpen ? "menu-open" : ""}`}>
                 <Link className='textNav' to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
                 <Link className='textNav' to ="/estabelecimentos"> <MenuItem>Lojas</MenuItem></Link>
@@ -147,35 +189,16 @@ const Navbar = () => {
                 </Link>
                 </RightMenu>    
 
-                <Right >
-                <Somem>
-               
-                <Link className='textNav' to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
-                <Link className='textNav' to ="/estabelecimentos"> <MenuItem>lojas</MenuItem></Link>
-                <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
-                <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
-               
-                </Somem>
 
-                <NaoSomem>
-                <Link className='textNav' to="/sobre"><MenuItem>Sobre</MenuItem></Link>
-                <Link className='textNav' to ="/registro/:"> <MenuItem>Cadastro</MenuItem> </Link>
-            {currentUser? <MenuItem> <Link className='textNav' to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
-                {currentUserD?.confirmado===true? `${currentUserD.nomeUsuario}(V:${currentUserD?.pontos}Akz)` : currentUserD.nomeUsuario }</Link></MenuItem>
-            : <Link className='textNav' to ="/login"> <MenuItemFi>Entrar</MenuItemFi></Link>
-            }
-                
-                <Link className='textNav' to="/carrinho">
-                <MenuItemFi>
-                <Badge badgeContent = {quantidade} color="primary" >
-                    <ShoppingCartOutlined/>
-                </Badge>
-                </MenuItemFi>
-                </Link>
-                </NaoSomem>
+               
+                <Right >
+               
 
                 </Right> 
+
+              
              </Wrapper>
+            
         </Container>
 
 <ReactDimmer

@@ -9,8 +9,8 @@ const color_text = "#042940"
 const Container = styled.div`
 flex:1;
 margin:5px;
-min-width: 280px;
-height: 500px;
+min-width: 250px;
+height: 480px;
 background-color: #f5fbfd;
 position: relative;
 outline:1px solid black;
