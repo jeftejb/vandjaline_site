@@ -1,5 +1,6 @@
 import {
   CalendarToday,
+  LaptopWindowsSharp,
   LocationSearching,
   MailOutline,
   PermIdentity,
@@ -113,8 +114,18 @@ if(Number(pagamento.valor) <= Number(dados?.pontos)){
     try{
          await userRequest.post("/pagamentos/", dadosIn)
     }catch{}
- }
+  }
+
+  const notifica = ()=>{
+    alert("Solicitação feita com sucesso !!")
+  }
+  const refress = ()=>{
+    window.location.reload(false);
+  }
+  
  soliPagamento()
+ notifica()
+ refress()
 }else{
   alert("Solicitacao invalida nao tem dinheiro suficiente")
 }
