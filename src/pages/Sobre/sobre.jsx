@@ -115,7 +115,7 @@ export default function Sobre() {
             <b id="intermediario">Serviço de  intermediário.</b><p/><br/>
 
             O serviço de intermediários  é um serviço que abrange qualquer um que quer ganhar uma renda extra ajudando a promover produtos. 
-            Para ajudar na divulgação de produtos,  o vandjaline  possui um serviço de intermediários que permite que usuários possam se afiliar a diversos produtos, para ajudar na divulgação do mesmo a fim de receber uma comissão sempre um produto é vendido.<br/>
+            Para ajudar na divulgação de produtos,  o vandjaline  possui um serviço de intermediários que permite que usuários possam se afiliar a diversos produtos, para ajudar na divulgação do mesmo a fim de receber uma comissão sempre que um produto é vendido.<br/>
 
             <b>Como me tornar um intermediário ?</b><p/><br/>
             Para se tornar um intermediário basta possuir uma conta de usuário e activar a opção de intermediário.<br/>
@@ -130,6 +130,10 @@ export default function Sobre() {
             <b>Como obter o meu link de intermediário ?</b><p/><br/>
 
             Para obter o link de um determinado produto que você se afiliou basta ir ate aos "<b>produtos</b> " escolher um produto que pretendes publicitar e clicar em "<b>publicitar</b>". Depois de ter fito isto basta ir ao teu perfil  no menu "<b>Produtos afiliados</b> "  copiar o link de divulgação e colocar nas tuas redes sociais ou partilhar o link via SMS. <p/><br/>
+              
+            <b>Convida seus amigos para se inscreverem no site e seja remunerado !</b><p/><br/>
+
+            É isso mesmo você pode ganhar dinheiro so por convidar outras pessoas para se inscreverem no site, basta partilhares o seu link, só precisas clicar no botão "convidar amigos" que esta no teu perfil de usuário e enviar o seu link para um amigo ou partilhares em uma rede social e receberas 25 kz como valor inicial por cada pessoa que se inscrever através do seu link.  
 
             <b>Como solicitar um pagamento ?</b><p/><br/>
 
