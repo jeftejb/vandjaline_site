@@ -112,7 +112,7 @@ if(Number(pagamento.valor) <= Number(dados?.pontos)){
   const dadosIn= {id_usuario:dados?._id ,nomeUsuario:dados?.nomeCompleto, valor:pagamento?.valor, iban:dados?.iban, kamba:dados?.kamba, telefone:dados?.numeroTelefone}
  const soliPagamento = async ()=>{
     try{
-         await userRequest.post("/pagamentos/", dadosIn)
+         await publicRequest.post("/pagamentos/", dadosIn)
     }catch{}
   }
 
