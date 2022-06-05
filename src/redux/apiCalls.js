@@ -25,6 +25,12 @@ import {publicRequest ,userRequest} from "../requesteMetodos"
 const refresh = ()=>{
   window.location.reload();
 }
+
+const redireciona = (dados)=>{
+  window.location.href =`/pacotes?${dados.email}?${dados.nomeLoja}`
+} 
+
+
 //usuario
 export const loginUser = async (dispatch,user)=>{
     dispatch(loginStart()); 
@@ -88,10 +94,11 @@ export const updateUsuario = async ( usuario, _id)=>{
 //estabelecimento
 
 export const novoEstabelecimento = async ( estabelecimento)=>{
+ const dados = {email:estabelecimento.emailLoja, nomeLoja:estabelecimento.nomeLoja}
 try{
 await publicRequest.post("/autenticacao/registro/estabelecimento", estabelecimento)
   alert("Cadastro feito com sucesso!")
-  refresh();
+  redireciona(dados);
 }catch(erro){
   alert("Erro ao cadastrar Já existe um cadastro feitos com estes dados !! ",+erro)
 }
@@ -137,3 +144,7 @@ export const novaFatura = async (dispatch, dados)=>{
     dispatch(novoFaturaFailer())
   }
 }
+
+
+
+

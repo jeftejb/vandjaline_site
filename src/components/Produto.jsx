@@ -88,6 +88,7 @@ transition: all 0.5s ease;
     transform: scale(1.1);
 }
 `
+const dinheiro = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'AKZ' })
 
 const Produto = ({item}) => {
     const id_user = JSON?.parse(JSON?.parse(localStorage?.getItem("persist:root")).user)?.currentUser?._id;
@@ -135,7 +136,7 @@ if(ids.indexOf(id_user) === -1){
             <Image src = {`${item?.imagem}`}/>
             <Extra>
                 <Text>Nome :{item?.titulo} </Text>
-                <Preco>Preç: {Number(item?.preco).toFixed(2)}Kz </Preco>
+                <Preco>Preç: {dinheiro.format(Number(item?.preco))} </Preco>
                 <Text>Recomendações :{item.rec ? item?.rec : 0} </Text>
                 </Extra>
             <Info>

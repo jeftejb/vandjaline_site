@@ -18,13 +18,16 @@ import { publicRequest } from './../requesteMetodos';
 
 const nadelClickTerminar = ()=>{
 const dados = input
+const alerta = ()=>{
+  alert("Email enviado com sucesso!")
+}
 if(dados !== undefined){
   const enviarEmail = async ()=>{
 
     try{
          await publicRequest.post(`/autenticacao/email/recuperacao`, dados)
           
-         alert("Email enviado com sucesso!")
+        
          
     }catch(erro){
 console.log(erro)
@@ -32,6 +35,7 @@ console.log(erro)
     
   }
   enviarEmail();
+  alerta()
 }else{
     alert("Por favor insira o seu email!")
 }

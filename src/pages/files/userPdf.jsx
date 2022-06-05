@@ -6,7 +6,7 @@ const userPdf = (dados)=>{
   
     const data = new Date();
     const dataUs = data.toDateString()
-   console.log(data.toDateString())
+    const dinheiro = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'AKZ' })
    
  
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
@@ -24,7 +24,7 @@ const reportTitle = [
 
 const produtList = dados.produtos.map((pro)=>(
  
-    [{},{text: `${pro.titulo} \n\n ${pro.descricao}`},{text:`${Number(pro.preco).toFixed(2)}Kz \n\n Quantidade ${pro?.quantidade} `}, {text:`${pro.loja !== undefined?pro.loja :"*"}`}]
+    [{},{text: `${pro.titulo} \n\n ${pro.descricao}`},{text:`${dinheiro.format(Number(pro.preco))}Kz \n\n Quantidade ${pro?.quantidade} `}, {text:`${pro.loja !== undefined?pro.loja :"*"}`}]
    
 ))
 
@@ -45,7 +45,7 @@ const detalis = [
                     ['', '', '',''],
                     ...produtList,
                     ['', '', '',''],
-					[`Fale com nosco : +244111111111\nEmail:uservandja@gmail.com\nLocal:Huila, Lubango\nData:${dataUs} `, {colSpan: 3, rowSpan: 2, text: `Resumo:\nSubtotal:Kz ${Number(dados.total).toFixed(2)}\nDesconto:%0\nTotal:Kz ${Number(dados.total).toFixed(2)}`}, '',''],
+					[`Fale com nosco : +244111111111\nEmail:uservandja@gmail.com\nLocal:Huila, Lubango\nData:${dataUs} `, {colSpan: 3, rowSpan: 2, text: `Resumo:\nSubtotal:Kz ${dinheiro.format(Number(dados.total))}\nDesconto:%0\nTotal:Kz ${dinheiro.format(Number(dados.total))}`}, '',''],
 					['Vandjaline', '', '',''],
                     
                 ]

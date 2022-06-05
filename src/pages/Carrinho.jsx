@@ -20,7 +20,8 @@ ${mobile({ padding: "10px " })}
 `
 
 const Titulo = styled.h1`
-font-weight: 300;
+font-weight: 10;
+font-size:10px ;
 text-align:center;
 ${mobile({ fontSize:"25px"})}
 `
@@ -33,8 +34,8 @@ padding: 20px;
 ${mobile({ padding: "10px " })}
 `
 const TopButton = styled.button`
-padding: 10px;
-font-weight: 600;
+padding: 7px;
+font-weight: 400;
 cursor: pointer;
 border : ${(props)=>props.type === "filled" && "none"};
 background-color : ${(props)=>props.type === "filled" ? "black" : "transparent"};
@@ -113,13 +114,13 @@ align-items: center;
 margin-bottom: 20px;
 `
 const ProdutosQuantidade = styled.div`
-font-size: 24px;
+font-size: 14px;
 margin:5px;
 ${mobile({ margin: "5px  17px" })}
 `
 const ProdutoPreco = styled.div`
-font-size: 25px;
-font-weight: 200;
+font-size: 15px;
+font-weight: bolder;
 `
 
 
@@ -132,7 +133,7 @@ ${mobile({ marginTop: "50px" })}
 `
 
 const ResumoTitulo = styled.h1`
-font-weight: 200;
+font-weight: 100;
 `
 
 const ResumoItem = styled.div`
@@ -143,7 +144,10 @@ font-weight: ${(props)=>props.type === "total" && "500"};
 font-size: ${(props)=>props.type === "total" && "24px"};
 `
 
-const ResumoItemText = styled.span``
+const ResumoItemText = styled.span`
+font-size:15px ;
+font-weight:bolder;
+`
 
 const ButtonResumo = styled.button`
 width: 100%;
@@ -225,7 +229,7 @@ const Carrinho = () => {
        
       gerarPDF();
     }else{
-        alert("Precisas de efectuar o login")
+        alert("Precisa efectuar o login")
 
     }
         
@@ -233,7 +237,7 @@ const Carrinho = () => {
 
     
    
-    
+    const dinheiro = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'AKZ' })
   
     return (
        <Container>
@@ -272,7 +276,7 @@ const Carrinho = () => {
                                   <ProdutosQuantidade>{produto?.quantidade}</ProdutosQuantidade>
                          <Delete onClick={()=>handelDelite({id:produto?._id, preco:produto?.preco, quantidade:produto?.quantidade})}/>
                               </ProdutoPagamento>
-                              <ProdutoPreco>AKZ {Number(produto?.preco*produto?.quantidade).toFixed(2)}</ProdutoPreco>
+                              <ProdutoPreco>{dinheiro.format(Number(produto?.preco*produto?.quantidade))}</ProdutoPreco>
                           </PrecoDetalhes>
                       </Produto>
                       
@@ -284,7 +288,7 @@ const Carrinho = () => {
                       <ResumoTitulo>Resumo</ResumoTitulo>
                       <ResumoItem>
                           <ResumoItemText>Subtotal</ResumoItemText>
-                          <ResumoItemText>Kz {Number(carrinho.total).toFixed(2)}</ResumoItemText>
+                          <ResumoItemText>{dinheiro.format(Number(carrinho.total))}</ResumoItemText>
                       </ResumoItem>
                       <ResumoItem>
                           <ResumoItemText>Desconto</ResumoItemText>
@@ -292,7 +296,7 @@ const Carrinho = () => {
                       </ResumoItem>
                       <ResumoItem type="total">
                           <ResumoItemText>Total</ResumoItemText>
-                          <ResumoItemText>AKZ {Number(carrinho.total).toFixed(2)}</ResumoItemText>
+                          <ResumoItemText> {dinheiro.format(Number(carrinho.total))}</ResumoItemText>
                       </ResumoItem>
                       <ButtonResumo onClick={handelClick}>Solicitar Agora</ButtonResumo>
                       

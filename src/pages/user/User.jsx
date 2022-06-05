@@ -1,6 +1,5 @@
 import {
   CalendarToday,
-  LaptopWindowsSharp,
   LocationSearching,
   MailOutline,
   PermIdentity,
@@ -12,7 +11,7 @@ import "./user.css";
 import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import { useEffect, useState } from "react";
-import { userRequest, publicRequest } from "./../../requesteMetodos";
+import { publicRequest } from "./../../requesteMetodos";
 import { updateUsuario } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
 import Navbar from "../../components/Navbar";
@@ -174,6 +173,8 @@ const copiar  = ()=>{
 
 }
 
+const dinheiro = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'AKZ' })
+
 if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
 
   return (
@@ -238,7 +239,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
             </div> 
             }
             {dados?.confirmado !== false && <div className="userShowInfo">
-              <span className="userShowInfoTitle">Valor Actual :{dados?.pontos < 0 ? 0 : dados?.pontos}Kz
+              <span className="userShowInfoTitle">Valor Actual :{dados?.pontos < 0 ? dinheiro.format(0) : dinheiro.format(Number(dados?.pontos))}Kz
               <form action="">
               { dados?.pontos >= 10 ?
               <>
@@ -247,9 +248,9 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
                   <option value={10} >10 Akz</option>
                   <option value={15} >15 Akz</option>
                  <option value={30} >30 Akz</option>
-                 <option value={50} >50 Akz</option>
-                 <option value={70} >70 Akz</option>
                  <option value={100} >100 Akz</option>
+                 <option value={250} >250 Akz</option>
+                 <option value={500} >500 Akz</option>
                   </select> <p>
                 <button onClick={handelClikPagamento} >Solicitar</button>
                 </p>

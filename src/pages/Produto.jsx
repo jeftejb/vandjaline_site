@@ -40,7 +40,8 @@ ${mobile({ padding: "10px" })}
 `
 
 const Titulo = styled.h1`
-font-weight: 200;
+font-weight:bolder;
+font-size: 18px;
 `
 
 const Desc = styled.p`
@@ -48,8 +49,8 @@ margin:20px 0px;
 `
 
 const Preco = styled.span`
-font-weight: 100px;
-font-size: 40px;
+font-weight:bolder;
+font-size: 15px;
 
 `
 const FilterContainer = styled.div`
@@ -89,7 +90,8 @@ padding: 10px;
 `
 
 const Loja = styled.h3`
-font-size: 25px;
+font-weight:bolder;
+font-size: 15px;
 
 `
 const FilterTamanhoOpcao = styled.option``
@@ -120,7 +122,7 @@ margin:0px 5px;
 `
 
 const Button = styled.button`
-padding: 15px;
+padding: 10px;
 border:2px solid teal;
 margin-left: 10px;
 color:#000; 
@@ -241,7 +243,7 @@ if(ids.indexOf(id_user) === -1){
     }
 
 
-
+    const dinheiro = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'AKZ' })
     return (
         <Container>
              <ElementOne/>
@@ -255,7 +257,7 @@ if(ids.indexOf(id_user) === -1){
                        <Desc>Desacricao: {produto?.descricao}</Desc>
                        <Desc>Disponivel: {produto?.quanti}</Desc>
                        <Desc>Recomendações: {produto?.rec}</Desc>
-                       <Preco> Preco: {Number(produto?.preco).toFixed(2)}kz</Preco>
+                       <Preco> Preco: {dinheiro.format(Number(produto?.preco))}</Preco>
                        <Loja>Loja: {produto?.loja}</Loja>
                        <FilterContainer>
                            <Filter>
@@ -280,7 +282,7 @@ if(ids.indexOf(id_user) === -1){
                                <Quantidade> {quantidade} </Quantidade>
                                <Add  onClick = {()=>hendQuantidade("add")}/>
                            </QuantidadeContainer>
-                           <Button onClick = {handleClick} >Adicionar ao Carrinho</Button>
+                           <Button onClick = {handleClick} >Ad.Carrinho</Button>
                            {user?.confirmado === true? <Button onClick = {handleClickPubli} >Publicitar</Button> : ""}
                            <Button onClick = {handleClickRecomendar} >Recomendar</Button>
                        </AddContainer>

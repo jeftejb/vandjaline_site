@@ -141,6 +141,7 @@ const Navbar = () => {
                <Link className='textNav' to ="/estabelecimentos"> <MenuItem>lojas</MenuItem></Link>
                <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
                <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
+            
               
                </Somem>
 
@@ -150,7 +151,9 @@ const Navbar = () => {
                <Link className='textNav' to ="/registro/:"> <MenuItem>Cadastro</MenuItem> </Link>
            {currentUser? <MenuItem> <Link className='textNav' to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
                {currentUserD?.confirmado===true? `${currentUserD.nomeUsuario}(V:${currentUserD?.pontos}Akz)` : currentUserD.nomeUsuario }</Link></MenuItem>
-           : <Link className='textNav' to ="/login"> <MenuItemFi>Entrar</MenuItemFi></Link>
+           :<> <Link className='textNav' to ="/login"> <MenuItemFi>Entrar</MenuItemFi></Link>
+           <Link className='textNav' to ="/pacotes"> <MenuItem>Planos</MenuItem></Link>
+           </>
            }
                
                <Link className='textNav' to="/carrinho">
