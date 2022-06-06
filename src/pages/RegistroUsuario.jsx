@@ -518,7 +518,7 @@ const RegistroUsuario = () => {
                     </DivRorm>
 
                     <DivRorm>
-                     <TextLabel>Numero do BI</TextLabel> 
+                     <TextLabel>Numero do BI/ NIF</TextLabel> 
                     <Imput name="nifLoja" placeholder = "Numero de do BI" onChange={handelChangeEstabelecimento} required/>
                     </DivRorm>
                     
