@@ -2,7 +2,7 @@
 import  styled  from 'styled-components'
 import { mobile } from '../responsive'
 import CategoriaItem from './CategoriaItem'
-import SwiperCore,{  EffectFade, Autoplay, A11y, Pagination, Scrollbar,} from 'swiper';
+import SwiperCore,{  EffectFade, Autoplay, A11y, Pagination, Scrollbar} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
@@ -37,7 +37,7 @@ const Categorias = () => {
         <Swiper
         modules={[ EffectFade, Autoplay, Pagination, Scrollbar,A11y ]}
         effect='fade'
-      spaceBetween={20}
+      spaceBetween={30}
       breakpoints= {{
         0: {
           slidesPerView: 1,

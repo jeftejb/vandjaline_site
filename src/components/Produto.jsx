@@ -6,14 +6,22 @@ import {addUsuario} from  "./../redux/apiCalls"
 import {actPontos} from "./../redux/apiCalls"
 
 
-const Text = styled.h5 ` color:black;`
+const Text = styled.h5 `
+color:black;
+font-weight:border;
+font-size:12px ;
+size:200px ;
+`
 
 const Preco = styled.h5`
 color:black ;
+font-weight:bolder;
+font-size:12px ;
+size:200px ;
 `
 const Extra = styled.div`
 top:0 ;
-margin-top:200px ;
+margin-top:190px ;
 height: 10%;
 
 `
@@ -38,9 +46,10 @@ const Container = styled.div`
 flex:1;
 margin-top:5px;
 margin-bottom:10px;
-min-width: 280px;
-height: 260px;
-margin-left:13px;
+min-width: 300px;
+height: 250px;
+margin-left:0px;
+
 display: flex;
 text-align:center;
 justify-content: center;
@@ -64,9 +73,10 @@ margin-top:30px;
 `
 
 const Image = styled.img`
-height: 50%;
+width: 150px;
+height: 150px;
 z-index: 2;
-border-radius:50% ;
+border-radius:30% ;
 margin-top: 30px;
 position: absolute;
 
@@ -135,8 +145,8 @@ if(ids.indexOf(id_user) === -1){
             <Circle/>
             <Image src = {`${item?.imagem}`}/>
             <Extra>
-                <Text>Nome :{item?.titulo} </Text>
-                <Preco>Preç: {dinheiro.format(Number(item?.preco))} </Preco>
+                <Text>{item?.titulo} {item?.novo === "Novo" ? <span style={{color:"#FA7F08"}}> Novo </span>:""} </Text>
+                <Preco>{dinheiro.format(Number(item?.preco))} </Preco>
                 <Text>Recomendações :{item.rec ? item?.rec : 0} </Text>
                 </Extra>
             <Info>

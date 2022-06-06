@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Produto from "./Produto"
 //import axios from "axios"
 import SwiperCore,{ EffectFade, Autoplay} from 'swiper';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
@@ -13,7 +14,9 @@ import { publicRequest } from "../requesteMetodos";
 const Container = styled.div`
 display: flex;
 flex-wrap: wrap;
-justify-content:space-between;
+justify-content:center ;
+align-items:center ;
+
 
 
 `
@@ -47,9 +50,9 @@ const Produtos = ({cat,filters,sort}) => {
     return (
         <Container>
         <Swiper
-        modules={[ EffectFade, Autoplay]}
-       
-      spaceBetween={50}
+        modules={[EffectFade, Autoplay]}
+     
+      spaceBetween={30}
       breakpoints= {{
         0: {
           slidesPerView: 1,

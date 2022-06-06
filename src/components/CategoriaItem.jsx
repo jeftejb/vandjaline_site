@@ -7,8 +7,8 @@ import {Link} from "react-router-dom"
 const Container = styled.div`
 flex: 1;
 margin: 5px;
-width: 100%;
-height: 30vh;
+min-width: 350px;
+height: 215px;
 position: relative;
 outline:1px solid black;
 outline-offset: -1rem;
@@ -21,13 +21,14 @@ text-align:center;
     outline:3px solid black ;
     outline-offset: 0rem;
 }
+
 `
 const Img = styled.img`
   width: 100%;
 height: 30vh;
 border-radius:3%;
 object-fit: cover;
-${mobile({ height: "30hv" })}
+${mobile({ height: "220px" })}
 `
 const Info = styled.div`
 position: absolute;
@@ -41,7 +42,7 @@ align-items: center;
 justify-content: center;
 `
 const Titulo = styled.h1`
-color:rgb(255, 165, 0);
+color:#011F26;
 margin-bottom: 20px;
 font-size:25px;
 font-weight:bold;
@@ -51,7 +52,7 @@ const Button = styled.button`
 border: none;
 padding: 20px;
 background-color: transparent;
-color: grey;
+color:#FA7F08;
 cursor: pointer;
 font-weight: 600;
 &:hover{
@@ -66,10 +67,11 @@ const CategoriaItem = ({item}) => {
             <Link to={`/produtos/${item.nomeCat}`}>
             <Img src={item?.imagemCat} />
             <Info>
-                <Titulo>{item?.nomeCat}</Titulo>
+                
                 <Button>Ver Produtos </Button>
             </Info>
             </Link>
+            <Titulo>{item?.nomeCat}</Titulo>
         </Container>
     )
 }

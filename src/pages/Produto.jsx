@@ -69,14 +69,14 @@ align-items: center;
 
 
 const FilterTitulo = styled.span`
-font-size: 20px;
+font-size: 13px;
 font-weight: 200;
 `
 
 
 const FilterColor = styled.div`
-width: 20px;
-height: 20px;
+width: 15px;
+height: 15px;
 border-radius: 50%;
 background-color: ${props=>props.color};
 margin:0px 5px;
@@ -86,7 +86,7 @@ cursor: pointer;
 
 const FilterTamanho = styled.select`
 margin-left: 10px;
-padding: 10px;
+padding: 3px 10px;
 `
 
 const Loja = styled.h3`
@@ -253,12 +253,15 @@ if(ids.indexOf(id_user) === -1){
                        <Image src={`${produto?.imagem}`} />
                    </ImageContainer>
                    <InfoContainer>
-                       <Titulo>Nome: {produto?.titulo}</Titulo>
+                       <Titulo> {produto?.titulo}</Titulo>
                        <Desc>Desacricao: {produto?.descricao}</Desc>
                        <Desc>Disponivel: {produto?.quanti}</Desc>
                        <Desc>Recomendações: {produto?.rec}</Desc>
-                       <Preco> Preco: {dinheiro.format(Number(produto?.preco))}</Preco>
+                       <Preco> Preço: {dinheiro.format(Number(produto?.preco))}</Preco>
                        <Loja>Loja: {produto?.loja}</Loja>
+
+                       <Desc> {produto?.novo === "Novo" ? <span style={{color:"#FA7F08"}}> Novo </span> : ""}</Desc>
+
                        <FilterContainer>
                            <Filter>
                                <FilterTitulo>Cor: </FilterTitulo>
@@ -266,6 +269,11 @@ if(ids.indexOf(id_user) === -1){
                                 <FilterColor color = {c} key = {c} onClick = {()=>setCor(c)} />
                                )): <FilterColor color = "white" />}
                            </Filter>
+                           <QuantidadeContainer>
+                               <Remove onClick = {()=>hendQuantidade("remove")} />
+                               <Quantidade> {quantidade} </Quantidade>
+                               <Add  onClick = {()=>hendQuantidade("add")}/>
+                           </QuantidadeContainer>
                            <Filter>
                            <FilterTitulo>Tamanho: </FilterTitulo>
                                <FilterTamanho onChange={(e)=>setTamanho(e.target.value)}>
@@ -277,11 +285,7 @@ if(ids.indexOf(id_user) === -1){
                            </Filter>
                        </FilterContainer>
                        <AddContainer>
-                           <QuantidadeContainer>
-                               <Remove onClick = {()=>hendQuantidade("remove")} />
-                               <Quantidade> {quantidade} </Quantidade>
-                               <Add  onClick = {()=>hendQuantidade("add")}/>
-                           </QuantidadeContainer>
+                          
                            <Button onClick = {handleClick} >Ad.Carrinho</Button>
                            {user?.confirmado === true? <Button onClick = {handleClickPubli} >Publicitar</Button> : ""}
                            <Button onClick = {handleClickRecomendar} >Recomendar</Button>
