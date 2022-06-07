@@ -4,7 +4,9 @@ import styled from "styled-components"
 import Produto from "./Produto"
 //import axios from "axios"
 import { publicRequest } from "../requesteMetodos"
+import "./style.css"
 
+import reveal from "../redux/style"
 
 
 const Container = styled.div`
@@ -70,15 +72,17 @@ const ProdutosUnik = ({cat,filters,sort}) => {
   const startIndex = currentPage*itensPerPage
   const endIndex = startIndex+itensPerPage
   const currentitens =  produtos.slice(startIndex,endIndex )
+
+  reveal()
     return (
         <Containe>
-        <Container>
+        <Container className="reveal fade-bottom">
              
             {cat? filterProdutos.slice(startIndex, endIndex).map((item,i)=>(
                  <Produto item={item} key={item._id}/>
               
           )): currentitens.map((item, i)=>(
-             <Produto item={item} key={item._id}/>
+             <Produto  item={item} key={item._id}/>
         ))}  
        
        </Container>

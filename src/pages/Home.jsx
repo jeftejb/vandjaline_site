@@ -10,6 +10,12 @@ import Slide from '../components/Slide'
 import styled from "styled-components"
 import Estabelecimentos from '../components/Estabelecimentos'
 
+import { tablet } from '../responsive'
+
+import "./../components/style.css"
+import reveal  from '../redux/style'
+
+
 
 const color_text = "#042940"
 
@@ -54,15 +60,7 @@ border: 2px solid #9FC131;
 
 
 
-const ContainerSlider = styled.div`
-height: 60vh;
-background-color: #7392B7;
-box-shadow: 20px 15px 15px black;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-`
+
 
 const Desc = styled.p`
 text-align:center ;
@@ -89,8 +87,48 @@ animation:go-back 1s;
 
 const Link = styled.a``
 
+const ContainerSlider = styled.div`
+height: 60vh;
+background-color: #7392B7;
+box-shadow: 20px 15px 15px black;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding:20px ;
+
+${tablet({ flexDirection:"column" })}
+`
+
+
+const ContainerText = styled.div`
+width: 45% ;
+height: 60% ;
+padding: 20px ;
+margin:10px ;
+background-color: #FA7F08 ;
+box-shadow: 20px 15px 15px black;
+align-items: center ;
+
+${tablet({ width: "300px"})}
+`
+
+const ContainerDesc = styled.div`
+width: 55% ;
+height: 70% ;
+padding:20px ;
+margin:10px ;
+background-color:#F24405 ;
+box-shadow: 35px 25px 25px black;
+align-items: center ;
+justify-content: center ;
+
+${tablet({ width: "300px"})}
+`
+
+
  const  Home = ()=> {
 
+  reveal()
   
     return(
         <div>
@@ -113,8 +151,8 @@ const Link = styled.a``
             <Categorias/>
 
             <ContainerSlider>
-            <Text>Divulgue seus negócios, produtos ou serviços !  </Text>
-           <Desc >Construa seu negocio de uma maneira simples e fácil , tenha a sua loja virtual a custo “0”! faça  o seu  cadastro como usuário , ou comerciante e comesse a publicitar os seus produtos.<Link href="/sobre">Saber mais </Link> </Desc>
+           <ContainerText className='reveal fade-left'> <Text>Divulgue seus negócios, produtos ou serviços !  </Text></ContainerText>
+           <ContainerDesc className='reveal fade-right'><Desc >Construa seu negocio de uma maneira simples e fácil , tenha a sua loja virtual a custo “0”! faça  o seu  cadastro como usuário , ou comerciante e comesse a publicitar os seus produtos.<Link href="/sobre">Saber mais </Link> </Desc></ContainerDesc>
             </ContainerSlider>
 
             <Container>
@@ -131,8 +169,8 @@ const Link = styled.a``
             <Produtos/>
            
             <ContainerSlider>
-            <Text>Ganhamos todos!</Text>
-          <Desc>  Faça o cadastro como usuário e comesse a ganhar dinheiro convidado mais pessoas no site e ajudando a publicitar os produtos do site. <Link href="/sobre">Saber mais </Link> </Desc>
+              <ContainerText className='reveal fade-left' ><Text>Ganhamos todos!</Text></ContainerText>
+              <ContainerDesc className='reveal fade-right' ><Desc>Faça o cadastro como usuário e comesse a ganhar dinheiro convidado mais pessoas no site e ajudando a publicitar os produtos do site. <Link href="/sobre">Saber mais </Link> </Desc> </ContainerDesc>
             </ContainerSlider>
 
                 

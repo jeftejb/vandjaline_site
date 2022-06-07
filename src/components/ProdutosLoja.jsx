@@ -9,6 +9,9 @@ import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import { publicRequest } from "../requesteMetodos";
 
+import "./style.css"
+
+import reveal from "../redux/style"
 
 const Container = styled.div`
 
@@ -60,10 +63,10 @@ const ProdutosLoja = ({id}) => {
     const currentitens =  produtos.slice(startIndex,endIndex )
 
    //SwiperCore.use([Autoplay])
-  
+         reveal()
     return (
       <Containe>
-        <Container>
+        <Container className="reveal fade-bottom">
        
               
           

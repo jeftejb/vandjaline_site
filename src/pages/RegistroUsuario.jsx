@@ -8,7 +8,8 @@ import Navbar from "../components/Navbar";
 import Rodape from "../components/Rodape";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import app from "./../firebase";
-
+import "./../components/style.css"
+import { CircularProgress } from "@material-ui/core"
 
 
 
@@ -187,6 +188,8 @@ const RegistroUsuario = () => {
     const [file, setFile] = useState(null)
    const id_user = location?.pathname.split("/")[2] ;
 
+   const [loading ,setLoading] = useState()
+
  
 
  
@@ -254,12 +257,14 @@ const RegistroUsuario = () => {
           setConfirmPassErro({state:"red"})
             
         }else{ 
+          setLoading(true)
           try {
             const usuario = id_user !== ":" ? {...inputUser, id:id_user, imagem: imagem} :  {...inputUser, imagem:imagem};
            await novoUsuario(usuario)
-        
+           setLoading(false)
         }catch{
             alert("Erro ao Cadastrar")
+            setLoading(false)
         }
            
            }
@@ -314,7 +319,8 @@ const RegistroUsuario = () => {
          ){
           setVasioLoja({state:"red"})
          }else{
-
+      
+          setLoading(true)
   if (inputEstabelecimento?.password === passLoja?.confirmPassLoja){
             try{
             
@@ -352,6 +358,7 @@ const RegistroUsuario = () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                     const estabelecimento = {...inputEstabelecimento , imagem:downloadURL}
                     novoEstabelecimento( estabelecimento)
+                    setLoading(false)
                 });
               }
             );
@@ -362,6 +369,7 @@ const RegistroUsuario = () => {
               }else{
                 const estabelecimento = {...inputEstabelecimento , imagem:"https://firebasestorage.googleapis.com/v0/b/vandja-6d839.appspot.com/o/avatar%2Fshopping-5217035_1280.png?alt=media&token=0428274b-7003-40f8-971a-9b97353b8f43"}
                 novoEstabelecimento( estabelecimento)
+                setLoading(false)
               }
                
                
@@ -369,11 +377,13 @@ const RegistroUsuario = () => {
            
             }catch{
                 alert("Erro ao cadastrar")
+                setLoading(false)
             }
        
         }else{ 
             alert("Erro ao cadastrar Palvra passe incopativel!!")
             setConfirmPassErroLoja({state:"red"})
+            setLoading(false)
             
            }
 
@@ -389,6 +399,12 @@ const RegistroUsuario = () => {
         <Navbar/>
         <Container>
        
+{loading && 
+<div className="loading">
+  <CircularProgress/>
+</div>
+}
+
             <Wrapper>
                 <Titulo>{dados? "CONTA DE USUÁRIO Convite feito por: "+dados.nomeCompleto :"CONTA DE USUÁRIO" }</Titulo>
                 <Form>
@@ -403,9 +419,9 @@ const RegistroUsuario = () => {
                     </DivRorm>
 
                     <DivRorm>
-                     <TextLabel>Numero de telefone</TextLabel> 
+                     <TextLabel>Numero de telefone  +244</TextLabel> 
                    
-                    <Imput name="numeroTelefone"  type="number" max={10} placeholder = "Numero de telefone"onChange={handelChangeUser} required/>
+                    <Imput name="numeroTelefone"  type="tel" pattern="[0-9]{9}" placeholder = "Numero de telefone"onChange={handelChangeUser} required/>
                     </DivRorm>
 
                     <DivRorm>
@@ -500,7 +516,7 @@ const RegistroUsuario = () => {
                       Os pagamentos são efectuados atraves da carteira virtual kamba <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App Kamba</a>  
                     </Agradecimento>
 
-                    <Button onClick ={handelClickUser} >CRIAR CONTA </Button> <ButtonCon> <Link style={{textDecoration:"none", color:"#fff", fontSize:"12px"}} to="/">VOLTAR A PAGINA INICIAL</Link> </ButtonCon>
+                    <Button disabled={loading} onClick ={handelClickUser} >CRIAR CONTA </Button> <ButtonCon> <Link style={{textDecoration:"none", color:"#fff", fontSize:"12px"}} to="/">VOLTAR A PAGINA INICIAL</Link> </ButtonCon>
                     </Form>
             </Wrapper>
 
@@ -681,7 +697,7 @@ const RegistroUsuario = () => {
                      A conta de comerciante te permite criar uma pequena loja virtual com varias opções como: cadastrar, editar e eliminar produtos, ainda podes receber pagamentos e partilhar o link da sua loja nas tuas redes sociais e muito mais.<br/>  
                      Os pagamentos são efectuados atraves da carteira virtual kamba <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App Kamba</a>   
                     </Agradecimento>
-                    <Button onClick={handelClickEstabelecimento} >CRIAR CONTA </Button> <ButtonCon> <Link style={{textDecoration:"none", color:"#fff", fontSize:"12px"}} to="/">VOLTAR A PAGINA INICIAL</Link> </ButtonCon>
+                    <Button disabled={loading} onClick={handelClickEstabelecimento} >CRIAR CONTA </Button> <ButtonCon> <Link style={{textDecoration:"none", color:"#fff", fontSize:"12px"}} to="/">VOLTAR A PAGINA INICIAL</Link> </ButtonCon>
                     </Form>
             </Wrapper>
 
