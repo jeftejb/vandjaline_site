@@ -5,7 +5,8 @@ import styled from "styled-components"
 import { loginUser } from "../redux/apiCalls"
 import {mobile} from "../responsive"
 import{Link} from "react-router-dom"
-
+import { CircularProgress } from "@material-ui/core"
+import "./../components/style.css"
 
 const Container  = styled.div`
 width: 100vw;
@@ -71,12 +72,20 @@ color :red;
 const Login = () => {
     const [nomeUsuario, setUserName] = useState("")
     const [password, setPassword] = useState("")
-    const {isFetching,error} = useSelector((state)=>state?.user)
+    const {error} = useSelector((state)=>state?.user)
+    const [loading ,setLoading] = useState()
     const dispatch = useDispatch()
     
-    const handleClick = (e)=>{
+    const handleClick = async (e)=>{
         e.preventDefault()
-        loginUser(dispatch, {nomeUsuario, password})
+        setLoading(true)
+        try{
+           await loginUser(dispatch, {nomeUsuario, password})
+            setLoading(false)
+        }catch{
+            setLoading(false)
+        }
+        
     }
 
   
@@ -91,13 +100,19 @@ const Login = () => {
                 <Form>
                     <Imput placeholder = "nome de usuario" onChange={(e)=>setUserName(e.target.value)} />
                     <Imput placeholder = "palavra passe " type="password" onChange={(e)=>setPassword(e.target.value)}/>
-                    <Button onClick = {handleClick} disabled={isFetching} >ENTRAR</Button>
-                    {error && <Error>Algo deu errado ...!</Error>}
+                    <Button disabled={loading} onClick = {handleClick} >ENTRAR</Button>
+                    {error && <Error>Algo deu errado ...! Nome ou Palavra passe incorretos</Error>}
                     <Link to = "/recuperar/senha">NAO ME LEMBRO DA MINHA PALAVRA PASSE</Link>
                     <Link to ="/registro/:id">Criar conta </Link>
                     <Link to ="/">Voltar a Pagina Inicial</Link>
                     </Form>
             </Wrapper>
+
+            {loading && 
+<div className="loading">
+  <CircularProgress/>
+</div>
+}
 
             
         </Container>

@@ -48,8 +48,7 @@ margin-top:5px;
 margin-bottom:10px;
 min-width: 300px;
 height: 250px;
-margin-left:0px;
-
+margin:10px;
 display: flex;
 text-align:center;
 justify-content: center;
