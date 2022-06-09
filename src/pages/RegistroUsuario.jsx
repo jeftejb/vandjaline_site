@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link, useLocation } from "react-router-dom"
 import {  useEffect, useState } from "react"
 import { novoUsuario, novoEstabelecimento} from "../redux/apiCalls"
-import { userRequest } from "../requesteMetodos"
+import { publicRequest, userRequest } from "../requesteMetodos"
 import Navbar from "../components/Navbar";
 import Rodape from "../components/Rodape";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
@@ -290,10 +290,13 @@ const RegistroUsuario = () => {
     }
       
     const handelClickEstabelecimento = async (e)=>{
- e.preventDefault()
+           e.preventDefault()
         const fileName = new Date().getTime()+ file?.name;
         const storage = getStorage(app)
         const storageRef = ref (storage, `filesLoja/${fileName}`)
+
+    
+  
 
         if(
           inputEstabelecimento?.nomeLoja === undefined || 
@@ -322,6 +325,14 @@ const RegistroUsuario = () => {
       
           setLoading(true)
   if (inputEstabelecimento?.password === passLoja?.confirmPassLoja){
+    const enviaPagamento = async ()=>{
+
+      try{
+      await publicRequest.post("/autenticacao/email/link/loja" , {email : inputEstabelecimento?.emailLoja })
+       }catch(error){
+           console.log(error)
+       }
+  }
             try{
             
             // Register three observers:
@@ -358,6 +369,7 @@ const RegistroUsuario = () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                     const estabelecimento = {...inputEstabelecimento , imagem:downloadURL}
                     novoEstabelecimento( estabelecimento)
+                    enviaPagamento()
                     setLoading(false)
                 });
               }
@@ -369,6 +381,7 @@ const RegistroUsuario = () => {
               }else{
                 const estabelecimento = {...inputEstabelecimento , imagem:"https://firebasestorage.googleapis.com/v0/b/vandja-6d839.appspot.com/o/avatar%2Fshopping-5217035_1280.png?alt=media&token=0428274b-7003-40f8-971a-9b97353b8f43"}
                 novoEstabelecimento( estabelecimento)
+                enviaPagamento()
                 setLoading(false)
               }
                
