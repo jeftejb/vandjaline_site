@@ -25,7 +25,7 @@ text-align:center;
 `
 const Img = styled.img`
   width: 100%;
-height: 30vh;
+height: 27vh;
 border-radius:3%;
 object-fit: cover;
 ${mobile({ height: "220px" })}

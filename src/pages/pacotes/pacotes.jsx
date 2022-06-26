@@ -11,10 +11,10 @@ import "./pacotes.css"
 
  const  Pacotes = ()=>{
     // const location =  useLocation()
-    const email =  window.location.href.split('?')[1] ;
+    //const email =  window.location.href.split('?')[1] ;
     const nomeLoja =  window.location.href.split('?')[2];
 
-console.log(email)
+
 
 /*
 const handelClick = (e)=>{
