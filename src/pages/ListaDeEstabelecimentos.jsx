@@ -6,6 +6,7 @@ import ElementOne from "../components/ElementOne";
 import EstabelecimentosElement from "../components/Estabelecimentos";
 
 import { tablet } from "../responsive";
+import NovasLetras from "../components/NovasLetras";
 
 const Container = styled.div`
 text-align: center;
@@ -22,6 +23,7 @@ const Estabelecimento = ()=>{
         <Navbar/>
         <Titulo>Lojas</Titulo>
         <EstabelecimentosElement/> 
+        <NovasLetras/>
         <Rodape/>
         </Container>
     )

@@ -1,31 +1,47 @@
-.newUser {
-  flex: 8;
-  position: relative;
+.principal {
+
+
+
+  margin: 20px;
+  padding: 20px;
+
 }
 
-.menuSobre {
-  text-align: center;
+.menuSobreL {
+text-align: center;
+margin-bottom: 30px;
+  
+
 }
 
-.menuSobre ul {
+.menuSobreL ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  text-align: center;
+  
 }
 
-.menuSobre li {
+.menuSobreL li {
   list-style: none;
   padding: 20px;
 }
 
-.menuSobre li > a {
+.menuSobreL li > a {
   text-decoration: none;
   color: gray;
 }
 
+.sobreOvandjaL {
+  margin-bottom: 25px;
+  margin-top: 25px;
+  text-align: center;
+}
 .sobreOvandja {
   margin-bottom: 25px;
+
 }
+
 
 .sobreOvandja h1 {
   margin-bottom: 20px;
@@ -37,4 +53,5 @@
 
 .conteudo {
   padding: 50px;
+  
 }

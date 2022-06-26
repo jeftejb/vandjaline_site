@@ -1,14 +1,13 @@
-import { Facebook, Instagram, MailOutline, Phone, Twitter, YouTube } from "@material-ui/icons"
-import styled from "styled-components"
-import { mobile, PcGrande, tablet} from "../responsive"
+import { Facebook, Instagram, MailOutline, Phone, Twitter, YouTube } from "@material-ui/icons";
+import styled from "styled-components";
+import { mobile, PcGrande, tablet} from "../responsive";
 const color = "white";
 
 
 const ContainerRodape = styled.div`
 display: flex;
-
 background-color:#759EB8 ;
-${mobile({ flexWrap:'wrap'  })}
+${mobile({ flexWrap:'wrap'  })};
 
 `
 
@@ -18,7 +17,6 @@ color:${color};
 
 
 const Left = styled.div`
-
 flex: 1;
 display: flex;
 flex-direction: column;
@@ -116,7 +114,7 @@ height:20px ;
 
 const Rodape = () => {
     return (
-        
+        <div>
        <ContainerRodape>
            <Left>
                <Logo><Img alt="" src="image/logo.png"/></Logo>
@@ -161,7 +159,7 @@ const Rodape = () => {
            </Right>
          
        </ContainerRodape>
-     
+       </div>
     )
 }
 

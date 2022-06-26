@@ -6,6 +6,7 @@ import ElementOne from "../components/ElementOne";
 import Fazenda from "../components/Fazenda";
 
 import { tablet } from "../responsive";
+import NovasLetras from "../components/NovasLetras";
 
 const Container = styled.div`
 text-align: center;
@@ -22,6 +23,7 @@ const ListFazenda = ()=>{
         <Navbar/>
         <Titulo>Fazendas</Titulo>
         <Fazenda/> 
+        <NovasLetras/>
         <Rodape/>
         </Container>
     )

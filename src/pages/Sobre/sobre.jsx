@@ -1,16 +1,17 @@
-import "./sobre.css";
+import React from "react";
 import Menu from "../../components/Navbar";
 import Rodape from "../../components/Rodape";
 import ElementOne from "../../components/ElementOne";
+import "./sobre.css";
 
 export default function Sobre() {
   return (
     <div>
       <ElementOne/>
     <Menu/>
-    <div className="newUser">
-    
-    <div className="menuSobre">
+
+<div className="principal">
+    <div className="menuSobreL">
       <ul>
         <li><a href="#sobre_o_vandjaline">Sobre o Vandjaline</a></li>
         <li><a href="#termos">Termos e Serviços</a></li>
@@ -20,8 +21,10 @@ export default function Sobre() {
         </ul>
       </div>
 
-      <div className="conteudo">
-        <div className="sobreOvandja" id="sobre_o_vandjaline">
+    
+
+      
+        <div className="sobreOvandjaL" id="sobre_o_vandjaline">
           <h1>Ola ! seja bem vindo ao vandjaline </h1>
 
           <span >Nós somos o <b>Vandjaline</b> o site que vai tornar mais facil o processo de pesquisa de preços, a compra e venda de produtos fisicos e digitais. </span>
@@ -66,7 +69,7 @@ export default function Sobre() {
 
             <h4>Criação de  contas</h4> <br/>
             
-            È muito simples criar uma conta basta clicar no menu ´´<b>cadastro</b>´´  e  preencher os dados que lhe são solicitados. <p/><br/>
+            È muito simples criar uma conta basta clicar no menu "<b>cadastro</b>"  e  preencher os dados que lhe são solicitados. <p/><br/>
             
             <b>Existem dois tipos de conta que são Conta de usuário e conta Empresa </b><p/><br/>
             
@@ -74,7 +77,7 @@ export default function Sobre() {
 
             Para quem pretende apenas comprar produtos ou se tornar um intermediário  a Conta de usuário é a recomendada.<p/>
            
-            Basta preencher os dados e clicar em ´´<b>criar conta usuário</b> ´´ para teres a sua conta de usuário onde terás os seguintes serviços : <br/>
+            Basta preencher os dados e clicar em "<b>criar conta usuário</b> " para teres a sua conta de usuário onde terás os seguintes serviços : <br/>
             <ul>
               <li> 
                 Intermediário(caso activares a opção me tornar um intermediário ).
@@ -90,7 +93,7 @@ export default function Sobre() {
             <b >Conta Empresa</b><p/> <br/>
             Para quem é vendedor e pretende ter uma loja virtual esta  é recomendada a conta Empresa. <br/>
 
-            Basta preencher os dados e clicar em ´´<b>criar conta empresa</b> ´´ para teres a sua conta empresa  onde terás os seguintes serviços :<br/>
+            Basta preencher os dados e clicar em "<b>criar conta empresa</b> " para teres a sua conta empresa  onde terás os seguintes serviços :<br/>
             
             <ul>
               <li>
@@ -123,7 +126,7 @@ export default function Sobre() {
             <b>Como activar a opção de intermediário ?</b><p/><br/>
           
             <b> 1 Passo :</b> Possuir uma conta de usuário.<p/><br/>
-            <b> 2 Passo :</b> No menu "<b>Editar</b> ", ir ate a opção "<b>me tornar um intermediário </b> " selecionar a opção "<b>sim</b>" e clicar no botão  "<b>Ser intermediário</b>" , veras que na opção intermediário aparecerá ´´ <b>pendente confirmar </b>´´.<p/><br/>
+            <b> 2 Passo :</b> No menu "<b>Editar</b> ", ir ate a opção "<b>me tornar um intermediário </b> " selecionar a opção "<b>sim</b>" e clicar no botão  "<b>Ser intermediário</b>" , veras que na opção intermediário aparecerá " <b>pendente confirmar </b>".<p/><br/>
             <b> 3 Passo :</b> Clicar na opção "<b>confirmar</b>". <p/><br/>
             <b> 4 Passo :</b> clicar na opção "<b>requisitar código</b>" que será enviado por e-mail  e inserir o código de confirmação na caixa de texto, em seguida clicar em "<b>confirmar</b>".  <p/><br/>
 
@@ -188,16 +191,9 @@ export default function Sobre() {
             
             </span>
           </div>
-
-
           
-
-
         </div>
-
-
-
-    </div>
+       
     <Rodape/>
     </div>
   );
