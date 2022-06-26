@@ -187,6 +187,34 @@
   background-color: #dbf227;
 }
 
+.conteudo{
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  text-align: center;
+ 
+  align-items: center;
+
+
+}
+
+.conteudo>h1{
+  margin-bottom: 10px;
+}
+
+.tabela{
+  margin-left: 0px;
+  width: 60%;
+
+  text-align: center;
+}
+
+.im{
+  width: 70px;
+  height: 40px;
+}
+
+
 @media only screen and (max-width: 725px) {
   .confirEmail > span {
     margin-top: 25px;
@@ -216,3 +244,5 @@
     font-size: 20px;
   }
 }
+
+

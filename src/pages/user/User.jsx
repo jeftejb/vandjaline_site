@@ -134,12 +134,14 @@ if(Number(pagamento.valor) <= Number(dados?.pontos)){
 
 const nadelClickEmail = (dados)=>{
   const email ={email: dados , id:id_user}
+  
   const enviarEmail = async ()=>{
    await publicRequest.post(`/autenticacao/email/confirmacao`, email)
     //confirmarEmailCadastro(email);
 
   }
   enviarEmail().catch(console.error());
+
 }
 
 /*
@@ -246,8 +248,6 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
                   <select name="valor" onChange={handelChangePagamento}>
                   <option >Retirar</option>
                   <option value={10} >10 Akz</option>
-                  <option value={15} >15 Akz</option>
-                 <option value={30} >30 Akz</option>
                  <option value={100} >100 Akz</option>
                  <option value={250} >250 Akz</option>
                  <option value={500} >500 Akz</option>
@@ -258,10 +258,11 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
                 :"Pouco dinheiro"
               }
                 </form>
+              <Link to={"/historico/"+dados._id}>Historico de pagamentos</Link><br/>
+              <Link to={"/historico_pedidos/"+dados._id}>Historico de Pedidos</Link>
               
-               
               </span>
-
+             
             </div> 
             }
              
@@ -411,7 +412,7 @@ else{
 <div className="confirEmail">
 <h1>Confirmar Email</h1>
  <span>Enviamos um email de confirmacao no seu email, caso nao receberes o email por favor clique no botao confirmar email obrigado.</span>
- <button onClick={()=>nadelClickEmail(dados?.email)} >Confirmar email</button>
+ <button onClick={()=>nadelClickEmail(dados?.email)}> Confirmar email </button>
  </div>
 
  </div>

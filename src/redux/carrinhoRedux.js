@@ -19,6 +19,7 @@ const carrinhoSlice = createSlice({
             state.produtos.push(action.payload);
             state.quantidade += 1; 
             state.total += action.payload.preco * action.payload.quantidade; 
+            alert("Produto adicionado com sucesso")
         }
       
         }, 

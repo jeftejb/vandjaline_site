@@ -23,7 +23,7 @@ const Titulo = styled.h1`
 font-weight: 10;
 font-size:10px ;
 text-align:center;
-${mobile({ fontSize:"25px"})}
+${mobile({ fontSize:"15px"})}
 `
 
 const Top = styled.div`
@@ -35,7 +35,7 @@ ${mobile({ padding: "10px " })}
 `
 const TopButton = styled.button`
 padding: 7px;
-font-weight: 400;
+font-weight: 200;
 cursor: pointer;
 border : ${(props)=>props.type === "filled" && "none"};
 background-color : ${(props)=>props.type === "filled" ? "black" : "transparent"};
@@ -75,7 +75,7 @@ display: flex;
 `
 
 const Image = styled.img`
-width: 200px;
+width: 100px;
 `
 
 const Detalhe = styled.span`
@@ -204,6 +204,7 @@ const Carrinho = () => {
         }
 
         novaFatura(dispatch, dados)
+        alert("Pedido feito com sucesso!")
     }else{
         alert("Precisas de efectuar o login")
     }
@@ -235,6 +236,9 @@ const Carrinho = () => {
         
     }
 
+    const voltarProdutos = ()=>{
+        window.location.href=`/produtos`
+    }
     
    
     const dinheiro = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'AKZ' })
@@ -247,7 +251,7 @@ const Carrinho = () => {
               <Titulo>O TEU CARRINHO DE COMPRAS </Titulo>
               <Top> 
                  
-                  <TopButton>CONTINUAR A COMPRAR</TopButton>
+                  <TopButton onClick={voltarProdutos} >CONTINUAR A COMPRAR</TopButton>
                   <TopTexts>
                       <TopText>Produtos no Carrinho({carrinho.produtos.length})</TopText>
                       
@@ -258,9 +262,10 @@ const Carrinho = () => {
               </Top>
               <Button>
                   <Inf>
-                      {carrinho?.produtos.map((produto, i)=>(
-                  <Produto key={i}>
-                          <ProdutoDetalhes>
+                      {carrinho?.produtos.map((produto,i)=>(
+                        <div key={i}>
+                  <Produto key={produto._id}>
+                          <ProdutoDetalhes >
                               <Image src={`${produto?.imagem}`} />
                               <Detalhe>
                                   <ProdutoNome><b>Produto:</b>{produto?.titulo}</ProdutoNome>
@@ -270,7 +275,7 @@ const Carrinho = () => {
                                   <ProdutoLoja><b>Loja:</b>{produto?.loja}</ProdutoLoja>
                               </Detalhe>
                           </ProdutoDetalhes>
-                          <PrecoDetalhes>
+                          <PrecoDetalhes >
                               <ProdutoPagamento>
                               
                                   <ProdutosQuantidade>{produto?.quantidade}</ProdutosQuantidade>
@@ -278,23 +283,25 @@ const Carrinho = () => {
                               </ProdutoPagamento>
                               <ProdutoPreco>{dinheiro.format(Number(produto?.preco*produto?.quantidade))}</ProdutoPreco>
                           </PrecoDetalhes>
+                       
                       </Produto>
-                      
+                      <Hr/>
+                          </div>
                              ))}
-                              <Hr/>
+                            
                     
                   </Inf>
                   <Resumo>
                       <ResumoTitulo>Resumo</ResumoTitulo>
-                      <ResumoItem>
+                      <ResumoItem key={1}>
                           <ResumoItemText>Subtotal</ResumoItemText>
                           <ResumoItemText>{dinheiro.format(Number(carrinho.total))}</ResumoItemText>
                       </ResumoItem>
-                      <ResumoItem>
+                      <ResumoItem  key={2}>
                           <ResumoItemText>Desconto</ResumoItemText>
                           <ResumoItemText>Kz 0%</ResumoItemText>
                       </ResumoItem>
-                      <ResumoItem type="total">
+                      <ResumoItem  key={3} type="total">
                           <ResumoItemText>Total</ResumoItemText>
                           <ResumoItemText> {dinheiro.format(Number(carrinho.total))}</ResumoItemText>
                       </ResumoItem>

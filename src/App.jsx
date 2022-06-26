@@ -16,6 +16,8 @@ import Confirmar from './pages/ConfirmarEmail';
 import RecuperaEmail from './pages/recuperarPasseEmail';
 import RecuperaEmailFim from './pages/recuperarFim';
 import Pacotes from "./pages/pacotes/pacotes";
+import Historico from "./pages/user/Historico";
+import HistoricoPedidos from "./pages/user/HistoricoPedidos";
 import {
   BrowserRouter as Router, Route, Routes,Navigate
 } from "react-router-dom";
@@ -57,7 +59,9 @@ const  App = ()=> {
           <Route exact path="/servicos" element={<Servicos/>}/>
           <Route exact path="/recuperar/senha" element={<RecuperaEmail/>}/>
           <Route exact path="/recuperar/senha/mudar/:email" element={<RecuperaEmailFim/>}/>
-          <Route exact path="/perfilUser/:i/:cod"   element={ user ? <PerfilUser/> : <Navigate to ={`/login`}/> }/>
+          <Route exact path="/perfilUser/:i/:cod" element={ user ? <PerfilUser/> : <Navigate to ={`/login`}/> }/>
+          <Route exact path="/historico/:id" element={<Historico/>}/>
+          <Route exact path="/historico_pedidos/:id" element={<HistoricoPedidos/>}/>
           <Route exact path="/confirmar/:id" element={confirmarEmail === true|| result === null? <Navigate to ={'/login'}/> : <Confirmar/>}/>
           <Route exact path="/pacotes" element={<Pacotes/>} />
        

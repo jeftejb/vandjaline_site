@@ -29,6 +29,13 @@ color:${color};
 const Logo = styled.h1`
 size:20;
 font-size:15px;
+
+`
+
+const Img = styled.img`
+width:100px ;
+height:40px ;
+
 `
 
 const Desc = styled.p`
@@ -99,7 +106,8 @@ color:${color};
 font-size:12px ;
 `
 const Pagamento = styled.img`
-width: 30%;
+width:35px ;
+height:20px ;
 
 `
 
@@ -111,7 +119,7 @@ const Rodape = () => {
         
        <ContainerRodape>
            <Left>
-               <Logo>Vandjaline</Logo>
+               <Logo><Img alt="" src="image/logo.png"/></Logo>
                <Desc> O vandjaline  é um projeto criado com o intuito de facilitar a vida de fornecedores , revendedores  
             e compradores de produtos diversos tanto produtos digitais como produtos físicos</Desc>
 
@@ -147,7 +155,7 @@ const Rodape = () => {
                <Titulo>Contatos</Titulo>
                <ContatoItem><Phone/>+244 948 992 170</ContatoItem>
                <ContatoItem><MailOutline/>uservandja@gmail.com</ContatoItem>
-               <Pagamento src="/image/payment.png"/>
+               <Pagamento src="image/payment.jfif"/>
 
               
            </Right>

@@ -2,6 +2,7 @@ import "./widgetLg.css";
 import {useState, useEffect} from "react"
 import {userRequest} from "../../requesteMetodos"
 import { useLocation } from "react-router-dom";
+import DateObject from "react-date-object";
 
 
 export default function WidgetLg() {
@@ -28,7 +29,7 @@ export default function WidgetLg() {
 
     const eliminar = async ()=>{
       try{
-          const res = await userRequest.delete("fatura/"+id);
+          const res = await userRequest.delete("fatura/user/"+id);
            console.log(res);
       }catch{}
     }
@@ -37,6 +38,11 @@ export default function WidgetLg() {
 
   }
 
+  const data = (data)=>{
+
+    const ndata =  new DateObject(data);
+    return  ndata.format("DD/MM/YY hh:mm")
+  }
 
   return (
     <div className="widgetLg">
@@ -55,13 +61,18 @@ export default function WidgetLg() {
         <tr className="widgetLgTr" key={fatura?._id}>
           <td className="widgetLgUser">
             <img
-              src=""
+              src={fatura?.produtos[0].imagem_produto}
               alt=""
               className="widgetLgImg"
             />
-            <span className="widgetLgName">{fatura?.nomeUsuario}</span>
+           
           </td>
-          <td className="widgetLgDate">{fatura?.createdAt}</td>
+          <td className="widgetLgDate">{
+       
+        data(fatura?.createdAt)
+          
+          
+          }</td>
           <td className="widgetLgAmount">{Number(fatura?.motante).toFixed(2)}kz</td>
           <td className="widgetLgStatus">
           {fatura?.estatosPedido ?

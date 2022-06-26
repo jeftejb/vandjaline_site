@@ -1,7 +1,7 @@
 import React from 'react';
 import {useLocation } from "react-router-dom";
 import "./confirmarEmail/user.css";
-import {userRequest } from "./../requesteMetodos";
+import {publicRequest, userRequest } from "./../requesteMetodos";
 import Navbar from "./../components/Navbar";
 import Rodape from "./../components/Rodape";
 import { useDispatch } from 'react-redux';
@@ -19,7 +19,19 @@ const nadelClickTerminar = ()=>{
 
   
   const enviarEmail = async ()=>{
+
+    const dados = {pontos :100, produtosVendidos:0}
+    const inserir = async ()=>{
      await userRequest.put(`/users/${id_user}`, {confirmEmail:true})
+   
+   }
+     const actualizar = async ()=>{
+      await publicRequest.put(`/users/${id_user}`, dados) 
+    };
+     
+    inserir();
+    actualizar();
+   
   }
   enviarEmail().catch(console.error());
   

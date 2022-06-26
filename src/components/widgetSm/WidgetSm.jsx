@@ -1,7 +1,8 @@
 import "./widgetSm.css";
-import { DeleteOutline, Visibility } from "@material-ui/icons";
+import { DeleteOutline } from "@material-ui/icons";
 import { useEffect, useState } from "react";
 import { userRequest } from "../../requesteMetodos";
+import copy from "copy-to-clipboard"
 
 export default function WidgetSm() {
   const [pro, setUsers] = useState([])
@@ -29,6 +30,23 @@ export default function WidgetSm() {
    delitePro();
   }
 
+
+  const funcaoCopia= (dado)=>{
+    const copiar  = ()=>{
+      const url  = process.env.REACT_APP_SITE_LINK+dado
+      copy(url)
+    }
+      const aviso = ()=>{
+        alert("Link copiado com sucesso")
+      }
+    
+      copiar ();
+      aviso();
+      
+    
+    }
+
+
   return (
     <div className="widgetSm">
       <span className="widgetSmTitle">Produtos Afilhados</span>
@@ -51,18 +69,15 @@ export default function WidgetSm() {
           <div className="widgetSmUser">
             <span className="widgetSmUsername">ProV:{0}</span>
           </div>
-          <button className="widgetSmButton">
-            <Visibility className="widgetSmIcon" />
-            Display
-          </button>
+         
           <form>
           <button  onClick={()=> handelClickDelite(pro?._id)} className="widgetSmButton">
             <DeleteOutline className="widgetSmIcon" />
           </button>
           </form>
           </div>
-          Link : {process.env.REACT_APP_SITE_LINK}{pro?.url_pro}/{codigoInter}
-         
+         <span className="texto">Link : {}</span> 
+         <button onClick={()=> funcaoCopia(pro?.url_pro+"/"+codigoInter)}  >Obter link para partulhar</button>
         </li>
       
         ))}

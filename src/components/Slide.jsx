@@ -72,7 +72,7 @@ padding:  10px;
 flex: 1;
 `
 const Titulo = styled.h1`
-font-size: 50px;
+font-size: 30px;
 
 `
 const Descricao = styled.p`

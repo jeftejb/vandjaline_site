@@ -55,17 +55,14 @@ export const confirmarCodigo = async (user)=>{
 
 export const novoUsuario = async (usuario)=>{
   try{
-    const dados = {pontos :25, produtosVendidos:0}
+   
     if(usuario.id){
       const inserir = async ()=>{
         await publicRequest.post("/autenticacao/registro/usuario", usuario);
     };
-      const actualizar = async ()=>{
-        await publicRequest.put(`/users/${usuario.id}`, dados) 
-      };
+    
     inserir();
-    actualizar()
-     alert("Cadastro feito com sucesso!")
+     alert("Cadastro feito com sucesso!");
      refresh();
     }else{
         await publicRequest.post("/autenticacao/registro/usuario", usuario);
