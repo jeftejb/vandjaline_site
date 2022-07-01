@@ -411,8 +411,8 @@ else{
 
 <div className="confirEmail">
 <h1>Confirmar Email</h1>
- <span>Enviamos um email de confirmacao no seu email, caso nao receberes o email por favor clique no botao confirmar email obrigado.</span>
- <button onClick={()=>nadelClickEmail(dados?.email)}> Confirmar email </button>
+ <span>Enviamos um e-mail de confirmacao no seu e-mail, caso não tenhas recebido o e-mail por favor clique no botão confirmar e-mail obrigado.</span>
+ <button onClick={()=>nadelClickEmail(dados?.email)}> Confirmar e-mail </button>
  </div>
 
  </div>

@@ -528,6 +528,7 @@ const RegistroUsuario = () => {
                       A conta de usuário te permite efectuar pesquisa de preços, criar a sua lista de compras,  efectuar reservas e pagamento de produtos.<br/>
                       Os pagamentos são efectuados atraves da carteira virtual kamba <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App Kamba</a>  
                     </Agradecimento>
+                    <Imput type="text" disabled value={id_user? id_user :  0 } />
 
                     <Button disabled={loading} onClick ={handelClickUser} >CRIAR CONTA </Button> <ButtonCon> <Link style={{textDecoration:"none", color:"#fff", fontSize:"12px"}} to="/">VOLTAR A PAGINA INICIAL</Link> </ButtonCon>
                     </Form>
@@ -548,7 +549,7 @@ const RegistroUsuario = () => {
 
                     <DivRorm>
                      <TextLabel>Numero do BI/ NIF</TextLabel> 
-                    <Imput name="nifLoja" placeholder = "Numero de do BI" onChange={handelChangeEstabelecimento} required/>
+                    <Imput name="nifLoja" placeholder = "Numero de do BI/NIF" onChange={handelChangeEstabelecimento} required/>
                     </DivRorm>
                     
                     <DivRorm>
@@ -632,22 +633,31 @@ const RegistroUsuario = () => {
                         Venda de equipamentos Informaticos
                         </Option>
                         <Option value="Informatica_e_reparação">
-                        Venda de equipamentos Informaticos\reparção de computadores
+                        Venda de equipamentos Informaticos e reparção de computadores
                         </Option>
                         <Option value="Casa_de_peças_de_carros">
                         Casa de peças de automoveis 
                         </Option>
                         <Option value="Casa_de_peças_de_motos">
-                        Casa de peças de motos
+                        Casa de peças de motociclos
                         </Option>
                         <Option value="Farmacia">
-                        Farmacia 
+                        Farmácia 
                         </Option>
                         <Option value="Fast_food">
                         Fast-Food 
                         </Option>
                         <Option value="Restaurante">
                         Restaurante 
+                        </Option>
+                        <Option value="Confeitaria">
+                        Confeitaria
+                        </Option>
+                        <Option value="Padaria">
+                        Padaria
+                        </Option>
+                        <Option value="Geladaria">
+                        Geladaria
                         </Option>
                         <Option value="Livraria">
                         Livraria 
@@ -659,13 +669,34 @@ const RegistroUsuario = () => {
                         Venda de Calçados 
                         </Option>
                         <Option value="Butique">
-                        Butique 
+                        Boutique
                         </Option>
                         <Option value="Agricultura">
-                        Venda de inputes agricola
+                        Venda de inputs agrícola
                         </Option>
                         <Option value="Fazenda">
                         Fazenda
+                        </Option>
+                        <Option value="Avicultura">
+                        Avicultura
+                        </Option>
+                        <Option value="Suinocultura">
+                        Suinocultura
+                        </Option>
+                        <Option value="Caprinocultura">
+                        Caprinocultura 
+                        </Option>
+                        <Option value="Bovinocultura">
+                        Bovinocultura
+                        </Option>
+                        <Option value="Aquicultura">
+                        Aquicultura 
+                        </Option>
+                        <Option value="Apicultura">
+                        Apicultura
+                        </Option>
+                        <Option value="Floricultura">
+                        Floricultura
                         </Option>
                         <Option value="Prestacao_de_servicos">
                         prestação de serviços
@@ -689,7 +720,7 @@ const RegistroUsuario = () => {
                  
                   <DivRorm>
                      <TextLabel>Descrição</TextLabel> 
-                  <TextArea name="descricao" placeholder="Descrição do Estabelecimento" onChange={handelChangeEstabelecimento} required ></TextArea>
+                  <TextArea name="descricao" placeholder="Descrição do Estabelecimento/Empresa" onChange={handelChangeEstabelecimento} required ></TextArea>
                    </DivRorm>
 
                   <DivImagem>

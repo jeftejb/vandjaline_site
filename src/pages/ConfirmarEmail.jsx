@@ -6,6 +6,8 @@ import Navbar from "./../components/Navbar";
 import Rodape from "./../components/Rodape";
 import { useDispatch } from 'react-redux';
 import { logaut } from './../redux/userRedux'
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 
@@ -13,24 +15,42 @@ import { logaut } from './../redux/userRedux'
  const ConfirmarEmail = () => {
   const location = useLocation();
   const id_user = location?.pathname.split("/")[2];
+  const [dado , getDado]= useState()
   const dispach = useDispatch()
+
+  useEffect(()=>{
+    const getUser  = async ()=>{
+      const res = await publicRequest.get(`users/${id_user}`);
+      getDado(res.data) 
+    }
+    getUser()
+  },[id_user])
   
 const nadelClickTerminar = ()=>{
 
   
   const enviarEmail = async ()=>{
 
-    const dados = {pontos :100, produtosVendidos:0}
+    if(dado. idConvidado !==0 ){
+    const dados = {pontos :15, produtosVendidos:0}
     const inserir = async ()=>{
      await userRequest.put(`/users/${id_user}`, {confirmEmail:true})
    
    }
      const actualizar = async ()=>{
-      await publicRequest.put(`/users/${id_user}`, dados) 
+      await publicRequest.put(`/users/${idConvidado}`, dados) 
     };
-     
+  
     inserir();
     actualizar();
+  }else{
+
+    const inserir = async ()=>{
+      await userRequest.put(`/users/${id_user}`, {confirmEmail:true})
+    }
+    inserir();
+
+  }
    
   }
   enviarEmail().catch(console.error());

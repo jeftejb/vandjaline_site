@@ -136,7 +136,7 @@ export default function Sobre() {
               
             <b>Convida seus amigos para se inscreverem no site e seja remunerado !</b><p/><br/>
 
-            É isso mesmo você pode ganhar dinheiro so por convidar outras pessoas para se inscreverem no site, basta partilhares o seu link, só precisas clicar no botão "convidar amigos" que esta no teu perfil de usuário e enviar o seu link para um amigo ou partilhares em uma rede social e receberas 25 kz como valor inicial por cada pessoa que se inscrever através do seu link.  
+            É isso mesmo você pode ganhar dinheiro so por convidar outras pessoas para se inscreverem no site, basta partilhares o seu link, só precisas clicar no botão "convidar amigos" que esta no teu perfil de usuário e enviar o seu link para um amigo ou partilhares em uma rede social e receberas 15 kz como valor inicial por cada pessoa que se inscrever através do seu link.<p/> <br/>
 
             <b>Como solicitar um pagamento ?</b><p/><br/>
 
