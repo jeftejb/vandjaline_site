@@ -528,7 +528,7 @@ const RegistroUsuario = () => {
                       A conta de usuário te permite efectuar pesquisa de preços, criar a sua lista de compras,  efectuar reservas e pagamento de produtos.<br/>
                       Os pagamentos são efectuados atraves da carteira virtual kamba <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App Kamba</a>  
                     </Agradecimento>
-                    <Imput type="text" disabled value={id_user? id_user :  0 } />
+                    <Imput type="text" name="idConvidado" disabled value={id_user? id_user :  0 } />
 
                     <Button disabled={loading} onClick ={handelClickUser} >CRIAR CONTA </Button> <ButtonCon> <Link style={{textDecoration:"none", color:"#fff", fontSize:"12px"}} to="/">VOLTAR A PAGINA INICIAL</Link> </ButtonCon>
                     </Form>
