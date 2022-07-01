@@ -31,14 +31,14 @@ const nadelClickTerminar = ()=>{
   
   const enviarEmail = async ()=>{
 
-    if(dado. idConvidado !==0 ){
+    if(dado?.idConvidado !==0 ){
     const dados = {pontos :15, produtosVendidos:0}
     const inserir = async ()=>{
      await userRequest.put(`/users/${id_user}`, {confirmEmail:true})
    
    }
      const actualizar = async ()=>{
-      await publicRequest.put(`/users/${idConvidado}`, dados) 
+      await publicRequest.put(`/users/${dado?.idConvidado}`, dados) 
     };
   
     inserir();
