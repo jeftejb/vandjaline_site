@@ -152,7 +152,7 @@ const Navbar = () => {
                <Link className='textNav' to ="/registro/:"> <MenuItem>Cadastro</MenuItem> </Link>
            {currentUser? <MenuItem> <Link className='textNav' to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
                {currentUserD?.confirmado===true? `${currentUserD.nomeUsuario}(V:${currentUserD?.pontos}Akz)` : currentUserD.nomeUsuario }</Link></MenuItem>
-           :<> <Link className='textNav' to ="/login"> <MenuItemFi>Entrar</MenuItemFi></Link>
+           :<> <Link className='textNav' to ="/login"> <MenuItemFi>Login</MenuItemFi></Link>
            <Link className='textNav' to ="/pacotes"> <MenuItem>Planos</MenuItem></Link>
            </>
            }

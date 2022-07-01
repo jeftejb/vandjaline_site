@@ -138,6 +138,7 @@ const nadelClickEmail = (dados)=>{
   const enviarEmail = async ()=>{
    await publicRequest.post(`/autenticacao/email/confirmacao`, email)
     //confirmarEmailCadastro(email);
+    alert("E-mail enviado com sucesso!!")
 
   }
   enviarEmail().catch(console.error());
