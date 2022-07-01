@@ -181,7 +181,7 @@ const Navbar = () => {
             <Link className='textNav' to="/sobre"><MenuItem>Sobre</MenuItem></Link>
             {currentUser? <MenuItem> <Link to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
                 {currentUserD?.confirmado===true? `${currentUserD.nomeUsuario}(V:${currentUserD?.pontos}Akz)` : currentUserD.nomeUsuario }</Link></MenuItem>
-            : <Link className='textNav' to ="/login"> <MenuItem>Entrar</MenuItem></Link>
+            : <Link className='textNav' to ="/login"> <MenuItem>Login</MenuItem></Link>
             }
                 
                 <Link className='textNav' to="/carrinho">
