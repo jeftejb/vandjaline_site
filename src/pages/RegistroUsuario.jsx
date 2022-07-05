@@ -189,7 +189,6 @@ const RegistroUsuario = () => {
    const id_user = location?.pathname.split("/")[2] ;
    const [loading ,setLoading] = useState();
 
-   const idConvidado  = id_user? id_user :  0 ;
 
  
 
@@ -260,7 +259,7 @@ const RegistroUsuario = () => {
         }else{ 
           setLoading(true)
           try {
-            const usuario = id_user !== ":" ? {...inputUser, id:id_user, imagem: imagem, idConvidado:idConvidado} : {...inputUser, imagem:imagem, idConvidado:idConvidado};
+            const usuario = id_user !== ":" ? {...inputUser, id:id_user, imagem:imagem} : {...inputUser, imagem:imagem, id:0};
            await novoUsuario(usuario)
            setLoading(false)
         }catch{
