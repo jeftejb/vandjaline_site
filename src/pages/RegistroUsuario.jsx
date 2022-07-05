@@ -647,6 +647,9 @@ const RegistroUsuario = () => {
                         <Option value="Fast_food">
                         Fast-Food 
                         </Option>
+                        <Option value="Hotelaria_e_turismo">
+                       Hotelaria e turismo
+                        </Option>
                         <Option value="Restaurante">
                         Restaurante 
                         </Option>
