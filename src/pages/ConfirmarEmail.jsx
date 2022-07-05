@@ -38,7 +38,7 @@ const nadelClickTerminar = ()=>{
    
    }
      const actualizar = async ()=>{
-      await publicRequest.put(`/users/${dado?.idConvidado}`, dados) 
+      await publicRequest.put(`/users/${dado?.convidado}`, dados) 
     };
   
     inserir();
