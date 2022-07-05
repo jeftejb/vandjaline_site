@@ -107,12 +107,15 @@ const handelChangePagamento = (e)=>{
 
 const handelClikPagamento = (e)=>{
   e.preventDefault();
+  if(pagamento){
+  
 if(Number(pagamento.valor) <= Number(dados?.pontos)){
   const dadosIn= {id_usuario:dados?._id ,nomeUsuario:dados?.nomeCompleto, valor:pagamento?.valor, iban:dados?.iban, kamba:dados?.kamba, telefone:dados?.numeroTelefone}
  const soliPagamento = async ()=>{
     try{
          await publicRequest.post("/pagamentos/", dadosIn)
     }catch{}
+  
   }
 
   const notifica = ()=>{
@@ -126,8 +129,11 @@ if(Number(pagamento.valor) <= Number(dados?.pontos)){
  notifica()
  refress()
 }else{
-  alert("Solicitacao invalida nao tem dinheiro suficiente")
+  alert("Solicitacao invalida não tem dinheiro suficiente")
 }
+  }else{
+    alert("Solicitacao invalida por favor selecione o valor que pretendes carregar!")
+  }
 
 }
 
@@ -161,9 +167,8 @@ const nadelClickEmail = ()=>{
 */
 
 
-const funcaoCopiar = ()=>{
+const funcaoCopiar = (url)=>{
 const copiar  = ()=>{
-  const url  = process.env.REACT_APP_SITE_LINK+"registro/"+id_user
   copy(url)
 }
   const aviso = ()=>{
@@ -282,7 +287,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
             </div>
             
             <div className="userShowInfo">
-            <h5 className="linkDePartilha"><button onClick={funcaoCopiar}>Convidar Amigos</button>
+            <h5 className="linkDePartilha"><button onClick={()=>funcaoCopiar(`${process.env.REACT_APP_SITE_LINK}registro/${id_user}`)}>Convidar Amigos</button>
              <p>Para poder partihlar o link por favor primerio active a opção de intermediario para seres remunerado </p>
              </h5> 
            </div>
