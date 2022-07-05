@@ -163,7 +163,7 @@ const nadelClickEmail = ()=>{
 
 const funcaoCopiar = ()=>{
 const copiar  = ()=>{
-  const url  = process.env.REACT_APP_SITE_LINK+"/registro/"+id_user
+  const url  = process.env.REACT_APP_SITE_LINK+"registro/"+id_user
   copy(url)
 }
   const aviso = ()=>{

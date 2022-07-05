@@ -187,8 +187,9 @@ const RegistroUsuario = () => {
     const [progress ,  getProgress] = useState(0)
     const [file, setFile] = useState(null)
    const id_user = location?.pathname.split("/")[2] ;
+   const [loading ,setLoading] = useState();
 
-   const [loading ,setLoading] = useState()
+   const idConvidado  = id_user? id_user :  0 ;
 
  
 
@@ -259,7 +260,7 @@ const RegistroUsuario = () => {
         }else{ 
           setLoading(true)
           try {
-            const usuario = id_user !== ":" ? {...inputUser, id:id_user, imagem: imagem} :  {...inputUser, imagem:imagem};
+            const usuario = id_user !== ":" ? {...inputUser, id:id_user, imagem: imagem, idConvidado:idConvidado} : {...inputUser, imagem:imagem, idConvidado:idConvidado};
            await novoUsuario(usuario)
            setLoading(false)
         }catch{
@@ -528,7 +529,7 @@ const RegistroUsuario = () => {
                       A conta de usuário te permite efectuar pesquisa de preços, criar a sua lista de compras,  efectuar reservas e pagamento de produtos.<br/>
                       Os pagamentos são efectuados atraves da carteira virtual kamba <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App Kamba</a>  
                     </Agradecimento>
-                    <Imput type="hidden" name="idConvidado" disabled value={id_user? id_user :  0 } />
+                   
 
                     <Button disabled={loading} onClick ={handelClickUser} >CRIAR CONTA </Button> <ButtonCon> <Link style={{textDecoration:"none", color:"#fff", fontSize:"12px"}} to="/">VOLTAR A PAGINA INICIAL</Link> </ButtonCon>
                     </Form>
