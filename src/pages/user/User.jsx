@@ -141,13 +141,24 @@ if(Number(pagamento.valor) <= Number(dados?.pontos)){
 const nadelClickEmail = (dados)=>{
   const email ={email: dados , id:id_user}
   
-  const enviarEmail = async ()=>{
-   await publicRequest.post(`/autenticacao/email/confirmacao`, email)
-    //confirmarEmailCadastro(email);
+  try{
+    const enviarEmail = async ()=>{
+      await publicRequest.post(`/autenticacao/email/confirmacao`, email)
+       //confirmarEmailCadastro(email);
+   
+     }
 
-  }
-  enviarEmail().catch(console.error());
-  alert("E-mail enviado com sucesso!!")
+     const alerta = ()=>{
+      alert("E-mail enviado com sucesso!!")
+     }
+
+     enviarEmail();
+     alerta();
+
+  }catch{  alert("Não foi possivel enviar o email por favor tente mais tarde")}
+ 
+
+ 
 
 }
 
