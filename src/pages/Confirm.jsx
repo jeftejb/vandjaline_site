@@ -74,25 +74,27 @@ const Confirm = () => {
        
     const handleClickReq = (e)=>{
         e.preventDefault()
+        const alerta = ()=>{
+            alert("Codigo enviado com sucesso ! Por favor verifique a sua caixa de E-mail para obter seu codigo!")
+        }
         const updateCod = async ()=>{
             const max = 1000000
         const  min = 50000
         const codigoConfirm = Math.floor(Math.random() * (max - min) + min)
         const dado = {email:email, conteudo:codigoConfirm}
-        const alerta = ()=>{
-            alert("Codigo enviado com sucesso ! Por favor verifique a sua caixa de E-mail para obter seu codigo!")
-        }
+     
            
          try {
             await userRequest.put(`/users/${id}`, {codigoConfirm: dado.conteudo})
              await publicRequest.post("/autenticacao/email", dado)
 
-           alerta()
+             alerta()
          }catch(erro){
              console.log(erro)
          }
          }
         updateCod()
+     
     }
     
     
