@@ -27,8 +27,8 @@ ${mobile({ width: "75%" })}
 `
 
 const Titulo  = styled.h1`
-font-size: 24px;
-font-weight: 600;
+font-size: 15px;
+font-weight: 400;
 `
 
 const Form  = styled.form`
@@ -79,11 +79,15 @@ const Confirm = () => {
         const  min = 50000
         const codigoConfirm = Math.floor(Math.random() * (max - min) + min)
         const dado = {email:email, conteudo:codigoConfirm}
+        const alerta = ()=>{
+            alert("Codigo enviado com sucesso ! Por favor verifique a sua caixa de E-mail para obter seu codigo!")
+        }
            
          try {
             await userRequest.put(`/users/${id}`, {codigoConfirm: dado.conteudo})
              await publicRequest.post("/autenticacao/email", dado)
 
+           alerta()
          }catch(erro){
              console.log(erro)
          }
@@ -97,8 +101,13 @@ const Confirm = () => {
         const alerta = ()=>{
             alert("Confirmação feita com sucesso !")
         }
+        if(confirm_codigo){
         confirmarCodigo({confirm_codigo, id})
         alerta()
+        }
+        else{
+            alert("Codigo invalido por favor coloque um codigo valido!")
+        }
        
     }
 

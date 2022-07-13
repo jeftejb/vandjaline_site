@@ -233,8 +233,8 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
             </div>
             <div className="userShowInfo">
               <LocationSearching className="userShowIcon" />
-              <span className="userShowInfoTitle">Intermediario : {dados?.intermediario}</span>
-              <span className="userShowUserTitle">{dados?.intermediario === 'Pendente' && dados?.confirmado !== true? <Link to="/confirm">confirmar</Link>:""}</span>
+              <span className="userShowInfoTitle">Intermediario :</span>
+              <span className="userShowUserTitle">{dados?.intermediario === 'Pendente' && dados?.confirmado !== true? <Link to="/confirm">confirmar</Link>:dados?.intermediario}</span>
               
             </div>
             <div className="userShowInfo">
