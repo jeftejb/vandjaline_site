@@ -83,9 +83,9 @@ const ListaDeProdutos = () => {
             <FilterContainer>
                 <Filter><FilterText>Filtrar Produtos:</FilterText> 
                 <Select name = "categoria" onChange={handleFilters}>
-                    {categoria?.map((item, i)=>{
+                    {categoria?.map((item, i)=>(
                      <Option key={i} >{item?.nomeCat}</Option>
-                    })}
+                    ))}
                 </Select>
                
                 </Filter>

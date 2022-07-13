@@ -47,7 +47,7 @@ const  App = ()=> {
           <Route exact path="/produtos" element={<ListaDeProdutos/>}/>
           <Route exact path="/estabelecimentos" element={<Estabelecimentos/>}/>
           <Route exact path="/carrinho" element={<Carrinho/>}/>
-          <Route exact path="/confirm" element={confirm === true  ? <Navigate to ={"/perfilUser"}/>  :<Confirm/>}/>
+          <Route exact path="/confirm" element={confirm === true  ? <Navigate to ={"/"}/>  :<Confirm/>}/>
           <Route exact path="/login" element = {user ? <Navigate to ={`/perfilUser/${user?._id}/${user?.codigoInter}`}/> : <Login/>}/>
           <Route exact path="/registro/:id" element={<RegistroUsuario/>}/>
           <Route exact path="/produtos/:categoria" element={<ListaDeProdutos/>}/>

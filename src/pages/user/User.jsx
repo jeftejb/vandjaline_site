@@ -11,7 +11,7 @@ import "./user.css";
 import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import { useEffect, useState } from "react";
-import { publicRequest } from "./../../requesteMetodos";
+import { publicRequest, userRequest } from "./../../requesteMetodos";
 import { updateUsuario } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
 import Navbar from "../../components/Navbar";
@@ -32,6 +32,7 @@ const  User = ()=> {
   const [updateDados , getUpdateDados] = useState();
   const [dadosInter , getDadosInter] = useState();
   const [pagamento, getPagamento] = useState();
+  const [pagamentoDados, getPagamentoDados] = useState([]);
   const imagem = "https://firebasestorage.googleapis.com/v0/b/vandja-6d839.appspot.com/o/avatar%2Fkindpng_786207.png?alt=media&token=a59d158e-d6b7-459c-b760-002177d9f886"
 
 dotenv.config();  
@@ -42,7 +43,12 @@ dotenv.config();
       const result =  await publicRequest.get("/users/"+id_user)
      setUser(result.data)
     }
+    const getUserPagamentos = async ()=>{
+      const result =  await userRequest.get("/pagamentos/data/"+id_user)
+      getPagamentoDados(result.data)
+    }
     getUser()
+    getUserPagamentos()
  
   }, [id_user])
  
@@ -79,9 +85,8 @@ getDadosInter((prev)=>{
       updateUsuario( dadosInterFinal, id_user)
   
     }else{
-      console.log("voce ja e um intermediario")
-      console.log( dadosInterFinal)
-      console.log(dados?.codigoInter)
+      alert("voce ja e um intermediario")
+    
     }
 
   }else{alert("precisa de Preencher os dados")}
@@ -105,9 +110,19 @@ const handelChangePagamento = (e)=>{
   })
 }
 
+      
 const handelClikPagamento = (e)=>{
   e.preventDefault();
+
+  const dataHoje = new Date();
+  const diaHoje = Number(dataHoje.getDate())
+  const data  = pagamentoDados[0]?.createdAt.split("-")[2]
+  const dataActual = Number(data?.split("T")[0])
+         
+  if(diaHoje !== dataActual){
   if(pagamento){
+
+  
   
 if(Number(pagamento.valor) <= Number(dados?.pontos)){
   const dadosIn= {id_usuario:dados?._id ,nomeUsuario:dados?.nomeCompleto, valor:pagamento?.valor, iban:dados?.iban, kamba:dados?.kamba, telefone:dados?.numeroTelefone}
@@ -128,12 +143,16 @@ if(Number(pagamento.valor) <= Number(dados?.pontos)){
  soliPagamento()
  notifica()
  refress()
+
 }else{
   alert("Solicitacao invalida não tem dinheiro suficiente")
 }
+
   }else{
     alert("Solicitacao invalida por favor selecione o valor que pretendes carregar!")
   }
+}else{alert("Atingiu o limite de saque de hoje!")
+}
 
 }
 

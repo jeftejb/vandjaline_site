@@ -88,13 +88,13 @@ const Confirm = () => {
             await userRequest.put(`/users/${id}`, {codigoConfirm: dado.conteudo})
              await publicRequest.post("/autenticacao/email", dado)
 
-             alerta()
+       
          }catch(erro){
              console.log(erro)
          }
          }
         updateCod()
-     
+        alerta()
     }
     
     
@@ -129,6 +129,7 @@ const Confirm = () => {
                     <Button onClick = {handleClickReq}  >Requisitar codigo</Button>
                    
                     </Form>
+                    <span>Caso haver algum problema no envio do seu codigo, entre em contacto com a nossa equipe: uservandja@gmail.com </span>
             </Wrapper>
 
             
