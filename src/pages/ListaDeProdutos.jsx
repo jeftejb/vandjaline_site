@@ -81,7 +81,7 @@ const ListaDeProdutos = () => {
             <Titulo> {cat?cat : "Produtos"}</Titulo>
 
             <FilterContainer>
-                <Filter><FilterText>Filtrar Produtos:</FilterText> 
+                <Filter><FilterText>Categoria:</FilterText> 
                 <Select name = "categoria" onChange={handleFilters}>
                     {categoria?.map((item, i)=>(
                      <Option key={i} >{item?.nomeCat}</Option>
@@ -89,13 +89,15 @@ const ListaDeProdutos = () => {
                 </Select>
                
                 </Filter>
-                <Filter>
+                <Filter>{/*
                     <FilterText>Produtos Novos:</FilterText>
                     <Select onChange={(e)=>setSort(e.target.value)}>
                     <Option value = "news" >Selecionado</Option>
                     <Option value = "asc"  >Preço (asc)</Option>
                     <Option value = "desc"  >Preço (desc)</Option>
                     </Select>
+                    */}
+                    
                 </Filter>
             </FilterContainer>
             <Produtos cat = {cat} filters = {filters} sort = {sort} />
