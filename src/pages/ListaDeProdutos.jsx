@@ -89,14 +89,14 @@ const ListaDeProdutos = () => {
                 </Select>
                
                 </Filter>
-                <Filter>{/*
+                <Filter>
                     <FilterText>Produtos Novos:</FilterText>
                     <Select onChange={(e)=>setSort(e.target.value)}>
                     <Option value = "news" >Selecionado</Option>
                     <Option value = "asc"  >Preço (asc)</Option>
                     <Option value = "desc"  >Preço (desc)</Option>
                     </Select>
-                    */}
+                    
                     
                 </Filter>
             </FilterContainer>

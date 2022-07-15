@@ -153,6 +153,7 @@ const Rodape = () => {
                <Titulo>Contatos</Titulo>
                <ContatoItem><Phone/>+244 948 992 170</ContatoItem>
                <ContatoItem><MailOutline/>uservandja@gmail.com</ContatoItem>
+               <Titulo>Metodos de pagamento</Titulo>
                <Pagamento src="image/payment.jfif"/>
 
               

@@ -15,7 +15,7 @@ import { useLocation } from 'react-router';
   const [input, setInput] = useState();
   const [confirm, setConfirm] = useState();
    const email  = location.pathname.split("/")[4];
- console.log(email)
+
   const handelPass = (e)=>{
 
     setInput((prev)=>{
@@ -51,9 +51,11 @@ const dados = {...input , email : email}
 <div className="confirEmail">
 <h1>Recuperar Palavra Passe !</h1>
  <span>Por favor insere seu email.</span>
- <input type="password" name="password" id="" placeholder='Nova Palavra passe' onChange={handelPass}/>
- <input type="password" name="senhaConfirm" id="" placeholder='Confirmar palavra passe' onChange={handelPassConfirm}/>
+ <form action="">
+ <input type="password" name="password" placeholder='Nova Palavra passe' onChange={handelPass}/>
+ <input type="password" name="senhaConfirm"  placeholder='Confirmar palavra passe' onChange={handelPassConfirm}/>
  <button onClick={nadelClickTerminar} >Mudar</button>
+ </form>
  </div>
 
     </div>
