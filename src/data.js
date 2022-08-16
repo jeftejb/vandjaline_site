@@ -181,44 +181,47 @@ dotenv.config();
 */
 
 export const sliderItemns = [
+    {
+        id:6, 
+        img:"/image/baner-4.png", 
+        titulo:"Vandjaline - Crie a sua loja virtual grátis", 
+        desc: "Para de perseguir o dinheiro e comece a perseguir o sucesso. Tony Hsieh",
+        bg:""
+    },
         {
             id:1, 
             img:"/image/baner-1.png", 
-            titulo:"Vandjaline", 
+            titulo:"Vandjaline - Pesquisa de preços para Produtos ou Serviços", 
             desc: "Pare de sonhar com o sucesso, com dinheiro e realizações o tempo esta passando ninguém quer saber dos teus sonhos! Comesse a materializa-los lute por eles e comesse hoje !! ",
             bg:""
         }, 
+        
         {
             id:2, 
-            img:"/image/baner-2.png", 
-            titulo:"Vandjaline", 
+            img:"/image/baner-7.jpg", 
+            titulo:"Vandjaline - Crie a sua lista de compras que te ajudará a organizar melhor as compras", 
             desc: "Todos os seus sonhos podem se tornar realidade se você tem coragem para persegui-los. Walt Disney",
             bg:""
         }, 
         {
             id:3, 
-            img:"/image/baner-3.png", 
-            titulo:"Vandjaline", 
-            desc: "Comece de onde você está. Use o que você tiver. Faça o que você puder. Arthur Ashe",
+            img:"/image/baner-2.png", 
+            titulo:"Vandjaline - Encontre e compare os preços dos principais produtos e serviços sem sair do conforto de sua casa ", 
+            desc: "Todos os seus sonhos podem se tornar realidade se você tem coragem para persegui-los. Walt Disney",
             bg:""
         }, 
+       
         {
-            id:4, 
+            id:5, 
             img:"/image/baner-4.png", 
-            titulo:"Vandjaline", 
+            titulo:"Vandjaline - Faça reserva dos seus produtos preferidos atens que eles terminem ", 
             desc: "Seja você mesmo independente  mente das dificuldade que estiveres a passar nunca perca o sua identidade.",
             bg:""
         },
-        {
-            id:5, 
-            img:"/image/baner-5.png", 
-            titulo:"Vandjaline", 
-            desc: "Para de perseguir o dinheiro e comece a perseguir o sucesso. Tony Hsieh",
-            bg:""
-        },{
-            id:6, 
+       {
+            id:7, 
             img:"/image/baner-6.png", 
-            titulo:"Vandjaline", 
+            titulo:"Vandjaline - Venda, compre e poupe dinheiro com a vandjaline", 
             desc: "Se você quiser crescer, terá que fazer algo diferente do que a maioria das outras pessoas está fazendo. Lakshmi Mittal",
             bg:""
         }

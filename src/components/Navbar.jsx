@@ -85,7 +85,13 @@ font-size: 14px;
 cursor: pointer;
 margin-left: 15px;
 margin-bottom: 15px;
+font-weight: bold;
+text-transform: uppercase;
 ${mobile({ fontSize: "12px" , marginLeft:"8px" })}
+
+:hover{
+    color:orange ;
+}
 
 `
 

@@ -13,7 +13,7 @@ import "./style.css"
 
 const Container = styled.div`
 width: 100%;
-height: 100vh;
+height: 50vh;
 display: flex;
 position: relative;
 overflow: hidden;
@@ -55,15 +55,16 @@ align-items: center;
 background-color: "";
 `
 const ImgContainer = styled.div`
-height: 100%;
+height: 50%;
 flex: 1;
 opacity:8;
 
 `
 const Image = styled.img`
-margin-top:250px ;
-width: 50%;
-height: 412px ;
+margin-top:80px ;
+margin-left:15px ;
+width: 40%;
+height: 312px ;
 `
 const InfoContainer = styled.div`
 position: absolute ;

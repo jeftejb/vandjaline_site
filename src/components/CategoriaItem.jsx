@@ -7,12 +7,14 @@ import {Link} from "react-router-dom"
 const Container = styled.div`
 flex: 1;
 margin: 5px;
-min-width: 350px;
-height: 215px;
+min-width: 320px;
+height: 200px;
+margin-bottom: 25px ;
 position: relative;
 outline:1px solid black;
 outline-offset: -1rem;
 border-radius: 3%;
+
 background-color: #ffffffc3;
 align-items: center;
 justify-content: center;
@@ -25,10 +27,10 @@ text-align:center;
 `
 const Img = styled.img`
   width: 100%;
-  height: 215px;
+  height: 200px;
 border-radius:3%;
 object-fit: cover;
-${mobile({ height: "220px" })}
+${mobile({ height: "200px" })}
 `
 const Info = styled.div`
 position: absolute;

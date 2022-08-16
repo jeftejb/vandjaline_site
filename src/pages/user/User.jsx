@@ -74,7 +74,9 @@ getDadosInter((prev)=>{
   }
 
   const handelIntermediario = ()=>{
-  
+    alert("Este serviço encontra-se em construção, dentro em breve estará disponivel")
+    
+  /*
     const max = 1000000
     const  min = 50000
     const codigoInter = Math.floor(Math.random() * (max - min) + min)
@@ -90,14 +92,19 @@ getDadosInter((prev)=>{
     }
 
   }else{alert("precisa de Preencher os dados")}
-
+*/
   }
 
  
   
   
   const SairUs = ()=>{
-    dispatch(logaut())
+    if (window.confirm("Deseja sair de sua conta ?") === true) {
+      dispatch(logaut())
+    } else {
+     
+    }
+
 
 }
 
@@ -359,6 +366,16 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
                   placeholder={dados?.endereco}
                   className="userUpdateInput"
                   name="endereco"
+                  onChange={handelChange}
+                />
+              </div>
+              <div className="userUpdateItem">
+                <label>BI</label>
+                <input
+                  type="text"
+                  placeholder={dados?.bi}
+                  className="userUpdateInput"
+                  name="bi"
                   onChange={handelChange}
                 />
               </div>
