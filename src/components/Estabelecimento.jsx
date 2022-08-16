@@ -70,7 +70,7 @@ const  Estabelecimento = ({item}) => {
     return (
         <Container>
            <ContainerImage>
-                <Image src={item.img}/>
+                <Image src={item?.imagem}/>
            </ContainerImage>
            <Info>
                <Nome>{item.nomeLoja}</Nome>
