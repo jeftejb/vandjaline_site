@@ -1,3 +1,4 @@
+import React from 'react'
 import {mobile, tablet} from "../responsive"
 import styled from "styled-components"
 import { Link, useLocation } from "react-router-dom"
@@ -10,6 +11,8 @@ import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/
 import app from "./../firebase";
 import "./../components/style.css"
 import { CircularProgress } from "@material-ui/core"
+import ReactPlayer from 'react-player'
+
 
 
 
@@ -170,6 +173,16 @@ display:flex ;
 width: 50% ;
 ${mobile({ width: "100%" })}
 ${tablet({ width: "100%" })}
+`
+
+const PlayerWrapper = styled.div`
+margin: 15px;
+padding: 25px ;
+`
+
+const PlayerWrapperContainer = styled.div`
+margin: 15px;
+padding: 25px ;
 `
 
 const RegistroUsuario = () => {
@@ -748,7 +761,22 @@ const RegistroUsuario = () => {
                     </Form>
             </Wrapper>
 
-            
+
+<PlayerWrapperContainer>
+
+            <PlayerWrapper>
+        <ReactPlayer
+          className='react-player'
+          url='https://youtu.be/OrIQs4WQP4g'
+          width='100%'
+          height='100%'
+        />
+        <span>Como cadastrar o meu estabelecimento</span>
+      </PlayerWrapper>
+
+      </PlayerWrapperContainer>
+
+
         </Container>
 
 <Rodape/>
