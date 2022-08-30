@@ -74,9 +74,9 @@ getDadosInter((prev)=>{
   }
 
   const handelIntermediario = ()=>{
-    alert("Este serviço encontra-se em construção, dentro em breve estará disponivel")
     
-  /*
+    
+  
     const max = 1000000
     const  min = 50000
     const codigoInter = Math.floor(Math.random() * (max - min) + min)
@@ -92,7 +92,7 @@ getDadosInter((prev)=>{
     }
 
   }else{alert("precisa de Preencher os dados")}
-*/
+
   }
 
  
@@ -152,11 +152,11 @@ if(Number(pagamento.valor) <= Number(dados?.pontos)){
  refress()
 
 }else{
-  alert("Solicitacao invalida não tem dinheiro suficiente")
+  alert("Solicitação invalida não tem dinheiro suficiente")
 }
 
   }else{
-    alert("Solicitacao invalida por favor selecione o valor que pretendes carregar!")
+    alert("Solicitação invalida por favor selecione o valor que pretendes retirar!")
   }
 }else{alert("Atingiu o limite de saque de hoje!")
 }
@@ -294,7 +294,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
                  <option value={75} >75 Akz</option>
                  <option value={250} >250 Akz</option>
                  <option value={500} >500 Akz</option>
-                 <option value={1000} >1000 Akz</option>
+              
                   </select> <p>
                 <button onClick={handelClikPagamento} >Solicitar</button>
                 </p>
