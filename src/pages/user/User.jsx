@@ -83,7 +83,7 @@ getDadosInter((prev)=>{
     const dadosInterFinal = {...dadosInter, codigoInter:codigoInter, confirmado:false}
  
    if( dadosInter!== undefined ){
-    if(dados?.intermediario !== "Pendente" && dados?.intermediario !== "Aceite"){
+    if(dados?.intermediario !== "Pendente" && dados?.intermediario !== "Confirmado" ){
       updateUsuario( dadosInterFinal, id_user)
   
     }else{
@@ -413,7 +413,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
               
             </div>
           </form>
-          {dados?.intermediario !== "Pendente" && dados?.intermediario !== "Aceite" && dados?.intermediario !== " Confirmado"?
+          {dados?.intermediario !== "Pendente" && dados?.intermediario !== "Confirmado"?
           <>
           <form className="userUpdateRight">
               <label htmlFor="file">
