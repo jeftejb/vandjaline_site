@@ -284,17 +284,16 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
             </div> 
             }
             {dados?.confirmado !== false && <div className="userShowInfo">
-              <span className="userShowInfoTitle">Valor Actual :{dados?.pontos < 0 ? dinheiro.format(0) : dinheiro.format(Number(dados?.pontos))}Kz
+              <span className="userShowInfoTitle">Valor Actual :{dados?.pontos <= 0 ? dinheiro.format(0) : dinheiro.format(Number(dados?.pontos))}
               <form action="">
               { dados?.pontos >= 10 ?
               <>
                   <select name="valor" onChange={handelChangePagamento}>
                   <option >Retirar</option>
-                  <option value={15} >15 Akz</option>
-                 <option value={75} >75 Akz</option>
+                  <option value={50} >50 Akz</option>
+                 <option value={100} >100 Akz</option>
                  <option value={250} >250 Akz</option>
-                 <option value={500} >500 Akz</option>
-              
+                
                   </select> <p>
                 <button onClick={handelClikPagamento} >Solicitar</button>
                 </p>
@@ -414,7 +413,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
               
             </div>
           </form>
-          {dados?.intermediario !== "Pendente" && dados?.intermediario !== "Aceite" ?
+          {dados?.intermediario !== "Pendente" && dados?.intermediario !== "Aceite" && dados?.intermediario !== " Confirmado"?
           <>
           <form className="userUpdateRight">
               <label htmlFor="file">
