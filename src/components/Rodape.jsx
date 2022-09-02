@@ -117,7 +117,7 @@ const Rodape = () => {
         <div>
        <ContainerRodape>
            <Left>
-               <Logo><Img alt="" src="image/logo.png"/></Logo>
+               <Logo><Img  src="image/logo.png"/></Logo>
                <Desc> O vandjaline  é um projeto criado com o intuito de facilitar a vida de fornecedores , revendedores  
             e compradores de produtos diversos tanto produtos digitais como produtos físicos</Desc>
 
