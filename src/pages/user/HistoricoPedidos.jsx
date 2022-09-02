@@ -52,7 +52,7 @@ const data = (data)=>{
             <tr>
                 <th>Produto</th>
                 <th>Data</th>
-                <th>Valo</th>
+                <th>Valor</th>
                 <th>Stato</th>
             </tr>
           </thead>

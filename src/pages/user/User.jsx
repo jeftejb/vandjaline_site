@@ -272,12 +272,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
               <span className="userShowInfoTitle">{dados?.sexo}</span>
             </div>
 
-            <div className="userShowInfo">
-            <label htmlFor="" className="userShowIcon">Link de pagamento: </label>
-              <span className="userShowInfoTitle">{dados?.kamba}</span>
-            </div>
-
-           
+            
            
              {dados?.confirmado !== false && <div className="userShowInfo">
               <span className="userShowInfoTitle">Produtos vendidos :{dados?.produtosVendidos}</span>
