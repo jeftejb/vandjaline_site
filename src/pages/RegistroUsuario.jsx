@@ -182,7 +182,6 @@ padding: 25px ;
 
 const PlayerWrapperContainer = styled.div`
 display: flex;
-flex-direction:column;
 margin: 15px;
 padding: 25px ;
 flex-wrap:wrap;
