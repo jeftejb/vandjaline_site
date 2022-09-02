@@ -380,13 +380,13 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
               </div>
 
               <div className="userUpdateItem">
-                <label>Link de Pagamento da Carteira Digital Kamba(recomendado)</label>
+                <label>Link de pagamento Kamba(Recomendado)</label>
                 <input
                   type="text"
                   placeholder={dados?.kamba}
                   className="userUpdateInput"
                   name="kamba"
-                  onClick={handelChange}
+                  onChange={handelChange}
                 />
               </div>
 
