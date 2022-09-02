@@ -273,8 +273,8 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
             </div>
 
             <div className="userShowInfo">
-            <label htmlFor="" className="userShowIcon">IBAN: </label>
-              <span className="userShowInfoTitle">{dados?.iban}</span>
+            <label htmlFor="" className="userShowIcon">Link de pagamento: </label>
+              <span className="userShowInfoTitle">{dados?.kamba}</span>
             </div>
 
            
@@ -380,20 +380,10 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
               </div>
 
               <div className="userUpdateItem">
-                <label>IBAN</label>
-                <input
-                  type="text"
-                  placeholder={dados?.iban}
-                  className="userUpdateInput"
-                  name="iban"
-                  onChange={handelChange}
-                />
-              </div>
-              <div className="userUpdateItem">
                 <label>Link de Pagamento da Carteira Digital Kamba(recomendado)</label>
                 <input
                   type="text"
-                  placeholder={dados?.kamba}
+                  value={dados?.kamba}
                   className="userUpdateInput"
                   name="kamba"
                   onChange={handelChange}
