@@ -383,10 +383,10 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
                 <label>Link de Pagamento da Carteira Digital Kamba(recomendado)</label>
                 <input
                   type="text"
-                  value={dados?.kamba}
+                  placeholder={dados?.kamba}
                   className="userUpdateInput"
                   name="kamba"
-                  onChange={handelChange}
+                  onClick={handelChange}
                 />
               </div>
 
