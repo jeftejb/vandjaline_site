@@ -181,8 +181,11 @@ padding: 25px ;
 `
 
 const PlayerWrapperContainer = styled.div`
+display: flex;
+flex-direction:column;
 margin: 15px;
 padding: 25px ;
+flex-wrap:wrap;
 `
 
 const RegistroUsuario = () => {
@@ -774,7 +777,31 @@ const RegistroUsuario = () => {
         <span>Como cadastrar o meu estabelecimento</span>
       </PlayerWrapper>
 
+      <PlayerWrapper>
+        <ReactPlayer
+          className='react-player'
+          url='https://youtu.be/Eax-WWJrvmM'
+          width='100%'
+          height='100%'
+        />
+        <span>Cadastro de Usuário</span>
+      </PlayerWrapper>
+
+
+      <PlayerWrapper>
+        <ReactPlayer
+          className='react-player'
+          url='https://youtu.be/1Nebuxv_gBY'
+          width='100%'
+          height='100%'
+        />
+        <span>Como me tornar um intermediario</span>
+      </PlayerWrapper>
+
+
       </PlayerWrapperContainer>
+
+      
 
 
         </Container>
