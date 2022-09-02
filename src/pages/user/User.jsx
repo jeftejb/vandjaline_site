@@ -230,7 +230,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
        <Navbar/>
        
       <div className="userTitleContainer">
-        <h1 className="userTitle">Perfil Usuario</h1>
+        <h3 className="userTitle">Perfil do Usuário</h3>
         <button onClick={SairUs}>
           Sair
         </button>
@@ -375,7 +375,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
               </div>
 
               <div className="userUpdateItem">
-                <label>Link de pagamento Kamba(Recomendado)</label>
+                <label>Link de pagamento da carteira digital Kamba(Recomendado)</label>
                 <input
                   type="text"
                   placeholder={dados?.kamba}
