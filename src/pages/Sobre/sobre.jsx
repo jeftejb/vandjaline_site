@@ -136,7 +136,7 @@ export default function Sobre() {
               
             <b>Convida seus amigos para se inscreverem no site e seja remunerado !</b><p/><br/>
 
-            É isso mesmo você pode ganhar dinheiro so por convidar outras pessoas para se inscreverem no site, basta partilhares o seu link, só precisas clicar no botão "convidar amigos" que esta no teu perfil de usuário e enviar o seu link para um amigo ou partilhares em uma rede social e receberas 15 kz como valor inicial por cada pessoa que se inscrever através do seu link.<p/> <br/>
+            É isso mesmo você pode ganhar dinheiro so por convidar outras pessoas para se inscreverem no site, basta partilhares o seu link, só precisas clicar no botão "convidar amigos" que esta no teu perfil de usuário e enviar o seu link para um amigo ou partilhares em uma rede social e receberas <b>25,00kz</b> como valor inicial por cada pessoa que se inscrever através do seu link.<p/> <br/>
 
             <b>Como solicitar um pagamento ?</b><p/><br/>
 
@@ -153,8 +153,8 @@ export default function Sobre() {
 
           <span >
            
-            Depois de te tornares um intermediário começaras a receber pagamentos  depois de efectuares a sua primeira venda, ou seja quando alguém comprar um determinado produto através do seu link você ganhará uma comissão  de 150kz que é um valor não fixo ou seja a qualquer momento poderá   ser alterado.  
-            O pagamento poderá ser efectuado tão logo se comprovar a sua venda que pode durar de 24 a 72 horas ou seja de um a três dias uteis da semana,  podendo solicitar ate 1000kz por dia.<p/><br/> 
+            Depois de te tornares um intermediário começaras a receber pagamentos  depois de efectuares a sua primeira venda, ou seja quando alguém comprar um determinado produto através do seu link você ganhará uma comissão  de <b>200,00kz</b> , que é um valor não fixo ou seja a qualquer momento poderá   ser alterado.  
+            O pagamento poderá ser efectuado tão logo se comprovar a sua venda que pode durar de 24 a 72 horas ou seja de um a três dias uteis da semana,  podendo solicitar ate um determinado valor por dia.<p/><br/> 
 
            <b>Métodos de pagamento</b><p/><br/>
 

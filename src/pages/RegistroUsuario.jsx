@@ -437,23 +437,23 @@ const RegistroUsuario = () => {
                 <Titulo>{dados? "CONTA DE USUÁRIO Convite feito por: "+dados.nomeCompleto :"CONTA DE USUÁRIO" }</Titulo>
                 <Form>
                 <DivRorm>
-                <TextLabel>Primeiro e segundo nome</TextLabel> 
+                <TextLabel>Primeiro e segundo nome*</TextLabel> 
                     <Imput name="nomeCompleto"  placeholder = "Primeiro e segundo nome" onChange={handelChangeUser} />
                     </DivRorm>
 
                     <DivRorm>
-               <TextLabel>E-mail</TextLabel> 
+               <TextLabel>E-mail*</TextLabel> 
                     <Imput name="email" type="email" placeholder = "E-mail" onChange={handelChangeUser} />
                     </DivRorm>
 
                     <DivRorm>
-                     <TextLabel>Numero de telefone  +244</TextLabel> 
+                     <TextLabel>Numero de telefone*  +244</TextLabel> 
                    
                     <Imput name="numeroTelefone"  type="tel" pattern="[0-9]{9}" placeholder = "Numero de telefone"onChange={handelChangeUser} required/>
                     </DivRorm>
 
                     <DivRorm>
-                    <TextLabel>Pais</TextLabel> 
+                    <TextLabel>Pais*</TextLabel> 
            
                     <Select name = "pais" onChange={handelChangeUser} required>
                     <Option disable >
@@ -466,7 +466,7 @@ const RegistroUsuario = () => {
                     </DivRorm>
 
                     <DivRorm>
-                     <TextLabel>Província</TextLabel> 
+                     <TextLabel>Província*</TextLabel> 
   
                     <Select name = "provincia" onChange={handelChangeUser } required>
                             <Option disable>
@@ -496,21 +496,21 @@ const RegistroUsuario = () => {
                     </DivRorm>
 
                     <DivRorm>
-                   <TextLabel>Município</TextLabel> 
+                   <TextLabel>Município*</TextLabel> 
                   
                     <Imput name ="municipio" placeholder="Munícipio" onChange={handelChangeUser} required/>
                     </DivRorm>
                         
 
                     <DivRorm>
-              <TextLabel>Data de nascimento</TextLabel> 
+              <TextLabel>Data de nascimento*</TextLabel> 
                     
                     <Imput type="date" name="dataNascimento" placeholder="Data de Nascimento " onChange={handelChangeUser} required/>
                     </DivRorm>
 
                    
                     <Div>
-                       Genero
+                       Genero*
                     <label style={{fontSize:"15px", marginTop:"30px", size:"150"}}>Femenino</label>
                     <Imputr type="radio" name="sexo" value="Femenino"  onChange={handelChangeUser} required/>
                     <label style={{fontSize:"15px", marginTop:"30px"}}>Masculino</label>
@@ -518,23 +518,23 @@ const RegistroUsuario = () => {
                     </Div>
                      
                     <DivRorm>
-                    <TextLabel>Endereço</TextLabel> 
+                    <TextLabel>Endereço*</TextLabel> 
                     <Imput name="endereco" placeholder = "Endereço" onChange={handelChangeUser} required/>
                     </DivRorm>
 
                     <DivRorm>
-                  <TextLabel>Nome de usuário</TextLabel> 
+                  <TextLabel>Nome de usuário*</TextLabel> 
                    
                     <Imput name="nomeUsuario" placeholder = "Nome de usuário" onChange={handelChangeUser} required/>
                     </DivRorm>
 
                     <DivRorm>
-                    <TextLabel>Palavra passe</TextLabel> 
+                    <TextLabel>Palavra passe*</TextLabel> 
                     <Imput name="password" type="password" placeholder = "Palavra passe "onChange={handelChangeUser}required/>
                     </DivRorm>
 
                     <DivRorm>
-                    <TextLabel>Confirmar palavra passe</TextLabel>
+                    <TextLabel>Confirmar palavra passe*</TextLabel>
                     <Imput name="confirmPass" type="password" placeholder = "Confirmar palavra passe " onChange = {handelChangeCOnfr} required/> 
                    </DivRorm>
                     { passErro ?  <label className="label" style={{ color: passErro?.state}} htmlFor="">Palavra passe incopativel.</label> : ""}
@@ -553,37 +553,37 @@ const RegistroUsuario = () => {
                 <Titulo>CONTA DE COMERCIANTE</Titulo>
                 <Form>
                 <DivRorm>
-                     <TextLabel>Nome da loja </TextLabel> 
+                     <TextLabel>Nome da loja* </TextLabel> 
                     <Imput name ="nomeLoja" placeholder = "Nome da empresa/ Estabelecimento comercial" onChange={handelChangeEstabelecimento} required/>
                     </DivRorm>
 
                     <DivRorm>
-                     <TextLabel>Gerente/Dono da loja</TextLabel> 
+                     <TextLabel>Gerente/Dono da loja*</TextLabel> 
                     <Imput name = "gerenteLoja" placeholder = "Nome do dono /Gerente" onChange={handelChangeEstabelecimento} required/>
                     </DivRorm>
 
                     <DivRorm>
-                     <TextLabel>Numero do BI/ NIF</TextLabel> 
+                     <TextLabel>Numero do BI/ NIF*</TextLabel> 
                     <Imput name="nifLoja" placeholder = "Numero de do BI/NIF" onChange={handelChangeEstabelecimento} required/>
                     </DivRorm>
                     
                     <DivRorm>
-                     <TextLabel>E-mail</TextLabel> 
+                     <TextLabel>E-mail*</TextLabel> 
                     <Imput name="emailLoja" type="email" placeholder = "Email" onChange={handelChangeEstabelecimento} required/>
                     </DivRorm>
 
                     <DivRorm>
-                     <TextLabel>Numero de telefone</TextLabel> 
+                     <TextLabel>Numero de telefone*</TextLabel> 
                     <Imput name="telefoneLoja" type = "number" placeholder = "Numero de Telefone" onChange={handelChangeEstabelecimento} required/>
                     </DivRorm>
 
                     <DivRorm>
-                     <TextLabel>Endereço da loja</TextLabel> 
+                     <TextLabel>Endereço da loja*</TextLabel> 
                     <Imput name="enderecoLoja" placeholder = "Endereco" onChange={handelChangeEstabelecimento} required/>
                    </DivRorm>
 
                    <DivRorm>
-                     <TextLabel>Pais</TextLabel> 
+                     <TextLabel>Pais*</TextLabel> 
                     <Select name = "pais" onChange={handelChangeEstabelecimento} required>
                     <Option disable >
                          Pais
@@ -596,7 +596,7 @@ const RegistroUsuario = () => {
 
 
                      <DivRorm>
-                     <TextLabel>Província</TextLabel> 
+                     <TextLabel>Província*</TextLabel> 
                     <Select name = "provincia" onChange={handelChangeEstabelecimento } required>
                             <Option disable>
                          Província
@@ -625,12 +625,12 @@ const RegistroUsuario = () => {
                     </DivRorm>
 
                     <DivRorm>
-                     <TextLabel>Município</TextLabel> 
+                     <TextLabel>Município*</TextLabel> 
                     <Imput name ="municipio" placeholder="Município" onChange={handelChangeEstabelecimento} required/>
                    </DivRorm>
 
                    <DivRorm>
-                     <TextLabel>Tipo de negócio</TextLabel> 
+                     <TextLabel>Tipo de negócio*</TextLabel> 
                     <Selecta name="actuacao" onChange={handelChangeEstabelecimento} required>
                         <Option disable>
                    Tipo de Negócio
@@ -726,18 +726,18 @@ const RegistroUsuario = () => {
                       </DivRorm>
 
                       <DivRorm>
-                     <TextLabel>Palavra passe</TextLabel> 
+                     <TextLabel>Palavra passe*</TextLabel> 
                     <Imput type="password" name="password" placeholder = "Palavra Passe" onChange={handelChangeEstabelecimento} required/>
                    </DivRorm>
 
                     <DivRorm>
-                     <TextLabel>Confirmar palavra passe</TextLabel> 
+                     <TextLabel>Confirmar palavra passe*</TextLabel> 
                     <Imput name="confirmPassLoja" type="password" placeholder = "Confirmar palavra passe " onChange = {handelChangeCOnfrLoja}required/>
                    </DivRorm>
                   
                  
                   <DivRorm>
-                     <TextLabel>Descrição</TextLabel> 
+                     <TextLabel>Descrição*</TextLabel> 
                   <TextArea name="descricao" placeholder="Descrição do Estabelecimento/Empresa" onChange={handelChangeEstabelecimento} required ></TextArea>
                    </DivRorm>
 

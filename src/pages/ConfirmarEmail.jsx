@@ -32,7 +32,7 @@ const nadelClickTerminar = ()=>{
   const enviarEmail = async ()=>{
 
     if(dado?.convidado !==0 ){
-    const dados = {pontos :15, produtosVendidos:0}
+    const dados = {pontos :25, produtosVendidos:0}
     const inserir = async ()=>{
      await userRequest.put(`/users/${id_user}`, {confirmEmail:true})
    
