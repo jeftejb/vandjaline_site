@@ -12,6 +12,7 @@ const carrinhoSlice = createSlice({
     }, 
     reducers:{
         addProduto:(state,action)=>{
+            if(Array.isArray(state.produtos)){
             const verifica = state.produtos.findIndex((item)=>item._id === action.payload?._id )
             if(verifica !== -1) {
                alert("Este produto ja existe no carrinho")
@@ -21,6 +22,9 @@ const carrinhoSlice = createSlice({
             state.total += action.payload.preco * action.payload.quantidade; 
             alert("Produto adicionado com sucesso")
         }
+    }else{
+        alert("Houve algum erro ao adicionar")
+    }
       
         }, 
         deleteProduto:(state, action)=>{

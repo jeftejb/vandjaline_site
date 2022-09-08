@@ -177,10 +177,14 @@ const Produto = () => {
 
     }
 
-    const handleClick = () => {
+    const handleClick = async () => {
+        const produtoMenos = produto?.quanti - quantidade;
         const codInter = proPub[0]?.codigoInter ;
-        dispatch(addProduto({...produto, quantidade, cor , tamanho, codInter}))
+
+       await  dispatch(addProduto({...produto, quantidade, cor , tamanho, codInter}))
+       await publicRequest.put("/produtos/menos/"+_id, {quanti:produtoMenos} )
         
+
     }
 
     const handleClickRecomendar = (e) =>{
@@ -254,14 +258,12 @@ if(ids.indexOf(id_user) === -1){
                    </ImageContainer>
                    <InfoContainer>
                        <Titulo> {produto?.titulo}</Titulo>
-                       <Desc>Desacricao: {produto?.descricao}</Desc>
+                       <Preco> Preço: {dinheiro.format(Number(produto?.preco))}</Preco>
                        <Desc>Disponivel: {produto?.quanti}</Desc>
                        <Desc>Recomendações: {produto?.rec}</Desc>
-                       <Preco> Preço: {dinheiro.format(Number(produto?.preco))}</Preco>
                        <Loja>Loja: {produto?.loja}</Loja>
-
                        <Desc> {produto?.novo === "Novo" ? <span style={{color:"#FA7F08"}}> Novo </span> : ""}</Desc>
-
+                       <Desc>Descrição: {produto?.descricao}</Desc>
                        <FilterContainer>
                            <Filter>
                                <FilterTitulo>Cor: </FilterTitulo>

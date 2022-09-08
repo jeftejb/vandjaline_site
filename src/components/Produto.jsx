@@ -6,14 +6,24 @@ import {addUsuario} from  "./../redux/apiCalls"
 import {actPontos} from "./../redux/apiCalls"
 
 
-const Text = styled.h5 `
+const Text = styled.span `
 color:black;
 font-weight:border;
 font-size:12px ;
 size:200px ;
+
 `
 
-const Preco = styled.h5`
+
+const TextLoja = styled.h5 `
+color:black;
+font-weight:border;
+font-size:12px ;
+size:200px ;
+
+`
+
+const Preco = styled.h6`
 color:black ;
 font-weight:bolder;
 font-size:12px ;
@@ -140,7 +150,7 @@ if(ids.indexOf(id_user) === -1){
    
     return (
         <Container>
-            
+            <TextLoja>{item?.loja}</TextLoja>
             <Circle/>
             <Image src = {`${item?.imagem}`}/>
             <Extra>

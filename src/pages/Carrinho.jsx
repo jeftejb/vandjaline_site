@@ -3,6 +3,7 @@ import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
 import Rodape from "../components/Rodape"
+import { publicRequest } from "../requesteMetodos"
 import { mobile } from "../responsive"
 import ElementOne from "./../components/ElementOne"
 import Navbar from "./../components/Navbar"
@@ -171,6 +172,7 @@ const Carrinho = () => {
     const id_usuario =JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser?._id
     const usuario =JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)?.currentUser
     const produtos =JSON.parse(JSON.parse(localStorage.getItem("persist:root")).carrinho)?.produtos
+    
 
     const produto = produtos.map((dados) =>(
         {
@@ -210,8 +212,12 @@ const Carrinho = () => {
     }
     }
    
-    const handelDelite = (dados)=>{
-         dispatch(deleteProduto(dados))
+    const handelDelite = async (dados)=>{
+
+        const res = await publicRequest.get("/produtos/"+dados.id)
+        const quantidadeMais = res.data.quanti+ dados.quantidade
+         await dispatch(deleteProduto(dados))
+         await publicRequest.put("/produtos/menos/"+dados.id, {quanti:quantidadeMais } )
          
     }
    
