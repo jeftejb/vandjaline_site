@@ -10,6 +10,7 @@ import Rodape from "../components/Rodape";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import app from "./../firebase";
 import "./../components/style.css"
+import ElementOne from "../components/ElementOne"
 import { CircularProgress } from "@material-ui/core"
 import ReactPlayer from 'react-player'
 
@@ -424,6 +425,7 @@ const RegistroUsuario = () => {
     return (
         <div>
             <>
+            <ElementOne/>
         <Navbar/>
         <Container>
        

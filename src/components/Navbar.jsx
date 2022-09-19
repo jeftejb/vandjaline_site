@@ -87,10 +87,13 @@ margin-left: 15px;
 margin-bottom: 15px;
 font-weight: bold;
 text-transform: uppercase;
+border:2px solid #000;
+border-radius:15px;
+padding:5px 10px;
 ${mobile({ fontSize: "12px" , marginLeft:"8px" })}
 
 :hover{
-    color:orange ;
+    background-color:orange ;
 }
 
 `
@@ -191,9 +194,9 @@ const Navbar = () => {
             }
                 
                 <Link className='textNav' to="/carrinho">
-                <MenuItem>
-                <Badge badgeContent = {quantidade} color="primary" >
-                    <ShoppingCartOutlined/>
+                <MenuItem className='carrinhoDeCompras'>
+                <Badge badgeContent = {quantidade} color="primary"  >
+                    <ShoppingCartOutlined  />
                 </Badge>
                 </MenuItem>
                 </Link>
