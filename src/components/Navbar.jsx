@@ -18,6 +18,7 @@ height:60px;
 margin-top: 30px ;
 margin-bottom:30px ;
 align-items:center ;
+margin-left:10px;
 ${mobile({ height: "50px" })}
 `
 const Wrapper = styled.div`
@@ -46,6 +47,7 @@ ${tablet({  display:"flex" })}
 
 
 const Center = styled.div`
+margin-top:15px;
 flex: 1;
 text-align: center;
 display:flex ;
@@ -77,11 +79,9 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 
-
-
 `
 const MenuItem = styled.div`
-font-size: 14px;
+font-size: 13px;
 cursor: pointer;
 margin-left: 15px;
 margin-bottom: 15px;
@@ -89,8 +89,8 @@ font-weight: bold;
 text-transform: uppercase;
 border:2px solid #000;
 border-radius:15px;
-padding:5px 10px;
-${mobile({ fontSize: "12px" , marginLeft:"8px" })}
+padding:3px 8px;
+${mobile({ fontSize: "10px" , marginLeft:"8px" , padding:"2px 7px"})}
 
 :hover{
     background-color:orange ;
@@ -99,11 +99,18 @@ ${mobile({ fontSize: "12px" , marginLeft:"8px" })}
 `
 
 const MenuItemFi = styled.div`
-font-size: 14px;
+font-size: 13px;
 cursor: pointer;
 margin-left: 25px;
-
-${mobile({ fontSize: "12px" , marginLeft:"8px" })}
+font-weight:bold ;
+border:2px solid #000;
+border-radius:15px;
+padding:3px 8px;
+text-transform: uppercase;
+${mobile({ fontSize: "10px" , marginLeft:"8px", padding:"2px 7px"})}
+:hover{
+    background-color:orange ;
+}
 `
 
 const Somem = styled.div`
@@ -116,6 +123,8 @@ const NaoSomem = styled.div`
 display: flex;
 
 `
+
+
 
 
 
@@ -141,7 +150,7 @@ const Navbar = () => {
           
             </Left>
            
-            <Center> <Center>
+            <Center> 
                 
                 
             <Link className='textNav' to="/"><MenuItem>Home</MenuItem></Link>
@@ -151,7 +160,7 @@ const Navbar = () => {
                <Link className='textNav' to ="/estabelecimentos"> <MenuItem>Estabelecimentos</MenuItem></Link>
                <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
                <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
-            
+               <Link className='textNav' to ="/pacotes"> <MenuItem>Planos</MenuItem></Link>
               
                </Somem>
 
@@ -160,16 +169,16 @@ const Navbar = () => {
                <Link className='textNav' to="/sobre"><MenuItem>Sobre</MenuItem></Link>
                <Link className='textNav' to ="/registro/:"> <MenuItem>Cadastro</MenuItem> </Link>
            {currentUser? <MenuItem> <Link className='textNav' to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
-               {currentUserD?.confirmado===true? `${currentUserD.nomeUsuario}(V:${currentUserD?.pontos}Akz)` : currentUserD.nomeUsuario }</Link></MenuItem>
+               {currentUserD?.confirmado === true? `${currentUserD.nomeUsuario}(V:${currentUserD?.pontos}Akz)` : currentUserD?.nomeUsuario }</Link></MenuItem>
            :<> <Link className='textNav' to ="/login"> <MenuItemFi>Login</MenuItemFi></Link>
-           <Link className='textNav' to ="/pacotes"> <MenuItem>Planos</MenuItem></Link>
+         
            </>
            }
                
                <Link className='textNav' to="/carrinho">
                <MenuItemFi>
                <Badge badgeContent = {quantidade} color="primary" >
-                   <ShoppingCartOutlined/>
+                   <ShoppingCartOutlined  className='carroDeCompras'/>
                </Badge>
                </MenuItemFi>
                </Link>
@@ -177,7 +186,7 @@ const Navbar = () => {
 
               
 
-                 </Center>  </Center> 
+                 </Center> 
 
                  
 
@@ -188,6 +197,7 @@ const Navbar = () => {
                 <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
             <Link className='textNav' to ="/registro/:%d"> <MenuItem>Cadastro</MenuItem> </Link>
             <Link className='textNav' to="/sobre"><MenuItem>Sobre</MenuItem></Link>
+            <Link className='textNav' to ="/pacotes"> <MenuItem>Planos</MenuItem></Link>
             {currentUser? <MenuItem> <Link to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
                 {currentUserD?.confirmado===true? `${currentUserD.nomeUsuario}(V:${currentUserD?.pontos}Akz)` : currentUserD.nomeUsuario }</Link></MenuItem>
             : <Link className='textNav' to ="/login"> <MenuItem>Login</MenuItem></Link>
@@ -195,8 +205,8 @@ const Navbar = () => {
                 
                 <Link className='textNav' to="/carrinho">
                 <MenuItem className='carrinhoDeCompras'>
-                <Badge badgeContent = {quantidade} color="primary"  >
-                    <ShoppingCartOutlined  />
+                <Badge badgeContent = {quantidade} color="primary">
+                    <ShoppingCartOutlined className='carroDeCompras'/>
                 </Badge>
                 </MenuItem>
                 </Link>

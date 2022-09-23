@@ -19,7 +19,8 @@
   transform: translateX(0%);
 }
 .Hamburger {
-  display: none;
+  
+  margin-top: 0px;
 }
 
 #app {
@@ -184,4 +185,8 @@ body {
 .carrinhoDeCompras{
   border: 2px solid #000;
   padding: 5px 10px;
+}
+
+.carroDeCompras{
+  font-size: 10px;
 }

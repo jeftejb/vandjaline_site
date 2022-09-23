@@ -4,23 +4,22 @@ import styled from 'styled-components';
 import {Link} from "react-router-dom";
 import {addUsuario} from  "./../redux/apiCalls"
 import {actPontos} from "./../redux/apiCalls"
+import { mobile } from '../responsive';
 
 
-const Text = styled.span `
+const Text = styled.h6 `
 color:black;
 font-weight:border;
-font-size:12px ;
+font-size:13px ;
 size:200px ;
 
 `
 
-
 const TextLoja = styled.h5 `
 color:black;
 font-weight:border;
-font-size:12px ;
+font-size:17px ;
 size:200px ;
-
 `
 
 const Preco = styled.h6`
@@ -30,9 +29,13 @@ font-size:12px ;
 size:200px ;
 `
 const Extra = styled.div`
+display:flex;
+position: relative;
 top:0 ;
-margin-top:190px ;
+margin-top:130px ;
 height: 10%;
+justify-content:center ;
+flex-direction: column ;
 
 `
 
@@ -53,17 +56,19 @@ cursor: pointer;
 `
 
 const Container = styled.div`
-flex:1;
+display:flex ;
+align-items:center ;
 margin-top:5px;
 margin-bottom:10px;
-min-width: 300px;
-height: 250px;
+min-width: 210px;
+height: 225px;
 margin:10px;
-display: flex;
-text-align:center;
+border-radius:25px;
+flex-direction:column;
 justify-content: center;
 background-color: #f5fbfd;
 position: relative;
+${mobile({  minWidth: "150px"})}
 &:hover ${Info}{
 opacity: 1;
 }
@@ -72,23 +77,23 @@ opacity: 1;
 
 
 const Circle = styled.div`
-width: 150px;
-height: 150px;
+width: 100px;
+height: 100px;
 border-radius: 50%;
 background-color: white;
 position: absolute;
-margin-top:30px;
+
 
 `
 
 const Image = styled.img`
-width: 150px;
-height: 150px;
+top:0;
+margin-top:30px ;
+width: 110px;
+height: 110px;
 z-index: 2;
 border-radius:30% ;
-margin-top: 30px;
 position: absolute;
-
 `
 
 
@@ -150,22 +155,19 @@ if(ids.indexOf(id_user) === -1){
    
     return (
         <Container>
-            <TextLoja>{item?.loja}</TextLoja>
+           
             <Circle/>
             <Image src = {`${item?.imagem}`}/>
             <Extra>
+            <TextLoja>{item?.loja}</TextLoja>
                 <Text>{item?.titulo} {item?.novo === "Novo" ? <span style={{color:"#FA7F08"}}> Novo </span>:""} </Text>
                 <Preco>{dinheiro.format(Number(item?.preco))} </Preco>
                 <Text>Recomendações :{item.rec ? item?.rec : 0} </Text>
                 </Extra>
             <Info>
-                <Icon> <ShoppingCartOutlined/> </Icon>
-            
-                <Icon> <Link to ={`/produto/${item?._id}/${""}}`}> <SearchOutlined/> </Link> </Icon>
-           
+                <Icon> <ShoppingCartOutlined/> </Icon> 
+                <Icon> <Link to ={`/produto/${item?._id}/${""}}`}> <SearchOutlined/> </Link> </Icon> 
                 <Icon> <FavoriteBorderOutlined onClick={handleClickRecomendar}/> </Icon>
-               
-                
             </Info>
             
             

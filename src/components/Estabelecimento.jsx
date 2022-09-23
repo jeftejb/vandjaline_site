@@ -9,8 +9,9 @@ const color_text = "#042940"
 const Container = styled.div`
 flex:1;
 margin:5px;
-min-width: 250px;
-height: 480px;
+min-width: 170px;
+height: 380px;
+border-radius:20px ;
 background-color: #f5fbfd;
 position: relative;
 outline:1px solid black;
@@ -26,12 +27,12 @@ cursor: pointer;
 const ContainerImage = styled.div`
 width: 100%;
 height: 40%;
-
+border-radius:20px ;
 `
 
 
 const Info = styled.div`
-padding: 20px;
+padding: 10px;
 display: flex;
 text-align: center;
 flex-direction: column;
@@ -74,8 +75,8 @@ const  Estabelecimento = ({item}) => {
            </ContainerImage>
            <Info>
                <Nome>{item.nomeLoja}</Nome>
-            <Desc>{item.descricao}
-                 </Desc>
+            
+                  <Desc>{item.descricao}</Desc>
                  <Tel>Contato : +244{item.telefoneLoja}</Tel>
                  <Email>Email : {item.emailLoja}</Email>
             <Link to ={`/estabelecimento/${item._id}`}>Saber Mais</Link>

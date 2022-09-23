@@ -10,13 +10,13 @@ import reveal from "../redux/style"
 
 
 const Container = styled.div`
-padding:10px;
+padding:5px;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 `
 const Containe = styled.div`
-padding:20px;
+padding:10px;
 
 
 `
@@ -65,7 +65,7 @@ const ProdutosUnik = ({cat,filters,sort}) => {
       );
    }, [produtos,cat, filters]);
 
- const [itensPerPage]  = useState(5)
+ const [itensPerPage]  = useState(8)
  const [currentPage , setcurrentPage] = useState(0)
 
  const pages = Math.ceil(produtos.length / itensPerPage )

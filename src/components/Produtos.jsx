@@ -55,13 +55,13 @@ const Produtos = ({cat,filters,sort}) => {
       spaceBetween={30}
       breakpoints= {{
         0: {
-          slidesPerView: 1,
-        },
-        768: {
           slidesPerView: 2,
         },
-        1020: {
+        768: {
           slidesPerView: 3,
+        },
+        1020: {
+          slidesPerView: 4,
         },
       }}
       

@@ -804,11 +804,11 @@ const RegistroUsuario = () => {
 
       
 
-
+   
         </Container>
-
-<Rodape/>
+        <Rodape/>
         </>
+ 
     </div>
     )
     

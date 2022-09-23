@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-
 import "./confirmarEmail/user.css";
-
 import Navbar from "./../components/Navbar";
-
 import Rodape from "./../components/Rodape";
 import { publicRequest } from './../requesteMetodos';
 import { useLocation } from 'react-router';
