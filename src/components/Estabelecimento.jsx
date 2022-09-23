@@ -17,6 +17,7 @@ position: relative;
 outline:1px solid black;
 outline-offset: -1rem;
 overflow-wrap: break-word;
+text-align: center;
 cursor: pointer;
  &:hover{
     outline:3px solid black ;
@@ -43,6 +44,9 @@ flex-direction: column;
 const Desc = styled.span`
 margin-bottom: 10px;
 color:${color_text} ;
+
+word-break: break-all;
+ 
 `
 
 const Image = styled.img`
@@ -51,7 +55,7 @@ width: 100%;
 `
 
 const Nome = styled.h1`
-padding: 20px 0px;
+padding: 5px 0px;
 font-size: 17px;
 color:${color_text} ;
 
@@ -78,8 +82,8 @@ const  Estabelecimento = ({item}) => {
                <Nome>{item.nomeLoja}</Nome>
             
                   <Desc>{item.descricao}</Desc>
-                 <Tel>Contato : +244{item.telefoneLoja}</Tel>
-                 <Email>Email : {item.emailLoja}</Email>
+                 <Tel> +244{item.telefoneLoja}</Tel>
+                 <Email>{item.emailLoja}</Email>
             <Link to ={`/estabelecimento/${item._id}`}>Saber Mais</Link>
            </Info>
         </Container>
