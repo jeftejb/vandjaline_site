@@ -16,6 +16,7 @@ background-color: #f5fbfd;
 position: relative;
 outline:1px solid black;
 outline-offset: -1rem;
+overflow-wrap: break-word;
 cursor: pointer;
  &:hover{
     outline:3px solid black ;

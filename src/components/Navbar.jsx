@@ -155,13 +155,19 @@ const Navbar = () => {
                 
             <Link className='textNav' to="/"><MenuItem>Home</MenuItem></Link>
                  <Somem>
-               
                <Link className='textNav' to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
-               <Link className='textNav' to ="/estabelecimentos"> <MenuItem>Estabelecimentos</MenuItem></Link>
-               <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
-               <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
-               <Link className='textNav' to ="/pacotes"> <MenuItem>Planos</MenuItem></Link>
               
+               <div class="dropdown ">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Comércio 
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+  <Link className='textNav' to ="/estabelecimentos"> <MenuItem>Estabelecimentos</MenuItem></Link>
+  <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
+  <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
+  </div>
+</div>
+<Link className='textNav' to ="/pacotes"> <MenuItem>Planos</MenuItem></Link>
                </Somem>
 
                <NaoSomem>
