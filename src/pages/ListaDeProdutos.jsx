@@ -78,7 +78,7 @@ const ListaDeProdutos = () => {
         <Container>
             <ElementOne/>
             <Navbar/>
-            <Titulo> {cat?cat : "Produtos"}</Titulo>
+            <Titulo> {cat?decodeURI(cat) : "Produtos"}</Titulo>
 
             <FilterContainer>
                 <Filter><FilterText>Categoria:</FilterText> 
