@@ -34,7 +34,7 @@ const dados = {...input , email : email}
   const enviarEmail = async ()=>{
      await publicRequest.put(`/users/mudar/pass/`, dados)
   }
-  enviarEmail().catch(console.error());
+  enviarEmail().then(alert("Palavra passe Alterada com sucesso!!")).catch(alert("Houve algum erro ao mudar a palavra passe, verifique o seu email, caso continuar por favor entre em contacto  Email: uservandja@gmail.com"));
 
 }else{
     alert("Palavra passe Incopativeis")

@@ -37,7 +37,7 @@ align-items:center;
 
 `
 const Language = styled.div`
-font-size: 14px;
+
 cursor: pointer;
 display: none;
 ${mobile({ display: "flex" })}
@@ -48,7 +48,7 @@ ${tablet({  display:"flex" })}
 
 const Center = styled.div`
 margin-top:15px;
-flex: 1;
+flex: 2;
 text-align: center;
 display:flex ;
 ${tablet({ flex: 2,  justifyContent: "center" })}
@@ -81,7 +81,7 @@ justify-content: center;
 
 `
 const MenuItem = styled.div`
-font-size: 13px;
+
 cursor: pointer;
 margin-left: 15px;
 margin-bottom: 15px;
@@ -89,7 +89,7 @@ font-weight: bold;
 text-transform: uppercase;
 border:2px solid #000;
 border-radius:15px;
-padding:3px 8px;
+padding:3px 10px;
 ${mobile({ fontSize: "10px" , marginLeft:"8px" , padding:"2px 7px"})}
 
 :hover{
@@ -99,13 +99,13 @@ ${mobile({ fontSize: "10px" , marginLeft:"8px" , padding:"2px 7px"})}
 `
 
 const MenuItemFi = styled.div`
-font-size: 13px;
+
 cursor: pointer;
 margin-left: 25px;
 font-weight:bold ;
 border:2px solid #000;
 border-radius:15px;
-padding:3px 8px;
+padding:3px 10px;
 text-transform: uppercase;
 ${mobile({ fontSize: "10px" , marginLeft:"8px", padding:"2px 7px"})}
 :hover{
@@ -162,7 +162,7 @@ const Navbar = () => {
   Comércio 
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-  <Link className='textNav' to ="/estabelecimentos"> <MenuItem>Estabelecimentos</MenuItem></Link>
+  <Link className='textNav' to ="/estabelecimentos"> <MenuItem>Lojas</MenuItem></Link>
   <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
   <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
   </div>
@@ -198,7 +198,7 @@ const Navbar = () => {
 
             <RightMenu className={`app-menu ${isMenuOpen ? "menu-open" : ""}`}>
                 <Link className='textNav' to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
-                <Link className='textNav' to ="/estabelecimentos"> <MenuItem>Estabelecimentos</MenuItem></Link>
+                <Link className='textNav' to ="/estabelecimentos"> <MenuItem>Lojas</MenuItem></Link>
                 <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
                 <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
             <Link className='textNav' to ="/registro/:%d"> <MenuItem>Cadastro</MenuItem> </Link>

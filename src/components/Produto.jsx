@@ -10,22 +10,24 @@ import { mobile } from '../responsive';
 const Text = styled.h6 `
 color:black;
 font-weight:border;
-font-size:13px ;
+font-size:10px ;
 size:200px ;
 
 `
 
-const TextLoja = styled.h5 `
+const TextLoja = styled.h5`
+top:0px;
+margin-top:0px;
 color:black;
 font-weight:border;
-font-size:17px ;
-size:200px ;
+font-size:10px ;
+size:20px;
 `
 
 const Preco = styled.h6`
 color:black ;
 font-weight:bolder;
-font-size:12px ;
+font-size:10px ;
 size:200px ;
 `
 const Extra = styled.div`
@@ -88,7 +90,7 @@ position: absolute;
 
 const Image = styled.img`
 top:0;
-margin-top:30px ;
+margin-top:45px ;
 width: 110px;
 height: 110px;
 z-index: 2;
@@ -155,11 +157,11 @@ if(ids.indexOf(id_user) === -1){
    
     return (
         <Container>
-           
+             <TextLoja>{item?.loja}</TextLoja>
             <Circle/>
             <Image src = {`${item?.imagem}`}/>
             <Extra>
-            <TextLoja>{item?.loja}</TextLoja>
+          
                 <Text>{item?.titulo} {item?.novo === "Novo" ? <span style={{color:"#FA7F08"}}> Novo </span>:""} </Text>
                 <Preco>{dinheiro.format(Number(item?.preco))} </Preco>
                 <Text>Recomendações :{item.rec ? item?.rec : 0} </Text>
