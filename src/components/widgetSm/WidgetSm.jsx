@@ -49,7 +49,7 @@ export default function WidgetSm() {
 
   return (
     <div className="widgetSm">
-      <span className="widgetSmTitle">Produtos Afilhados</span>
+      <span className="widgetSmTitle">Produtos Afiliados</span>
       <ul className="widgetSmList">
         {pro?.map((pro)=>(
         <li  key={pro?._id}>
@@ -77,7 +77,7 @@ export default function WidgetSm() {
           </form>
           </div>
          <span className="texto">Link : {}</span> 
-         <button onClick={()=> funcaoCopia(pro?.url_pro+"/"+codigoInter)}  >Obter link para partulhar</button>
+         <button onClick={()=> funcaoCopia(pro?.url_pro+"/"+codigoInter)}  >Obter link para partilhar</button>
         </li>
       
         ))}

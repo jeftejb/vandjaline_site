@@ -236,6 +236,7 @@ if(ids.indexOf(id_user) === -1){
             loja:produto?.loja,
             url_pro: url_pro
         }
+        const mensagen = ()=>alert("O produto foi adicionado com sucesso na sua lista de produtos afiliados, verifique a sua lista de produtos afiliados no seu perfil.")
         const addProPubli = async ()=>{
             try{
                 await userRequest.post("/publicitar/insert", infAdd)
