@@ -240,6 +240,7 @@ if(ids.indexOf(id_user) === -1){
         const addProPubli = async ()=>{
             try{
                 await userRequest.post("/publicitar/insert", infAdd)
+                mensagen();
             }catch(error){
                 console.log("Varios Erros")
             }

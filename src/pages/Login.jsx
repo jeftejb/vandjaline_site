@@ -98,8 +98,8 @@ const Login = () => {
             <Wrapper>
                 <Titulo>Login</Titulo>  
                 <Form>
-                    <Imput placeholder = "nome de usuario" onChange={(e)=>setUserName(e.target.value)} />
-                    <Imput placeholder = "palavra passe " type="password" onChange={(e)=>setPassword(e.target.value)}/>
+                    <Imput placeholder = "E-MAIL" onChange={(e)=>setUserName(e.target.value)} />
+                    <Imput placeholder = "PALAVRA PASSE " type="password" onChange={(e)=>setPassword(e.target.value)}/>
                     <Button disabled={loading} onClick = {handleClick} >ENTRAR</Button>
                     {error && <Error>Algo deu errado ...! Nome ou Palavra passe incorretos</Error>}
                     <Link to = "/recuperar/senha">NAO ME LEMBRO DA MINHA PALAVRA PASSE</Link>

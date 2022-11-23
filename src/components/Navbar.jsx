@@ -13,12 +13,15 @@ import  {Link}  from 'react-router-dom'
 
 
 const Container = styled.div`
-
-height:60px;
-margin-top: 30px ;
+position:relative ;
+width:100% ;
+height:10%;
+margin-top: 0;
 margin-bottom:30px ;
 align-items:center ;
-margin-left:10px;
+
+background-color: #759EB8;
+
 ${mobile({ height: "50px" })}
 `
 const Wrapper = styled.div`
@@ -81,7 +84,7 @@ justify-content: center;
 
 `
 const MenuItem = styled.div`
-
+text-decoration:none ;
 cursor: pointer;
 margin-left: 15px;
 margin-bottom: 15px;
@@ -141,10 +144,14 @@ const Navbar = () => {
   const handleMenu = () => {
     setMenu((prevState) => !prevState);
   };
+
+
+  
+
   
     return (
         <>
-        <Container>
+        <Container id='menuContainer'>
             <Wrapper>
             <Left> <Language> <Menu className="Hamburger" onClick={handleMenu}></Menu> </Language>
           
@@ -162,7 +169,7 @@ const Navbar = () => {
   Comércio 
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-  <Link className='textNav' to ="/estabelecimentos"> <MenuItem>Lojas</MenuItem></Link>
+  <Link  className='textNav' to ="/estabelecimentos"> <MenuItem>Lojas</MenuItem></Link>
   <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
   <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
   </div>

@@ -114,10 +114,17 @@ const Option = styled.option``
 
 
 
+const AgradecimentoContainer  = styled.div`
 
+padding:20px ;
+margin-top:10px ;
+margin-bottom:10px ;
+
+`
 const Agradecimento  = styled.span`
 font-size: 15px;
-margin:20px 0px;
+margin:20px ;
+
 `
 
 const Button  = styled.button`
@@ -248,23 +255,23 @@ const RegistroUsuario = () => {
               inputUser?.nomeCompleto === undefined || 
               inputUser?.email === undefined || 
               inputUser?.numeroTelefone === undefined || 
-              inputUser?.pais === undefined || 
-              inputUser?.provincia === undefined || 
-              inputUser?.municipio === undefined || 
-              inputUser?.dataNascimento === undefined || 
+              //inputUser?.pais === undefined || 
+              //inputUser?.provincia === undefined || 
+              //inputUser?.municipio === undefined || 
+              //inputUser?.dataNascimento === undefined || 
               inputUser?.sexo === undefined || 
-              inputUser?.endereco === undefined || 
-              inputUser?.nomeUsuario === undefined ||
+              //inputUser?.endereco === undefined || 
+              //inputUser?.nomeUsuario === undefined ||
               inputUser?.nomeCompleto === "" || 
               inputUser?.email === "" || 
               inputUser?.numeroTelefone === "" || 
-              inputUser?.pais === "" || 
-              inputUser?.provincia === "" || 
-              inputUser?.municipio === "" || 
-              inputUser?.dataNascimento === "" || 
-              inputUser?.sexo === "" || 
-              inputUser?.endereco === "" || 
-              inputUser?.nomeUsuario === "" 
+              //inputUser?.pais === "" || 
+              //inputUser?.provincia === "" || 
+              //inputUser?.municipio === "" || 
+              //inputUser?.dataNascimento === "" || 
+              inputUser?.sexo === "" 
+              //inputUser?.endereco === "" || 
+              //inputUser?.nomeUsuario === "" 
              ){
               setVasio({state:"red"})
              }
@@ -316,24 +323,24 @@ const RegistroUsuario = () => {
 
         if(
           inputEstabelecimento?.nomeLoja === undefined || 
-          inputEstabelecimento?.gerenteLoja === undefined || 
+          //inputEstabelecimento?.gerenteLoja === undefined || 
           inputEstabelecimento?.telefoneLoja === undefined || 
           inputEstabelecimento?.enderecoLoja === undefined || 
           inputEstabelecimento?.nifLoja === undefined || 
           inputEstabelecimento?.emailLoja === undefined || 
-          inputEstabelecimento?.pais === undefined || 
-          inputEstabelecimento?.provincia === undefined || 
-          inputEstabelecimento?.municipio === undefined || 
+          //inputEstabelecimento?.pais === undefined || 
+          //inputEstabelecimento?.provincia === undefined || 
+          //inputEstabelecimento?.municipio === undefined || 
           inputEstabelecimento?.actuacao === undefined ||
           inputEstabelecimento?.nomeLoja === "" || 
-          inputEstabelecimento?.gerenteLoja === "" || 
+          //inputEstabelecimento?.gerenteLoja === "" || 
           inputEstabelecimento?.telefoneLoja === "" || 
           inputEstabelecimento?.enderecoLoja === "" || 
           inputEstabelecimento?.nifLoja === "" || 
           inputEstabelecimento?.emailLoja === "" || 
-          inputEstabelecimento?.pais === "" || 
-          inputEstabelecimento?.provincia === "" || 
-          inputEstabelecimento?.municipio === "" || 
+          //inputEstabelecimento?.pais === "" || 
+          //inputEstabelecimento?.provincia === "" || 
+          //inputEstabelecimento?.municipio === "" || 
           inputEstabelecimento?.actuacao === "" 
          ){
           setVasioLoja({state:"red"})
@@ -436,11 +443,18 @@ const RegistroUsuario = () => {
 }
 
             <Wrapper>
-                <Titulo>{dados? "CONTA DE USUÁRIO Convite feito por: "+dados.nomeCompleto :"CONTA DE USUÁRIO" }</Titulo>
+                <Titulo>{dados? "CRIAR CONTA DE USUÁRIO Convite feito por: "+dados.nomeCompleto :"CRIAR CONTA DE USUÁRIO" }</Titulo>
+                <AgradecimentoContainer>
+                <Agradecimento>
+                      A conta de usuário te permite efectuar pesquisa de preços, criar a sua lista de compras,  efectuar reservas e pagamento de produtos.<br/>
+                      Os pagamentos são efectuados através da carteira virtual kamba <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App Kamba</a>  
+                    </Agradecimento>
+                    </AgradecimentoContainer>
+                   
                 <Form>
                 <DivRorm>
                 <TextLabel>Primeiro e segundo nome*</TextLabel> 
-                    <Imput name="nomeCompleto"  placeholder = "Primeiro e segundo nome" onChange={handelChangeUser} />
+                    <Imput name="nomeCompleto"  placeholder = "Primeiro e Segundo nome" onChange={handelChangeUser} />
                     </DivRorm>
 
                     <DivRorm>
@@ -454,7 +468,7 @@ const RegistroUsuario = () => {
                     <Imput name="numeroTelefone"  type="tel" pattern="[0-9]{9}" placeholder = "Numero de telefone"onChange={handelChangeUser} required/>
                     </DivRorm>
 
-                    <DivRorm>
+                    <DivRorm hidden>
                     <TextLabel>Pais*</TextLabel> 
            
                     <Select name = "pais" onChange={handelChangeUser} required>
@@ -467,7 +481,7 @@ const RegistroUsuario = () => {
                     </Select>
                     </DivRorm>
 
-                    <DivRorm>
+                    <DivRorm hidden>
                      <TextLabel>Província*</TextLabel> 
   
                     <Select name = "provincia" onChange={handelChangeUser } required>
@@ -497,14 +511,14 @@ const RegistroUsuario = () => {
                     </Select>
                     </DivRorm>
 
-                    <DivRorm>
+                    <DivRorm hidden>
                    <TextLabel>Município*</TextLabel> 
                   
                     <Imput name ="municipio" placeholder="Munícipio" onChange={handelChangeUser} required/>
                     </DivRorm>
                         
 
-                    <DivRorm>
+                    <DivRorm hidden>
               <TextLabel>Data de nascimento*</TextLabel> 
                     
                     <Imput type="date" name="dataNascimento" placeholder="Data de Nascimento " onChange={handelChangeUser} required/>
@@ -519,12 +533,12 @@ const RegistroUsuario = () => {
                     <Imputr type="radio" name="sexo" value="Masculino" onChange={handelChangeUser}required/>
                     </Div>
                      
-                    <DivRorm>
+                    <DivRorm hidden>
                     <TextLabel>Endereço*</TextLabel> 
                     <Imput name="endereco" placeholder = "Endereço" onChange={handelChangeUser} required/>
                     </DivRorm>
 
-                    <DivRorm>
+                    <DivRorm hidden>
                   <TextLabel>Nome de usuário*</TextLabel> 
                    
                     <Imput name="nomeUsuario" placeholder = "Nome de usuário" onChange={handelChangeUser} required/>
@@ -541,10 +555,6 @@ const RegistroUsuario = () => {
                    </DivRorm>
                     { passErro ?  <label className="label" style={{ color: passErro?.state}} htmlFor="">Palavra passe incopativel.</label> : ""}
                    { vasio ?  <label className="label" style={{ color: vasio?.state}} htmlFor="">Nao pode existir campos vasios</label> : ""}
-                    <Agradecimento>
-                      A conta de usuário te permite efectuar pesquisa de preços, criar a sua lista de compras,  efectuar reservas e pagamento de produtos.<br/>
-                      Os pagamentos são efectuados atraves da carteira virtual kamba <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App Kamba</a>  
-                    </Agradecimento>
                    
 
                     <Button disabled={loading} onClick ={handelClickUser} >CRIAR CONTA </Button> <ButtonCon> <Link style={{textDecoration:"none", color:"#fff", fontSize:"12px"}} to="/">VOLTAR A PAGINA INICIAL</Link> </ButtonCon>
@@ -552,14 +562,20 @@ const RegistroUsuario = () => {
             </Wrapper>
 
             <Wrapper>
-                <Titulo>CONTA DE COMERCIANTE</Titulo>
+                <Titulo>CRIAR CONTA DE COMERCIANTE</Titulo>
+                <AgradecimentoContainer>
+                <Agradecimento>
+                     A conta de comerciante te permite criar uma pequena loja virtual com varias opções como: cadastrar, editar e eliminar produtos, ainda podes receber pagamentos e partilhar o link da sua loja nas tuas redes sociais e muito mais.<br/>  
+                     Os pagamentos são efectuados através da carteira virtual kamba <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App Kamba</a>   
+                    </Agradecimento>
+                    </AgradecimentoContainer>
                 <Form>
                 <DivRorm>
                      <TextLabel>Nome da loja* </TextLabel> 
                     <Imput name ="nomeLoja" placeholder = "Nome da empresa/ Estabelecimento comercial" onChange={handelChangeEstabelecimento} required/>
                     </DivRorm>
 
-                    <DivRorm>
+                    <DivRorm hidden>
                      <TextLabel>Gerente/Dono da loja*</TextLabel> 
                     <Imput name = "gerenteLoja" placeholder = "Nome do dono /Gerente" onChange={handelChangeEstabelecimento} required/>
                     </DivRorm>
@@ -580,11 +596,11 @@ const RegistroUsuario = () => {
                     </DivRorm>
 
                     <DivRorm>
-                     <TextLabel>Endereço da loja*</TextLabel> 
-                    <Imput name="enderecoLoja" placeholder = "Endereco" onChange={handelChangeEstabelecimento} required/>
+                     <TextLabel>Endereço completo da loja*</TextLabel> 
+                    <Imput name="enderecoLoja" placeholder = "Ex:Huíla, Lubango, Arco-ires" onChange={handelChangeEstabelecimento} required/>
                    </DivRorm>
 
-                   <DivRorm>
+                   <DivRorm hidden>
                      <TextLabel>Pais*</TextLabel> 
                     <Select name = "pais" onChange={handelChangeEstabelecimento} required>
                     <Option disable >
@@ -597,7 +613,7 @@ const RegistroUsuario = () => {
                      </DivRorm>
 
 
-                     <DivRorm>
+                     <DivRorm hidden>
                      <TextLabel>Província*</TextLabel> 
                     <Select name = "provincia" onChange={handelChangeEstabelecimento } required>
                             <Option disable>
@@ -626,7 +642,7 @@ const RegistroUsuario = () => {
                     </Select>
                     </DivRorm>
 
-                    <DivRorm>
+                    <DivRorm hidden>
                      <TextLabel>Município*</TextLabel> 
                     <Imput name ="municipio" placeholder="Município" onChange={handelChangeEstabelecimento} required/>
                    </DivRorm>
@@ -757,10 +773,7 @@ const RegistroUsuario = () => {
 
                   { passErroLoja ?  <label className="label" style={{ color: passErroLoja?.state}} htmlFor="">Palavra passe incopativel</label> : "" } 
                   { vasioLoja ?  <label className="label" style={{ color: vasioLoja?.state}} htmlFor="">Nao pode existir campos vasios</label> : ""}
-                  <Agradecimento>
-                     A conta de comerciante te permite criar uma pequena loja virtual com varias opções como: cadastrar, editar e eliminar produtos, ainda podes receber pagamentos e partilhar o link da sua loja nas tuas redes sociais e muito mais.<br/>  
-                     Os pagamentos são efectuados atraves da carteira virtual kamba <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App Kamba</a>   
-                    </Agradecimento>
+                 
                     <Button disabled={loading} onClick={handelClickEstabelecimento} >CRIAR CONTA </Button> <ButtonCon> <Link style={{textDecoration:"none", color:"#fff", fontSize:"12px"}} to="/">VOLTAR A PAGINA INICIAL</Link> </ButtonCon>
                     </Form>
             </Wrapper>

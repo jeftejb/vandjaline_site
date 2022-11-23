@@ -7,6 +7,7 @@ import {actPontos} from "./../redux/apiCalls"
 import { mobile } from '../responsive';
 
 
+
 const Text = styled.h6 `
 color:black;
 font-weight:border;
@@ -121,6 +122,8 @@ const Produto = ({item}) => {
     const user = JSON?.parse(JSON?.parse(localStorage?.getItem("persist:root")).user)?.currentUser
     const _id = item._id;
 
+ 
+
     const handleClickRecomendar = (e) =>{
         e.preventDefault()
      
@@ -166,12 +169,12 @@ if(ids.indexOf(id_user) === -1){
                 <Preco>{dinheiro.format(Number(item?.preco))} </Preco>
                 <Text>Recomendações :{item.rec ? item?.rec : 0} </Text>
                 </Extra>
-            <Info>
+           
+             <Info>
                 <Icon> <ShoppingCartOutlined/> </Icon> 
                 <Icon> <Link to ={`/produto/${item?._id}/${""}}`}> <SearchOutlined/> </Link> </Icon> 
                 <Icon> <FavoriteBorderOutlined onClick={handleClickRecomendar}/> </Icon>
             </Info>
-            
             
         </Container>
     )
