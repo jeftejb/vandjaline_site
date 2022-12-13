@@ -5,6 +5,7 @@ import Rodape from "./../components/Rodape";
 import { publicRequest } from './../requesteMetodos';
 
 
+
  const RecuperaEmail = () => {
 
   const [input, setInput] = useState()
@@ -48,10 +49,10 @@ console.log(erro)
     <div className="user">
 <div className="confirEmail">
 <h1>Recuperar Palavra Passe !</h1>
- <span>Por favor insere seu email.</span>
+ <span style={{}}>Por favor insere seu email.</span>
  <form>
  <input type="email" name="email" id="" placeholder='Email' onChange={handelEmail} required/>
- <button onClick={nadelClickTerminar} >Enviar</button>
+ <button style={{backgroundColor:"##00A6A6"}} onClick={nadelClickTerminar} >Enviar</button>
  </form>
  </div>
 

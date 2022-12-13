@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./../../components/Navbar"
 import Rodape from "./../../components/Rodape"
-import ElementOne from "./../../components/ElementOne"
+
 //import {useLocation} from "react-router-dom"
 import "./pacotes.css"
 
@@ -25,7 +25,7 @@ const handelClick = (e)=>{
 */
     return(
      <div>
-         <ElementOne/>
+        
         <NavBar/>
 
         <div className="container">

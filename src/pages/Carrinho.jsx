@@ -5,7 +5,6 @@ import styled from "styled-components"
 import Rodape from "../components/Rodape"
 import { publicRequest } from "../requesteMetodos"
 import { mobile } from "../responsive"
-import ElementOne from "./../components/ElementOne"
 import Navbar from "./../components/Navbar"
 import {novaFatura} from "./../redux/apiCalls"
 import {deleteProduto} from "./../redux/carrinhoRedux"
@@ -13,7 +12,9 @@ import userPdf from "./files/userPdf"
 
 
 
-const Container = styled.div``
+const Container = styled.div`
+margin-top:200px;
+`
 
 const Wrapper = styled.div`
 padding: 20px;
@@ -251,7 +252,7 @@ const Carrinho = () => {
   
     return (
        <Container>
-           <ElementOne/>
+          
            <Navbar/>
           <Wrapper>
               <Titulo>O TEU CARRINHO DE COMPRAS </Titulo>

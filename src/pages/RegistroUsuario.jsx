@@ -6,7 +6,6 @@ import Rodape from "../components/Rodape";
 
 import { tablet } from '../responsive';
 import "./../components/style.css"
-import ElementOne from "../components/ElementOne"
 
 import ReactPlayer from 'react-player'
 
@@ -17,7 +16,7 @@ import {Storefront , PersonAdd, PermIdentity} from "@material-ui/icons"
 
 const Container  = styled.div`
 width: 100%;
-
+margin-top:200px ;
 position: relative;
 background: url("");
 display:flex;
@@ -138,11 +137,12 @@ font-family:"Titan One" ;
 font-size:38px;
 font-weight:bold ;
 margin-bottom:40px ;
+${tablet({ fontSize:"20px", fontWeight:"500" })}
 `;
 const DescTextCad = styled.h4`
 font-family:"Exo, sans-serif" ;
 font-size:28px ;
-
+${tablet({ fontSize:"20px", fontWeight:"500" })}
 `;
 
 
@@ -161,7 +161,7 @@ const RegistroUsuario = () => {
     return (
         <div>
             <>
-            <ElementOne/>
+            
         <Navbar/>
         <Container>
        

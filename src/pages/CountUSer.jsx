@@ -8,7 +8,6 @@ import {  userRequest} from "../requesteMetodos"
 import Navbar from "../components/Navbar";
 import Rodape from "../components/Rodape";
 import "./../components/style.css"
-import ElementOne from "../components/ElementOne"
 import { CircularProgress } from "@material-ui/core"
 import { PersonAdd} from "@material-ui/icons"
 
@@ -18,7 +17,7 @@ import { PersonAdd} from "@material-ui/icons"
 
 const Container  = styled.div`
 width: 100%;
-
+margin-top:200px ;
 position: relative;
 background: url("");
 display:flex;
@@ -283,7 +282,7 @@ const CountUSer = () => {
     return (
         <div>
             <>
-            <ElementOne/>
+         
         <Navbar/>
         <Container>
        

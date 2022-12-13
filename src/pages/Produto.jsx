@@ -2,7 +2,6 @@ import { Add, Remove } from "@material-ui/icons"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router"
 import styled from "styled-components"
-import ElementOne from "../components/ElementOne"
 import Navbar from "../components/Navbar"
 import NovasLetras from "../components/NovasLetras"
 import Rodape from "../components/Rodape"
@@ -15,7 +14,9 @@ import {actPontos} from "./../redux/apiCalls"
 //import { useLocation } from "react-router-dom"
 import Estabelecimento from "../components/Estabelecimento"
 import "./../components/style.css"
-const Container = styled.div``
+const Container = styled.div`
+margin-top:200px ;
+`
 
 const Wrapper= styled.div`
 padding: 50px;
@@ -277,6 +278,7 @@ if(ids.indexOf(id_user) === -1){
             loja:produto?.loja,
             url_pro: url_pro
         }
+        console.log(url_pro)
         const mensagen = ()=>alert("O produto foi adicionado com sucesso na sua lista de produtos afiliados, verifique a sua lista de produtos afiliados no seu perfil.")
         const addProPubli = async ()=>{
             try{
@@ -293,7 +295,7 @@ if(ids.indexOf(id_user) === -1){
     const dinheiro = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'AKZ' })
     return (
         <Container>
-             <ElementOne/>
+         
                <Navbar/>
                <Wrapper>
                    <ImageContainer>

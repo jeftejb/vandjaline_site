@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import  styled from 'styled-components'
-import ElementOne from '../components/ElementOne'
 import Navbar from '../components/Navbar'
 import Produtos from '../components/ProdutosLoja'
 import Rodape from '../components/Rodape'
 import { publicRequest } from '../requesteMetodos'
 
 const Container = styled.div`
-
+margin-top:200px ;
 `
 const ContainerImagem = styled.div`
 width: 100%;
@@ -112,7 +111,6 @@ getItem()
 
     return (
         <Container>
-            <ElementOne/>
             <Navbar/>
             <ContainerImagem>
                 <Img src ={loja?.imagem}/>

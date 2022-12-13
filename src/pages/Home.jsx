@@ -1,10 +1,9 @@
 import React from 'react'
 import Categorias from '../components/Categorias'
-import ElementOne from '../components/ElementOne'
 import Navbar from '../components/Navbar'
 import NovasLetras from '../components/NovasLetras'
 import Produtos from '../components/Produtos'
-import ProdutoCampoTodos from '../components/ProdutoCampoTodos'
+import ProdutoCampoTodos from '../components/ProdutoCampoTodosPrincipal'
 import Rodape from '../components/Rodape'
 import Slide from '../components/Slide'
 import styled from "styled-components"
@@ -22,7 +21,6 @@ const color_text = "#042940"
 const Container = styled.div`
 padding: 30px;
 display: flex;
-position: relative;
 overflow: hidden;
 justify-content: center;
 align-items: center;
@@ -230,7 +228,7 @@ ${tablet({ fontSize:"10px"})}
   
     return(
         <div>
-            <ElementOne/>
+            
             <Navbar/>
             <Slide/>
           

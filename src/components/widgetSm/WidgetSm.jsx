@@ -33,7 +33,7 @@ export default function WidgetSm() {
 
   const funcaoCopia= (dado)=>{
     const copiar  = ()=>{
-      const url  = process.env.REACT_APP_SITE_LINK+dado
+      const url  = 'https://www.vandjaline.com'+dado
       copy(url)
     }
       const aviso = ()=>{

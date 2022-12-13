@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Rodape from "../components/Rodape";
-import ElementOne from "../components/ElementOne";
 import EstabelecimentosElement from "../components/Estabelecimentos";
 import "./../components/style.css"
 import { tablet } from "../responsive";
@@ -11,6 +10,7 @@ import {Storefront} from "@material-ui/icons"
 
 const Container = styled.div`
 text-align: center;
+margin-top:200px ;
 `
 const Titulo = styled.h1`
 margin-top:40px;
@@ -24,18 +24,18 @@ display:flex;
 margin-top:25px ;
 margin-bottom:25px;
 width:100% ;
-height:500px ;
+
 align-items:center ;
 justify-content:space-between ;
-
+flex-wrap:wrap ;
 `;
 
 const InfoItem = styled.div`
 margin-top:20px ;
-margin-left:50px ;
-margin-right:50px ;
+margin-left:20px ;
+margin-right:20px ;
 width:30% ;
-height:90% ;
+
 
 
 `;
@@ -62,7 +62,7 @@ font-family:"Exo, sans-serif";
 const Estabelecimento = ()=>{
     return(
         <Container>
-        <ElementOne/>
+       
         <Navbar/>
         <Titulo>Lojas</Titulo>
         <ContainerInfo>

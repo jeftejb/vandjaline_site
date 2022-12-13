@@ -26,6 +26,9 @@ padding:20px;
 `
 const Button = styled.button`
 margin:4px;
+padding:10px 20px;
+border-radius:5px ;
+background-color:#BBDEF0;
 `
 
 const Div = styled.div`

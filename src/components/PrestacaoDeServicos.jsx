@@ -25,6 +25,9 @@ text-align: center;
 `
 const Button = styled.button`
 margin:4px;
+padding:10px 20px;
+border-radius:5px ;
+background-color:#BBDEF0;
 `
 
 const  PrestacaoDeServicos = () => {
@@ -52,6 +55,8 @@ const pages = Math.ceil(loja.length / itensPerPage )
  const endIndex = startIndex+itensPerPage
  const currentitens =  loja.slice(startIndex,endIndex )
 
+
+ console.log(loja)
 return(
   <Containe>
         <Container>

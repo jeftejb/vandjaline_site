@@ -19,7 +19,7 @@ import { logaut } from './../../redux/userRedux'
 import Rodape from "../../components/Rodape";
 import dotenv from "dotenv";
 import copy from "copy-to-clipboard"
-import ElementOne from "../../components/ElementOne";
+
 //import {confirmarEmailCadastro} from "./../../data" 
 
 
@@ -225,7 +225,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
 
   return (
     <div>
-      <ElementOne/>
+   
      <Navbar/>
     <div className="user">
         

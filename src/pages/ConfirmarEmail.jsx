@@ -79,7 +79,7 @@ const SairUs = ()=>{
     
 <Navbar/>
 
-<div style={{marginTop:"40px", padding:"50px" , justifyContent:"center", alignItems:"center" , fontFamily:"Titan one"}}  className="userTitleContainer">
+<div style={{marginTop:"200px", padding:"50px" , justifyContent:"center", alignItems:"center" , fontFamily:"Titan one"}}  className="userTitleContainer">
     <h1 style={{padding:"20px"}} className="userTitle">Ultimo passo !</h1>
     <button style={{padding:"10px 40px", borderRadius:"5px", backgroundColor:"#00A6A6"}} onClick={SairUs}>
       Sair

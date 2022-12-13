@@ -4,8 +4,9 @@ import  {Link}  from 'react-router-dom'
 import {mobile, tablet} from "../responsive"
 
 const Container = styled.div`
-position: relative ;
-height: 10rem;
+position: fixed ;
+width:100% ;
+height: 10px;
 background-color: #F49F0A;
 color: white;
 display: flex;

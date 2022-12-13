@@ -47,7 +47,7 @@ const dados = {...input , email : email}
     <div className="user">
 <div className="confirEmail">
 <h1>Recuperar Palavra Passe !</h1>
- <span>Por favor insere seu email.</span>
+
  <form action="">
  <input type="password" name="password" placeholder='Nova Palavra passe' onChange={handelPass}/>
  <input type="password" name="senhaConfirm"  placeholder='Confirmar palavra passe' onChange={handelPassConfirm}/>

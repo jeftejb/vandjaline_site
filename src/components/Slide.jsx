@@ -17,10 +17,10 @@ const Container = styled.div`
 width: 100%;
 height: 60vh;
 display: flex;
-position: relative;
+
 overflow: hidden;
 background-color:#F49F0A;
-margin-top:0px ;
+margin-top:100px ;
 /*${mobile({ display: "none" })}*/
 `
 /*
@@ -92,6 +92,8 @@ font-size:20px ;
 font-weight:200;
 ${mobile({ fontSize:"15px"})}
 `;
+
+
 
 
 

@@ -2,21 +2,31 @@
 import { useState, useEffect } from "react"
 import styled from "styled-components"
 import Produto from "./Produto"
-
-import SwiperCore,{ EffectFade, Autoplay} from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import { publicRequest } from "../requesteMetodos";
+import reveal from "../redux/style"
 
 
 const Container = styled.div`
-
+padding:5px;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 `
 
+
+const Div = styled.div`
+justify-content: space-between;
+
+text-align: center;
+`
+const Button = styled.button`
+margin:4px;
+padding:10px 20px;
+border-radius:5px ;
+background-color:#BBDEF0;
+`
 
 
 
@@ -35,41 +45,26 @@ const ProdutosCampoTodos = () => {
       getProduto()
    }, []);
   
-
-   SwiperCore.use([Autoplay])
   
+const [itensPerPage]  = useState(8)
+const [currentPage , setcurrentPage] = useState(0)
+
+const pages = Math.ceil(produtos.length / itensPerPage )
+const startIndex = currentPage*itensPerPage
+const endIndex = startIndex+itensPerPage
+const currentitens =  produtos.slice(startIndex,endIndex )
+
+reveal()
     return (
         <Container>
-        <Swiper
-        modules={[ EffectFade, Autoplay]}
-       
-      spaceBetween={50}
-      
-      breakpoints= {{
-        0: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        1020: {
-          slidesPerView: 3,
-        },
-      }}
-      autoplay={ {
-        delay: 2500,
-        disableOnInteraction: false,
-    }}
-        className="mySwiper"
-      >
-            {  produtos?
-            produtos.map((item, i)=>(
-            <SwiperSlide key={i}>  <Produto item={item} key={item._id}/></SwiperSlide>
-        ))  : ""
-            
-            }
-
-       </Swiper>
+            <Container>
+           { currentitens.map((item, i)=>(
+             <Produto  item={item} key={item._id}/>
+        ))}
+        </Container>
+       <Div>{Array.from(Array(pages), (i, index)=>{
+     return <Button value={index} onClick={(e)=>setcurrentPage(Number(e.target.value))} key={index}>{index +1}</Button>
+      })}</Div>
        </Container>
     )
 }
