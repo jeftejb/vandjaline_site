@@ -73,23 +73,28 @@ const SairUs = ()=>{
 }
 
   return (
-    <div>
-  <Navbar/>
-  <div className='botaoSair'>
-  <button  onClick={SairUs}>
-          Sair
-        </button>
-  </div>
-    <div className="user">
-<div className="confirEmail">
-<h1>Ultimo passo !</h1>
- <span>Obrigado por chegares ate aqui para terminar clique em terminar.</span>
- <button onClick={nadelClickTerminar} >terminar</button>
- </div>
+   
+<div>
+<div className="user">
+    
+<Navbar/>
 
-    </div>
-    <Rodape/> 
-       </div>
+<div style={{marginTop:"40px", padding:"50px" , justifyContent:"center", alignItems:"center" , fontFamily:"Titan one"}}  className="userTitleContainer">
+    <h1 style={{padding:"20px"}} className="userTitle">Ultimo passo !</h1>
+    <button style={{padding:"10px 40px", borderRadius:"5px", backgroundColor:"#00A6A6"}} onClick={SairUs}>
+      Sair
+    </button>
+  </div>
+
+<div className="confirEmail">
+<h3 style={{fontFamily:"Titan one"}} className="userTitle"> <span>Obrigado por chegares ate aqui para terminar clique em terminar.</span></h3>
+<span style={{fontFamily:"Titan one"}} className="userTitle">Enviamos um e-mail de confirmacao no seu e-mail, caso não tenhas recebido o e-mail por favor clique no botão confirmar e-mail obrigado.</span>
+<button style={{ borderRadius:"5px", backgroundColor:"#00A6A6"}} onClick={nadelClickTerminar}> Terminar </button>
+</div>
+
+</div>
+<Rodape/> 
+</div>
 
        
   );
