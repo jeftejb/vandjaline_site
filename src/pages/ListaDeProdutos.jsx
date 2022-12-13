@@ -98,7 +98,7 @@ const ListaDeProdutos = () => {
                 </Select>
                
                 </Filter>
-                <Filter>
+                {/*<Filter>
                     <FilterText>Outros Produtos:</FilterText>
                     <Select onChange={(e)=>setSort(e.target.value)}>
                     <Option value = "news" >Novos</Option>
@@ -107,6 +107,7 @@ const ListaDeProdutos = () => {
                     
                     
                 </Filter>
+                    */}
             </FilterContainer>
             <Produtos cat = {cat} filters = {filters} sort = {sort} />
             <NovasLetras/>
