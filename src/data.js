@@ -184,46 +184,60 @@ export const sliderItemns = [
     {
         id:6, 
         img:"/image/baner-4.png", 
-        titulo:"Vandjaline - Crie a sua loja virtual grátis", 
+        titulo:" Crie a sua loja virtual grátis", 
         desc: "Para de perseguir o dinheiro e comece a perseguir o sucesso. Tony Hsieh",
-        bg:""
+        bg:"",
+        link:"/registro/:%d",
+        but:"Criar Agora!!"
     },
         {
             id:1, 
             img:"/image/baner-1.png", 
-            titulo:"Vandjaline - Pesquisa de preços para Produtos ou Serviços", 
-            desc: "Pare de sonhar com o sucesso, com dinheiro e realizações o tempo esta passando ninguém quer saber dos teus sonhos! Comesse a materializa-los lute por eles e comesse hoje !! ",
-            bg:""
+            titulo:"Não perca nem uma novidade", 
+            desc: "Pesquisa de preços para Produtos ou Serviços",
+            bg:"", 
+            link:"/estabelecimentos",
+            but:"Começasar a pesquisar"
         }, 
         
         {
             id:2, 
             img:"/image/baner-7.jpg", 
-            titulo:"Vandjaline - Crie a sua lista de compras que te ajudará a organizar melhor as compras", 
-            desc: "Todos os seus sonhos podem se tornar realidade se você tem coragem para persegui-los. Walt Disney",
-            bg:""
+            titulo:"Organize suas compras!", 
+            desc: "Crie a sua lista de compras que te ajudará a organizar melhor as suas compras",
+            bg:"", 
+            link:"/sobre",
+            but:"Saber mais"
+        
         }, 
         {
             id:3, 
             img:"/image/baner-2.png", 
-            titulo:"Vandjaline - Encontre e compare os preços dos principais produtos e serviços sem sair do conforto de sua casa ", 
-            desc: "Todos os seus sonhos podem se tornar realidade se você tem coragem para persegui-los. Walt Disney",
-            bg:""
+            titulo:"Preços Baixos! ", 
+            desc: "Encontre e compare os preços dos principais produtos e serviços sem sair do conforto de sua casa",
+            bg:"",
+            link:"/produtos",
+            but:"Não perca tempo!!"
+
         }, 
        
         {
             id:5, 
             img:"/image/baner-4.png", 
-            titulo:"Vandjaline - Faça reserva dos seus produtos preferidos atens que eles terminem ", 
-            desc: "Seja você mesmo independente  mente das dificuldade que estiveres a passar nunca perca o sua identidade.",
-            bg:""
+            titulo:"Reservas", 
+            desc: "Faça reserva dos seus produtos preferidos atens que eles terminem!.Faça o seu registro para tornar tudo mais facil",
+            bg:"",
+            link:"/registro/:%d",
+            but:"Me Registrar Agora!"
         },
        {
             id:7, 
             img:"/image/baner-6.png", 
-            titulo:"Vandjaline - Venda, compre e poupe dinheiro com a vandjaline", 
-            desc: "Se você quiser crescer, terá que fazer algo diferente do que a maioria das outras pessoas está fazendo. Lakshmi Mittal",
-            bg:""
+            titulo:"Não perca tempo!", 
+            desc: "Venda, compre e poupe dinheiro com a vandjaline. Faça o seu registro para tornar tudo mais facil",
+            bg:"",
+            link:"/registro/:%d",
+            but:"Me Registrar Agora!"
         }
 ]
 

@@ -2,22 +2,25 @@
 import  styled  from 'styled-components'
 import { mobile } from '../responsive'
 import CategoriaItem from './CategoriaItem'
-import SwiperCore,{  EffectFade, Autoplay, A11y, Pagination, Scrollbar} from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import { useEffect, useState } from 'react';
 import { publicRequest } from '../requesteMetodos';
-
 const Container = styled.div`
 padding:20px;
+margin: 20px 150px 20px 150px;
 display: flex;
 flex-wrap: wrap;
-justify-content: space-between;
+flex-direction: row;
+align-items:center ;
 
-${mobile({ padding: "0px" , flexDirection:"column" })}
+${mobile({ padding:"0px", margin:"10px" , display:"flex", flexDirection:"row" })}
 `
 
+
+const ContainerItem = styled.div`
+
+`;
 
 const Categorias = () => {
 
@@ -32,39 +35,14 @@ const Categorias = () => {
   getCatItem()
   }, [])
 
-  SwiperCore.use([Autoplay])
+ 
     return (
-        <Swiper
-        modules={[ EffectFade, Autoplay, Pagination, Scrollbar,A11y ]}
-        effect='fade'
-      spaceBetween={30}
-      breakpoints= {{
-        0: {
-          slidesPerView: 2,
-        },
-        768: {
-          slidesPerView: 3,
-        },
-        1020: {
-          slidesPerView: 4,
-        },
-      }}
-      autoplay={ {
-        delay: 2500,
-        disableOnInteraction: false,
-    }}
-   
-      >
        
              <Container>
             {cat.map( (item, i)=>(
-               <SwiperSlide key={i}> <CategoriaItem item = {item} key={item?.id}/></SwiperSlide>
+              <ContainerItem key={i}><CategoriaItem item = {item} key={item?.id}/></ContainerItem> 
             ))}
         </Container>
-        
-        
-       
-      </Swiper>
        
     )
 }

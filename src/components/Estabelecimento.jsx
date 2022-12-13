@@ -15,7 +15,7 @@ border-radius:20px ;
 background-color: #f5fbfd;
 position: relative;
 outline:1px solid black;
-outline-offset: -1rem;
+font-family: 'Titan One', cursive;
 overflow-wrap: break-word;
 text-align: center;
 cursor: pointer;
@@ -28,7 +28,7 @@ cursor: pointer;
 
 const ContainerImage = styled.div`
 width: 100%;
-height: 40%;
+height: 60%;
 border-radius:20px ;
 `
 
@@ -41,22 +41,18 @@ flex-direction: column;
 
 `
 
-const Desc = styled.span`
-margin-bottom: 10px;
-color:${color_text} ;
 
-word-break: break-all;
- 
-`
 
 const Image = styled.img`
 height: 100%;
 width: 100%;
+border-radius:5%;
 `
 
 const Nome = styled.h1`
 padding: 5px 0px;
 font-size: 17px;
+font-family: 'Titan One', cursive;
 color:${color_text} ;
 
 `
@@ -80,12 +76,12 @@ const  Estabelecimento = ({item}) => {
            </ContainerImage>
            <Info>
                <Nome>{item.nomeLoja}</Nome>
+               
+            <Link style={{textDecoration:"none", padding:"20px 30px", backgroundColor:"#BBDEF0", borderRadius:"5px", fontFamily:"Titan one"}} to ={`/estabelecimento/${item._id}`}>Saber Mais</Link>
             
-                  <Desc>{item.descricao}</Desc>
-                 <Tel> +244{item.telefoneLoja}</Tel>
-                 <Email>{item.emailLoja}</Email>
-            <Link to ={`/estabelecimento/${item._id}`}>Saber Mais</Link>
            </Info>
+           <Tel> +244{item.telefoneLoja}</Tel>/
+                 <Email>{item.emailLoja}</Email>
         </Container>
     )
 }

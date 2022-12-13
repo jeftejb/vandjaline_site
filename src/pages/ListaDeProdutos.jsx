@@ -12,11 +12,16 @@ import { publicRequest } from "../requesteMetodos"
 
 const Container = styled.div``
 
-const Titulo = styled.h1`margin:20px ;`
+const Titulo = styled.h1`
+margin-top:40px ;
+margin-left:160px ;
+font-family:"Titan one" ;
+`
 
 const FilterContainer = styled.div`
 display: flex;
 justify-content: space-between;
+margin: 20px 60px 20px 60px ;
 `
 const Filter= styled.div`
 margin:20px;  

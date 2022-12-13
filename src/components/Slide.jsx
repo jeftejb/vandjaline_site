@@ -11,12 +11,16 @@ import 'swiper/swiper.min.css'
 
 import "./style.css"
 
+import { Link } from 'react-router-dom';
+
 const Container = styled.div`
 width: 100%;
-height: 50vh;
+height: 60vh;
 display: flex;
 position: relative;
 overflow: hidden;
+background-color:#F49F0A;
+margin-top:0px ;
 /*${mobile({ display: "none" })}*/
 `
 /*
@@ -51,37 +55,44 @@ height: 100vh ;
 height: 100vw ;
 display: flex;
 align-items: center;
+justify-content:center ;
 
-background-color: "";
 `
-const ImgContainer = styled.div`
-height: 50%;
+const ContainerInfo = styled.div`
+height: 100%;
 flex: 1;
 opacity:8;
+text-decoration:none ;
+`
 
-`
-const Image = styled.img`
-margin-top:80px ;
-margin-left:15px ;
-width: 40%;
-height: 312px ;
-`
 const InfoContainer = styled.div`
 position: absolute ;
-top:100px ;
-padding:  10px;
-flex: 1;
+top:50px ;
+padding:100px;
+${mobile({ top:"100px", padding:"20px" })}
 `
 const Titulo = styled.h1`
 font-size: 30px;
-
+font-weight: 500;
+font-family:'Titan One';
+${mobile({ fontSize:"18px" })}
 `
-const Descricao = styled.p`
-margin: 50px 0px;
-font-size: 25px;
-font-weight: 1000;
+const Description = styled.p`
+margin: 20px 0px;
+font-size: 55px;
+font-weight: 500;
 letter-spacing: 3px;
+font-family: 'Six Caps', sans-serif;
+${mobile({ fontSize:"15px", fontFamily:"Exo, sans-serif"})}
 `
+
+
+const Btn = styled.span`
+font-size:20px ;
+font-weight:200;
+${mobile({ fontSize:"15px"})}
+`;
+
 
 
 const Slide = ()=> {
@@ -106,11 +117,7 @@ const [slideIndex, setSlideIndex] = useState(0)
         modules={[ EffectFade, Autoplay, Pagination, Scrollbar,A11y, Navigation]}
         effect='fade'
      
-      breakpoints= {{
      
-          slidesPerView: 1,
-      
-      }}
       navigation={true}
       autoplay={ {
         delay: 6500,
@@ -126,14 +133,21 @@ const [slideIndex, setSlideIndex] = useState(0)
                 {sliderItemns.map((item,i)=>( 
                         <SwiperSlide key={i}> 
                 <Slider key={item.id}>
-                    <ImgContainer>
-                    <Image src={item.img}  slot="container-start"
-          className="parallax-bg" />
-                    </ImgContainer>
                     <InfoContainer>
-                        <Titulo> {item.titulo}</Titulo>
-                        <Descricao>{}</Descricao> 
-                       
+                        <ContainerInfo>
+                        <Titulo> {item?.titulo}</Titulo>
+                        <Description>{item?.desc}</Description>
+                        <Link className='linkItem' id='LinkItem' to={`${item?.link}`} style={{
+                            textDecoration:"none",
+                            color:"#fff",
+                            fontFamily:"Exo, sans-serif",
+                            border:"2px solid #ccc" ,
+                            borderRadius:"5px",
+                            padding:"1rem 2rem",
+                            backgroundColor:"#00A6A6",
+                            
+                            }} ><Btn>{item?.but}</Btn></Link>
+                        </ContainerInfo>
                     </InfoContainer>
                 </Slider>
                 </SwiperSlide>

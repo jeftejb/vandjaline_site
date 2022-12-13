@@ -5,8 +5,8 @@ import {mobile, tablet} from "../responsive"
 
 const Container = styled.div`
 position: relative ;
-height: 15rem;
-background-color: #759EB8;
+height: 10rem;
+background-color: #F49F0A;
 color: white;
 display: flex;
 text-align: center;
@@ -18,8 +18,9 @@ font-weight: 500;
 
 const TextElement = styled.span`
 size: 10px;
-font-size: 17px;
+font-size: 35px;
 margin: 15px;
+font-family:'Corinthia';
 `
 
 const Logo = styled.h1`

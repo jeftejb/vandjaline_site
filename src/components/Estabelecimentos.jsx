@@ -11,6 +11,7 @@ padding:15px;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
+margin-bottom:35px ;
 `
 const Containe = styled.div`
 
@@ -20,11 +21,16 @@ const Containe = styled.div`
 
 const Div = styled.div`
 justify-content: space-between;
-
 text-align: center;
+margin-bottom:20px ;
+
 `
 const Button = styled.button`
 margin:4px;
+padding:10px 20px;
+border-radius:5px ;
+background-color:#BBDEF0;
+
 `
 
 const  Estabelecimentos = () => {

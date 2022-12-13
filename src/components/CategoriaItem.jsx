@@ -3,22 +3,34 @@ import React from 'react'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
 import {Link} from "react-router-dom"
+import "./style.css"
 
 const Container = styled.div`
 flex: 1;
 margin: 5px;
-min-width: 200px;
-height: 150px;
+min-width: 150px;
+height: 50px;
 margin-bottom: 25px ;
 position: relative;
 outline:1px solid black;
-outline-offset: -1rem;
-border-radius: 3%;
-background-color: #ffffffc3;
+outline-offset: 0.1rem;
+border-radius: 5px;
+background-color: #BBDEF0;
 align-items: center;
 justify-content: center;
 text-align:center;
-${mobile({ minWidth:"170px", height: "160px" })}
+
+animation:go-back 1s ;
+
+@keyframes go-back {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+${mobile({ minWidth:"100px", height: "50px"})}
 &:hover{
     outline:3px solid black ;
     outline-offset: 0rem;
@@ -26,55 +38,46 @@ ${mobile({ minWidth:"170px", height: "160px" })}
 
 `
 const Img = styled.img`
-  width: 100%;
-  height: 150px;
+  width: 30%;
+  height: 30px;
 border-radius:3%;
 object-fit: cover;
-${mobile({ height: "160px" })}
+${mobile({ height: "30px" })}
 `
 const Info = styled.div`
-position: absolute;
-top:1rem ;
+position: relative;
+top:15px;
 left: 0;
 width: 100%;
-height: 100%;
+height: 50%;
 display: flex;
-flex-direction: column;
+
 align-items: center;
 justify-content: center;
+
+
+
 `
 const Titulo = styled.h1`
 color:#011F26;
-margin-bottom: 20px;
-font-size:20px;
+margin-left:5px;
+font-size:13px;
 font-weight:bold;
-${mobile({ fontSize:"15px"})}
+${mobile({ fontSize:"10px"})}
 
-`
-const Button = styled.button`
-border: none;
-padding: 20px;
-background-color: transparent;
-color:#FA7F08;
-cursor: pointer;
-font-weight: 600;
-&:hover{
-    background-color: rgb(255, 165, 0);
-}
 `
 
 const CategoriaItem = ({item}) => {
     return (
         
-        <Container>
-            <Link to={`/produtos/${item.nomeCat}`}>
-            <Img src={item?.imagemCat} />
+        <Container className='reveal fade-bottom'>
+            <Link to={`/produtos/${item.nomeCat}`} style={{textDecoration:"none"}} >
             <Info>
-                
-                <Button>Ver Produtos </Button>
+            <Img src={"/image/logo.png"} />
+            <Titulo>{item?.nomeCat}</Titulo>
             </Info>
             </Link>
-            <Titulo>{item?.nomeCat}</Titulo>
+           
         </Container>
     )
 }

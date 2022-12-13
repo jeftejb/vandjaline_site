@@ -17,8 +17,6 @@ flex-wrap: wrap;
 justify-content:center ;
 align-items:center ;
 
-
-
 `
 
 
@@ -55,10 +53,10 @@ const Produtos = ({cat,filters,sort}) => {
       spaceBetween={30}
       breakpoints= {{
         0: {
-          slidesPerView: 2,
+          slidesPerView: 1,
         },
         768: {
-          slidesPerView: 3,
+          slidesPerView: 2,
         },
         1020: {
           slidesPerView: 4,

@@ -12,7 +12,7 @@ import "./pacotes.css"
  const  Pacotes = ()=>{
     // const location =  useLocation()
     //const email =  window.location.href.split('?')[1] ;
-    const nomeLoja =  window.location.href.split('?')[2];
+    //const nomeLoja =  window.location.href.split('?')[2];
 
 
 
@@ -29,7 +29,7 @@ const handelClick = (e)=>{
         <NavBar/>
 
         <div className="container">
-            <span className="nomeLoja">{nomeLoja}</span>
+            <span className="nomeLoja">Planos Vandjaline</span>
             <span className="inf">O vandjaline possui pacotes acessíveis para toda empresa que quer divulgar os seus serviços 
             e produtos. A escolha de um dos pacotes é feita depois do cadastro da empresa. </span>
             <div className="containerPacotes">

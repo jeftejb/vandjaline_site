@@ -4,15 +4,19 @@
 }
 
 .user {
-  flex: 4;
+  flex: 1;
   padding: 5px;
+  font-family: "Titan One";
 }
 
 .userTitleContainer {
   flex:0.3;
   display: flex;
+  margin: 40px;
+  padding: 50px;
   align-items: center;
   justify-content: space-between;
+  font-family: "Titan One";
 }
 
 .userAddButton {
@@ -34,7 +38,7 @@
 
 .userShow {
   flex: 1;
-  padding: 20px;
+  padding: 20px 40px 20px 40px;
   -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }

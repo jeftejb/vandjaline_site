@@ -18,6 +18,8 @@ import RecuperaEmailFim from './pages/recuperarFim';
 import Pacotes from "./pages/pacotes/pacotes";
 import Historico from "./pages/user/Historico";
 import HistoricoPedidos from "./pages/user/HistoricoPedidos";
+import CountLoja from "./pages/CountLoja";
+import CountUser from "./pages/CountUSer";
 import {
   BrowserRouter as Router, Route, Routes,Navigate
 } from "react-router-dom";
@@ -50,6 +52,8 @@ const  App = ()=> {
           <Route exact path="/confirm" element={confirm === true  ? <Navigate to ={"/"}/>  :<Confirm/>}/>
           <Route exact path="/login" element = {user ? <Navigate to ={`/perfilUser/${user?._id}/${user?.codigoInter}`}/> : <Login/>}/>
           <Route exact path="/registro/:id" element={<RegistroUsuario/>}/>
+          <Route exact path="/registro/usuario/:id" element={<CountUser/>}/>
+          <Route exact path="/registro/comerciante/:id" element={< CountLoja/>}/>
           <Route exact path="/produtos/:categoria" element={<ListaDeProdutos/>}/>
           <Route exact path="/produto/:id/:cod" element={<Produto/>}/>
           <Route exact path="/estabelecimento/:id" element={<Estabelecimento/>}/>

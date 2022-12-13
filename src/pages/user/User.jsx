@@ -19,6 +19,7 @@ import { logaut } from './../../redux/userRedux'
 import Rodape from "../../components/Rodape";
 import dotenv from "dotenv";
 import copy from "copy-to-clipboard"
+import ElementOne from "../../components/ElementOne";
 //import {confirmarEmailCadastro} from "./../../data" 
 
 
@@ -224,14 +225,15 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
 
   return (
     <div>
-  
+      <ElementOne/>
+     <Navbar/>
     <div className="user">
         
-       <Navbar/>
+    
        
-      <div className="userTitleContainer">
-        <h3 className="userTitle">Perfil do Usuário</h3>
-        <button onClick={SairUs}>
+       <div style={{marginTop:"40px", padding:"50px" , justifyContent:"center", alignItems:"center" , fontFamily:"Titan one"}}  className="userTitleContainer">
+        <h1 style={{padding:"20px"}} className="userTitle">Perfil de Usuario</h1>
+        <button style={{padding:"10px 40px", borderRadius:"5px", backgroundColor:"#00A6A6"}} onClick={SairUs}>
           Sair
         </button>
       </div>
@@ -319,14 +321,15 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
             </div>
             
             <div className="userShowInfo">
-            <h5 className="linkDePartilha"><button onClick={()=>funcaoCopiar(`${process.env.REACT_APP_SITE_LINK}registro/${id_user}`)}>Convidar Amigos</button>
+            <h5 className="linkDePartilha"><button style={{padding:"10px 40px", borderRadius:"5px", backgroundColor:"#00A6A6"}} onClick={()=>funcaoCopiar(`${process.env.REACT_APP_SITE_LINK}registro/usuario/${id_user}`)}>Convidar Amigos</button>
              <p>Para poder partihlar o link por favor primerio active a opção de intermediario para seres remunerado </p>
              </h5> 
            </div>
           </div>
         </div>
         <div className="userUpdate">
-          <span className="userUpdateTitle">Editar</span>
+          <span className="userUpdateTitle">Editar</span><br/>
+          <span>Por favor actualize os todos que estiverem em falta, para proteger melhor a sua conta.</span>
           <form className="userUpdateForm">
             <div className="userUpdateLeft">
               
@@ -392,7 +395,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
                 
               </div>
              
-              <button onClick={handelClick} className="userUpdateButton">Actualizar</button>
+              <button style={{backgroundColor:"#00A6A6"}} onClick={handelClick} className="userUpdateButton">Actualizar</button>
             </div>
             <div className="userUpdateRight">
               
@@ -440,17 +443,17 @@ else{
         
     <Navbar/>
 
-    <div className="userTitleContainer">
-        <h1 className="userTitle">Perfil Usuario</h1>
-        <button onClick={SairUs}>
+    <div style={{marginTop:"40px", padding:"50px" , justifyContent:"center", alignItems:"center" , fontFamily:"Titan one"}}  className="userTitleContainer">
+        <h1 style={{padding:"20px"}} className="userTitle">Perfil de Usuario</h1>
+        <button style={{padding:"10px 40px", borderRadius:"5px", backgroundColor:"#00A6A6"}} onClick={SairUs}>
           Sair
         </button>
       </div>
 
 <div className="confirEmail">
-<h1>Confirmar Email</h1>
- <span>Enviamos um e-mail de confirmacao no seu e-mail, caso não tenhas recebido o e-mail por favor clique no botão confirmar e-mail obrigado.</span>
- <button onClick={()=>nadelClickEmail(dados?.email)}> Confirmar e-mail </button>
+<h1 style={{fontFamily:"Titan one"}} className="userTitle">Confirmar Email</h1>
+ <span style={{fontFamily:"Titan one"}} className="userTitle">Enviamos um e-mail de confirmacao no seu e-mail, caso não tenhas recebido o e-mail por favor clique no botão confirmar e-mail obrigado.</span>
+ <button style={{ borderRadius:"5px", backgroundColor:"#00A6A6"}} onClick={()=>nadelClickEmail(dados?.email)}> Confirmar e-mail </button>
  </div>
 
  </div>

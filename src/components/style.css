@@ -1,7 +1,7 @@
 .app-menu {
   color: white;
   height: 100vh;
-  width: 10rem;
+  width: 18rem;
   background-color: #fff;
   z-index: 200;
 
@@ -32,10 +32,8 @@ body {
 }
 
 body {
-  background: #c5d5ea;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
+  background: #ffff;
+  color:#042940; 
   margin: 0;
   padding: 0;
 }
@@ -48,10 +46,11 @@ body {
 
 .swiper-slide {
   font-size: 18px;
-  color: #fff;
+  color: #042940;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 40px 60px;
+  padding: 40px 150px;
+  
 }
 
 .parallax-bg {
@@ -157,6 +156,8 @@ body {
 
 .loading {
   position: absolute;
+  width: auto;
+  height: auto;
   top: 0;
   left: 0;
   bottom: 0;
@@ -197,4 +198,30 @@ body {
 .textNav{
   text-decoration: none;
   list-style: none;
+}
+
+.link{
+  color:"#fff";
+    font-family:"Exo, sans-serif";
+    border:"2px solid #ccc" ;
+    border-radius:"5px";
+    padding:"20px 45px";
+}
+
+
+.tuttomInfo{
+text-decoration: none;
+color: #ffff;
+  border: 2px solid #ccc;
+  padding: 20px 40px;
+  background-color:"#00A6A6";
+
+}
+
+
+
+  @media only screen and  (max-width: 559px){
+    .LinkItem{
+    background-color:black;
+    }
 }

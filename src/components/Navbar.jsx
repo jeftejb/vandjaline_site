@@ -4,7 +4,7 @@ import {ShoppingCartOutlined, Menu} from '@material-ui/icons'
 import {Badge} from '@material-ui/core'
 import { ReactDimmer } from "react-dimmer";
 import {mobile, tablet} from "../responsive"
-import "./style.css"
+import { PermIdentity} from "@material-ui/icons"
 //import { useEffect } from 'react'
 
 import{useSelector} from "react-redux"
@@ -15,12 +15,12 @@ import  {Link}  from 'react-router-dom'
 const Container = styled.div`
 position:relative ;
 width:100% ;
-height:10%;
+height:5%;
 margin-top: 0;
-margin-bottom:30px ;
+
 align-items:center ;
 
-background-color: #759EB8;
+background-color: #F49F0A;
 
 ${mobile({ height: "50px" })}
 `
@@ -28,10 +28,10 @@ const Wrapper = styled.div`
 padding:  10px 20px;
 display: flex;
 align-items: center;
-justify-content: space-between;
+justify-content: center;
 ${mobile({ padding: "10px 0px" })}
 ${tablet({   padding: "10px 10px" })}
-
+text-decoration:none ;
 `
 const Left = styled.div`
 flex: 1;
@@ -50,9 +50,11 @@ ${tablet({  display:"flex" })}
 
 
 const Center = styled.div`
-margin-top:15px;
+margin-top:2px;
 flex: 2;
 text-align: center;
+justify-content:center ;
+align-items: center;
 display:flex ;
 ${tablet({ flex: 2,  justifyContent: "center" })}
 `
@@ -84,19 +86,19 @@ justify-content: center;
 
 `
 const MenuItem = styled.div`
+display:flex ;
 text-decoration:none ;
+font-size:17px ;
 cursor: pointer;
 margin-left: 15px;
 margin-bottom: 15px;
 font-weight: bold;
 text-transform: uppercase;
-border:2px solid #000;
-border-radius:15px;
-padding:3px 10px;
+padding:2px 5px;
 ${mobile({ fontSize: "10px" , marginLeft:"8px" , padding:"2px 7px"})}
 
 :hover{
-    background-color:orange ;
+    background-color:orange  ;
 }
 
 `
@@ -104,11 +106,10 @@ ${mobile({ fontSize: "10px" , marginLeft:"8px" , padding:"2px 7px"})}
 const MenuItemFi = styled.div`
 
 cursor: pointer;
-margin-left: 25px;
+margin-left: 15px;
 font-weight:bold ;
-border:2px solid #000;
-border-radius:15px;
-padding:3px 10px;
+font-size:20px ;
+padding:1px 5px;
 text-transform: uppercase;
 ${mobile({ fontSize: "10px" , marginLeft:"8px", padding:"2px 7px"})}
 :hover{
@@ -127,7 +128,19 @@ display: flex;
 
 `
 
-
+const DivCircle = styled.div`
+position:relative ;
+width:65px ;
+height:35px ;
+border:2px solid #ccc ;
+border-radius:50% ;
+top:0px ;
+margin-left:7% ;
+align-items:center ;
+justify-content:center ;
+text-align:center ;
+background-color:#00A6A6 ;
+`;
 
 
 
@@ -160,41 +173,45 @@ const Navbar = () => {
             <Center> 
                 
                 
-            <Link className='textNav' to="/"><MenuItem>Home</MenuItem></Link>
+            <Link className='textNav'  style={{textDecoration:"none", color:"#042940"}} to="/"><MenuItem>Home</MenuItem></Link>
                  <Somem>
-               <Link className='textNav' to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
+               <Link className='textNav'  style={{textDecoration:"none", color:"#042940"}} to ="/produtos" > <MenuItem>Produtos</MenuItem></Link>
               
-               <div class="dropdown ">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <div className="dropdown ">
+  <button className="btn btn-secondary dropdown-toggle" style={{backgroundColor:"transparent" , border:"none",color:"#042940", fontWeight:"bold" ,fontSize:"17px", textTransform:"uppercase"}} type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   Comércio 
   </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-  <Link  className='textNav' to ="/estabelecimentos"> <MenuItem>Lojas</MenuItem></Link>
-  <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
-  <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
+  <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+  <Link  className='textNav'style={{textDecoration:"none", color:"#042940" }} to ="/estabelecimentos"> <MenuItem>Lojas</MenuItem></Link>
+  <Link className='textNav'style={{textDecoration:"none" , color:"#042940"}} to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
+  <Link className='textNav' style={{textDecoration:"none", color:"#042940"}}to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
   </div>
 </div>
-<Link className='textNav' to ="/pacotes"> <MenuItem>Planos</MenuItem></Link>
+<Link className='textNav' style={{textDecoration:"none", color:"#042940"}}to ="/pacotes"> <MenuItem>Planos</MenuItem></Link>
                </Somem>
 
                <NaoSomem>
              
-               <Link className='textNav' to="/sobre"><MenuItem>Sobre</MenuItem></Link>
-               <Link className='textNav' to ="/registro/:"> <MenuItem>Cadastro</MenuItem> </Link>
-           {currentUser? <MenuItem> <Link className='textNav' to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
-               {currentUserD?.confirmado === true? `${currentUserD.nomeUsuario}(V:${currentUserD?.pontos}Akz)` : currentUserD?.nomeUsuario }</Link></MenuItem>
-           :<> <Link className='textNav' to ="/login"> <MenuItemFi>Login</MenuItemFi></Link>
-         
-           </>
-           }
+     
+               <Link className='textNav' style={{textDecoration:"none", color:"#042940"}}to ="/registro/:d"> <MenuItem>Cadastro</MenuItem> </Link>
+          
                
-               <Link className='textNav' to="/carrinho">
+               <Link style={{textDecoration:"none", color:"#042940"}} className='textNav' to="/carrinho">
                <MenuItemFi>
-               <Badge badgeContent = {quantidade} color="primary" >
-                   <ShoppingCartOutlined  className='carroDeCompras'/>
+               <Badge  badgeContent = {quantidade} color="primary" >
+                 <MenuItem>Carrinho <ShoppingCartOutlined style={{marginLeft:"5px", fontSize:"15px"}} className='carroDeCompras'/></MenuItem> 
                </Badge>
                </MenuItemFi>
                </Link>
+                
+                <DivCircle>
+               {currentUser? <MenuItem> <Link className='textNav'style={{textDecoration:"none", color:"#042940",fontSize:"20px"}} to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
+               {currentUserD?.confirmado === true? `${[currentUserD.nomeCompleto][0][0]}` : [currentUserD.nomeCompleto][0][0] }</Link></MenuItem>
+           :<> <Link className='textNav'style={{textDecoration:"none", color:"#042940"}} to ="/login"><PermIdentity style={{fontSize:"30px"}}/></Link>
+         
+           </>
+           }
+           </DivCircle>
                </NaoSomem>
 
               
@@ -204,22 +221,25 @@ const Navbar = () => {
                  
 
             <RightMenu className={`app-menu ${isMenuOpen ? "menu-open" : ""}`}>
-                <Link className='textNav' to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
-                <Link className='textNav' to ="/estabelecimentos"> <MenuItem>Lojas</MenuItem></Link>
-                <Link className='textNav' to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
-                <Link className='textNav' to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
-            <Link className='textNav' to ="/registro/:%d"> <MenuItem>Cadastro</MenuItem> </Link>
-            <Link className='textNav' to="/sobre"><MenuItem>Sobre</MenuItem></Link>
-            <Link className='textNav' to ="/pacotes"> <MenuItem>Planos</MenuItem></Link>
-            {currentUser? <MenuItem> <Link to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
-                {currentUserD?.confirmado===true? `${currentUserD.nomeUsuario}(V:${currentUserD?.pontos}Akz)` : currentUserD.nomeUsuario }</Link></MenuItem>
-            : <Link className='textNav' to ="/login"> <MenuItem>Login</MenuItem></Link>
+                <Link className='textNav'style={{textDecoration:"none"}} to ="/produtos"> <MenuItem>Produtos</MenuItem></Link>
+                <Link className='textNav' style={{textDecoration:"none"}}to ="/estabelecimentos"> <MenuItem>Lojas</MenuItem></Link>
+                <Link className='textNav' style={{textDecoration:"none"}}to ="/servicos"> <MenuItem>Serviços</MenuItem></Link>
+                <Link className='textNav'style={{textDecoration:"none"}} to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
+            <Link className='textNav' style={{textDecoration:"none"}}to ="/registro/:%d"> <MenuItem>Cadastro</MenuItem> </Link>
+            <Link className='textNav' style={{textDecoration:"none"}}to="/sobre"><MenuItem>Sobre</MenuItem></Link>
+            <Link className='textNav' style={{textDecoration:"none"}}to ="/pacotes"> <MenuItem>Planos</MenuItem></Link>
+            <DivCircle>
+            {currentUser? <MenuItem> <Link style={{textDecoration:"none", color:"#042940",fontSize:"20px"}}  to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
+                {currentUserD?.confirmado===true? `${[currentUserD.nomeCompleto][0][0]}` : [currentUserD.nomeCompleto][0][0] }</Link></MenuItem>
+            : <Link className='textNav'style={{textDecoration:"none"}} to ="/login"> <PermIdentity style={{fontSize:"30px"}}/></Link>
             }
+              </DivCircle>
                 
-                <Link className='textNav' to="/carrinho">
+                <Link className='textNav' style={{textDecoration:"none", color:"#042940"}}to="/carrinho">
                 <MenuItem className='carrinhoDeCompras'>
                 <Badge badgeContent = {quantidade} color="primary">
-                    <ShoppingCartOutlined className='carroDeCompras'/>
+                <MenuItem>Carrinho <ShoppingCartOutlined style={{marginLeft:"5px", marginTop:"5px"}} className='carroDeCompras'/></MenuItem> 
+
                 </Badge>
                 </MenuItem>
                 </Link>

@@ -48,29 +48,37 @@ export const confirmarCodigo = async (user)=>{
       await userRequest.post("/autenticacao/confirm", user)
     
   }catch(erro){
-     console.log(erro)
+    
   }
 }
 
 
 export const novoUsuario = async (usuario)=>{
+
   try{
-   
-    if(usuario.id){
+ 
+    if(usuario?.id !== 0){
       const inserir = async ()=>{
         await publicRequest.post("/autenticacao/registro/usuario", usuario);
     };
+
+    const actualizarPontos = async()=>{
+      await userRequest.put(`/users/${usuario?.id}`, {pontos:15})
+    }
     
     inserir();
+    actualizarPontos()
      alert("Cadastro feito com sucesso!");
+   
      refresh();
+
     }else{
         await publicRequest.post("/autenticacao/registro/usuario", usuario);
         alert("Cadastro feito com sucesso!")
         refresh();
     }
   }catch(erro){
-    alert("Erro ao cadastrar  já existe um cadastro feito com estes dados!! ",+erro)
+    alert(erro)
   }
 }
 
@@ -95,6 +103,7 @@ try{
 await publicRequest.post("/autenticacao/registro/estabelecimento", estabelecimento)
   alert("Cadastro feito com sucesso!")
   redireciona(dados);
+ refresh();
 }catch(erro){
   alert("Erro ao cadastrar Já existe um cadastro feitos com estes dados !! ",+erro)
 }

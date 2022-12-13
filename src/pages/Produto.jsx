@@ -13,7 +13,8 @@ import {useDispatch} from "react-redux"
 import {addUsuario} from  "./../redux/apiCalls"
 import {actPontos} from "./../redux/apiCalls"
 //import { useLocation } from "react-router-dom"
-
+import Estabelecimento from "../components/Estabelecimento"
+import "./../components/style.css"
 const Container = styled.div``
 
 const Wrapper= styled.div`
@@ -29,35 +30,44 @@ flex: 1;
 const Image = styled.img`
 width: 100%;
 height: 50vh;
+text-align:center ;
+justify-content:center ;
+align-items:center ;
 object-fit: cover;
 ${mobile({ height: "40vh" })}
 `
 
 const InfoContainer = styled.div`
 flex: 1;
-padding: 0px 50px;
+padding: 70px 40px;
 ${mobile({ padding: "10px" })}
 `
 
 const Titulo = styled.h1`
-font-weight:bolder;
-font-size: 18px;
+font-family:"Titan one" ;
+font-size: 20px;
 `
 
 const Desc = styled.p`
 margin:20px 0px;
+font-family:"Exo, sans-serif" ;
+font-size:20px ;
 `
+
 
 const Preco = styled.span`
 font-weight:bolder;
-font-size: 15px;
+font-size: 20px;
+
+font-family:"Exo, sans-serif" ;
 
 `
 const FilterContainer = styled.div`
 width: 50%;
-margin:30px 0px;
+margin:20px 0px;
 display: flex;
 justify-content: space-between;
+
 ${mobile({ width: "100% " })}
 `
 
@@ -129,6 +139,37 @@ color:#000;
 cursor: pointer;
 font-weight: 700;
 `
+
+const TituloContainer = styled.text`
+    font-family:"Titan one" ;
+    font-size:18px;
+    margin-top:20px ;
+    margin-bottom:40px ;
+`
+
+const ContainerLoja = styled.div`
+margin: 40px;
+justify-content:center ;
+align-items:center ;
+text-align:center ;
+`;
+
+
+const ContainerDecription =styled.div`
+margin-top:25px ;
+margin-bottom:25px ;
+align-items:center ;
+justify-content:center ;
+text-align:center ;
+`;
+const TitleDescription = styled.text`
+margin-top:25px ;
+margin-bottom:25px ;
+font-family:"Titan one" ;
+font-size:18px;
+
+`;
+
 
 const Produto = () => {
 
@@ -256,16 +297,17 @@ if(ids.indexOf(id_user) === -1){
                <Navbar/>
                <Wrapper>
                    <ImageContainer>
+                   <Titulo> {produto?.titulo}</Titulo>
                        <Image src={`${produto?.imagem}`} />
                    </ImageContainer>
                    <InfoContainer>
-                       <Titulo> {produto?.titulo}</Titulo>
+                    
                        <Preco> Preço: {dinheiro.format(Number(produto?.preco))}</Preco>
                        <Desc>Disponivel: {produto?.quanti}</Desc>
                        <Desc>Recomendações: {produto?.rec}</Desc>
                        <Loja>Loja: {produto?.loja}</Loja>
                        <Desc> {produto?.novo === "Novo" ? <span style={{color:"#FA7F08"}}> Novo </span> : ""}</Desc>
-                       <Desc>Descrição: {produto?.descricao}</Desc>
+                       
                        <FilterContainer>
                            <Filter>
                                <FilterTitulo>Cor: </FilterTitulo>
@@ -296,6 +338,15 @@ if(ids.indexOf(id_user) === -1){
                        </AddContainer>
                    </InfoContainer>
                </Wrapper>
+               <ContainerDecription className="reveal fade-bottom">
+                <TitleDescription>Descrição:</TitleDescription>
+               <Desc> {produto?.descricao}</Desc>
+               </ContainerDecription>
+
+               <ContainerLoja className="reveal fade-bottom">
+                <TituloContainer>Estabelecimento</TituloContainer>
+                  <Estabelecimento item={{nomeLoja:produto.loja, _id:produto.id_loja}}/>
+               </ContainerLoja>
         <NovasLetras/>
         <Rodape/>
         </Container>

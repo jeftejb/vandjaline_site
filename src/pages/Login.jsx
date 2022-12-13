@@ -7,12 +7,12 @@ import {mobile} from "../responsive"
 import{Link} from "react-router-dom"
 import { CircularProgress } from "@material-ui/core"
 import "./../components/style.css"
+import { PermIdentity } from "@material-ui/icons"
 
 const Container  = styled.div`
 width: 100vw;
 height: 100vh;
-background: url("");
-background: #C5D5EA;
+
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -20,10 +20,13 @@ justify-content: center;
 `
 
 const Wrapper  = styled.div`
+font-family:"Titan one" ;
+text-align:center ;
+justify-content:center ;
+align-items:center ;
 width: 25%;
 padding: 20px;
-background: #C5D5EA;
-box-shadow: 20px 15px 15px black;
+
 margin-bottom: 20px;
 ${mobile({ width: "75%" })}
 `
@@ -34,17 +37,23 @@ font-weight: 600;
 `
 
 const Form  = styled.form`
+font-family:"Titan one" ;
 display: flex;
 flex-direction: column;
-
+justify-content: center;
+align-items:center ;
 `
 
 const Imput  = styled.input`
 flex:1;
-min-width: 40%;
+min-width: 100%;
 margin: 10px 0px ;
 padding: 10px;
 `
+
+const Logo  =  styled.div`
+
+`;
 
 
 
@@ -96,15 +105,16 @@ const Login = () => {
         <Container>
            
             <Wrapper>
+                <Logo><PermIdentity style={{fontSize:100}} /></Logo>
                 <Titulo>Login</Titulo>  
                 <Form>
-                    <Imput placeholder = "E-MAIL" onChange={(e)=>setUserName(e.target.value)} />
+                    <Imput placeholder = "E-MAIL" onChange={(e)=>setUserName(e.target.value)}  />
                     <Imput placeholder = "PALAVRA PASSE " type="password" onChange={(e)=>setPassword(e.target.value)}/>
                     <Button disabled={loading} onClick = {handleClick} >ENTRAR</Button>
                     {error && <Error>Algo deu errado ...! Nome ou Palavra passe incorretos</Error>}
-                    <Link to = "/recuperar/senha">NAO ME LEMBRO DA MINHA PALAVRA PASSE</Link>
-                    <Link to ="/registro/:id">Criar conta </Link>
-                    <Link to ="/">Voltar a Pagina Inicial</Link>
+                    <Link style={{fontFamily:"Titan one" , textDecoration:"none", color:"#042940 " }}  to = "/recuperar/senha">NAO ME LEMBRO DA MINHA PALAVRA PASSE</Link>
+                    <Link to ="/registro/:id" style={{fontFamily:"Titan one" , textDecoration:"none", color:"#042940"}}>Criar conta </Link>
+                    <Link to ="/" style={{fontFamily:"Titan one" , textDecoration:"none", color:"#042940"}}>Voltar a Pagina Inicial</Link>
                     </Form>
             </Wrapper>
 
