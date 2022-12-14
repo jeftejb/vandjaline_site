@@ -72,8 +72,8 @@ animation:go-back 1s;
 
 const Desc = styled.p`
 text-align:center ;
-padding:20px ;
-margin-bottom:20px;
+padding: 0px 20px ;
+margin-bottom:40px;
   font-size:50px ;
   font-weight:500;
   font-family: 'Six Caps', sans-serif;
@@ -129,7 +129,7 @@ ${tablet({ width: "40px", height:"20px", display:"none"})}
 
 const ContainerDesc = styled.div`
 width: 90% ;
-height: 55% ;
+height: 60% ;
 padding:0px 0px 20px 0px ;
 margin:10px ;
 border-radius:10px ;
@@ -142,12 +142,12 @@ ${tablet({ width: "30px", display:"none"})}
 `
 
 const ContainerDes = styled.div`
-width: 80% ;
+width: 90% ;
 height: 55% ;
 padding:0px 0px 20px 0px ;
 margin-top:30px ;
 margin-left:50px ;
-margin-bottom:20px;
+margin-bottom:40px;
 align-items: center ;
 justify-content: center ;
 
@@ -253,7 +253,7 @@ ${tablet({ fontSize:"10px"})}
               <ContainerP>
                 <TextC className='reveal fade-top' >Vamos juntos crescer!!</TextC>
            <ContainerDes className='reveal fade-bottom'><Desc >Construa o seu negocio de uma maneira simples e fácil , tenha a sua loja virtual a custo “0”! faça já o seu  cadastro como comerciante, e comesse a publicitar os seus produtos.</Desc></ContainerDes>
-           <Link className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6", textDecoration:"none"}} href="/sobre">Saber mais </Link>
+           <Link className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6",marginTop:"20px", textDecoration:"none"}} href="/sobre">Saber mais </Link>
               </ContainerP>
             </ContainerSlider>
 
@@ -268,7 +268,7 @@ ${tablet({ fontSize:"10px"})}
             <ContainerP>
             <TextC className='reveal fade-top '>Ganhamos Todos!!</TextC>
            <ContainerDes className='reveal fade-bottom'><Desc >Encontre aqui a Oportunidade de se tornar um intermediario e comesse a ganhar dinheiro publicitando produtos. </Desc></ContainerDes>
-           <Link  className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6", textDecoration:"none"}} href="/sobre">Saber mais </Link>
+           <Link  className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6", marginTop:"20px", textDecoration:"none"}} href="/sobre">Saber mais </Link>
               </ContainerP>
               <ContainerT>
               <ContainerText className='reveal fade-top' ><TextP>Ganhamos todos!</TextP></ContainerText>

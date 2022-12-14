@@ -92,9 +92,7 @@ text-transform: uppercase;
 padding:2px 5px;
 ${mobile({ fontSize: "13px" , marginLeft:"8px" , padding:"2px 7px"})}
 
-:hover{
-    background-color:orange  ;
-}
+
 
 `
 
@@ -225,6 +223,7 @@ const Navbar = () => {
   <Link className='textNav' style={{textDecoration:"none", color:"#042940"}}to ="/fazendas"> <MenuItem>Fazendas</MenuItem></Link>
   </div>
 </div>
+<Link className='textNav' style={{textDecoration:"none", color:"#042940"}}to="/sobre"><MenuItem>Sobre</MenuItem></Link>
 <Link className='textNav' style={{textDecoration:"none", color:"#042940"}}to ="/pacotes"> <MenuItem>Planos</MenuItem></Link>
                </Somem>
 

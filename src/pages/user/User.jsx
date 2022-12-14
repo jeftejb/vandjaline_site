@@ -33,6 +33,7 @@ const  User = ()=> {
   const id_user = location?.pathname.split("/")[2] 
   const [updateDados , getUpdateDados] = useState();
   const [dadosInter , getDadosInter] = useState();
+  const [dadosEntre , getDadosEntre] = useState();
   const [pagamento, getPagamento] = useState();
   const [pagamentoDados, getPagamentoDados] = useState([]);
   const imagem = "https://firebasestorage.googleapis.com/v0/b/vandja-6d839.appspot.com/o/avatar%2Fkindpng_786207.png?alt=media&token=a59d158e-d6b7-459c-b760-002177d9f886"
@@ -74,6 +75,27 @@ getDadosInter((prev)=>{
   return {...prev , [e.target.name]:e.target.value}
 })
   }
+
+
+  const handelChangeEntre = (e)=>{
+    getDadosEntre((prev)=>{
+      return {...prev , [e.target.name]:e.target.value}
+    })
+      }
+    
+
+      const handelEntregador = (e)=>{
+        e.preventDefault();
+
+        Swal.fire({
+          title: 'Olá caro entregador!',
+          text: ' Este serviço encontra-se em construção de momento, mas dentro em breve estará pronto!!',
+          icon: 'info',
+          confirmButtonText: 'Entendi'
+        })
+       
+      }
+
 
   const handelIntermediario = ()=>{
     
@@ -321,7 +343,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
               className="userShowImg"
             />
             <div className="userShowTopTitle">
-              <span className="userShowUsername">{String(dados?.nomeUsuario)}</span>
+              <span className="userShowUsername">{String(dados?.nomeCompleto)}</span>
               <span className="userShowUserTitle">intermediario : {dados?.intermediario} </span>
            
   
@@ -490,10 +512,32 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
                       Nao
                     </option>
                   </select>
-                  <button onClick={handelIntermediario} className="userUpdateButton">Ser Intermediario</button>
+                  <button style={{backgroundColor:"#00A6A6", marginBottom:"15px"}} onClick={handelIntermediario} className="userUpdateButton">Ser Intermediario</button>
                 </form>
                 </>
                 : ""}
+
+{dados?.entregador !== "pendente" && dados?.confirmado!== "true" && dados?.entregador !== "confirmado" ?
+          <>
+          <form className="userUpdateRight">
+              <label htmlFor="file">
+              Me tornar Entregador
+                </label>
+                  <select name="intermediario" onChange={handelChangeEntre}>
+                    <option undefined="true">Me tornar entregador</option>
+                    <option value="Pendente">
+                      Sim
+                    </option>
+                    <option value="Nao">
+                      Nao
+                    </option>
+                  </select>
+                  <button onClick={handelEntregador} style={{backgroundColor:"#00A6A6", marginBottom:"15px"}} className="userUpdateButton">Ser Entregador</button>
+                </form>
+                </>
+                : ""}
+
+                
                 <span>A carteira digital "Kamba" é um aplicativo inovador 100% angolano que permite efectuar varios tipos de operações na internet como pagamentos transferencias e outros, link para fazer o download: <a href={process.env.REACT_APP_SITE_LINK_KAMBA}> Clique aqui para baixar o App</a> </span>
         </div>
       </div>
