@@ -1,6 +1,7 @@
 
 import { useState } from "react"
 import styled from "styled-components"
+import Swal from "sweetalert2"
 import { confirmarCodigo  } from "../redux/apiCalls"
 import { publicRequest, userRequest} from "../requesteMetodos"
 import {mobile} from "../responsive"
@@ -75,7 +76,14 @@ const Confirm = () => {
     const handleClickReq = (e)=>{
         e.preventDefault()
         const alerta = ()=>{
-            alert("Codigo enviado com sucesso ! Por favor verifique a sua caixa de E-mail para obter seu codigo!")
+            
+            Swal.fire({
+                title: 'Tudo certo',
+                text: 'Codigo enviado com sucesso ! Por favor verifique a sua caixa de E-mail para obter seu codigo!',
+                icon: 'success',
+                confirmButtonText: 'Entendi'
+              })
+
         }
         const updateCod = async ()=>{
             const max = 1000000
@@ -101,14 +109,25 @@ const Confirm = () => {
     const handleClick = (e)=>{
         e.preventDefault()
         const alerta = ()=>{
-            alert("Confirmação feita com sucesso !")
+            Swal.fire({
+                title: 'Tudo certo',
+                text: 'Confirmação feita com sucesso!',
+                icon: 'success',
+                confirmButtonText: 'Entendi'
+              })
         }
         if(confirm_codigo){
         confirmarCodigo({confirm_codigo, id})
         alerta()
         }
         else{
-            alert("Codigo invalido por favor coloque um codigo valido!")
+            
+            Swal.fire({
+                title: 'Error',
+                text: 'Codigo invalido por favor coloque um codigo valido!',
+                icon: 'error',
+                confirmButtonText: 'Entendi'
+              })
         }
        
     }

@@ -1,4 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit"
+import Swal from "sweetalert2";
 
 
 const carrinhoSlice = createSlice({
@@ -15,19 +16,35 @@ const carrinhoSlice = createSlice({
             if(Array.isArray(state.produtos)){
             const verifica = state.produtos.findIndex((item)=>item._id === action.payload?._id )
             if(verifica !== -1) {
-               alert("Este produto ja existe no carrinho")
+                Swal.fire({
+                    title: 'Alerte',
+                    text: 'Este produto já existe no carrinho',
+                    icon: 'info',
+                    confirmButtonText: 'Entendi'
+                  })
         }else{
             state.produtos.push(action.payload);
             state.quantidade += 1; 
             state.total += action.payload.preco * action.payload.quantidade; 
-            alert("Produto adicionado com sucesso")
+            Swal.fire({
+                title: 'Tudo certo',
+                text: 'O produto foi adicionado com sucesso na sua lista de compras!',
+                icon: 'success',
+                confirmButtonText: 'Entendi'
+              })
         }
     }else{
-        alert("Houve algum erro ao adicionar")
+        Swal.fire({
+            title: 'Error',
+            text: 'Houve algum erro ao adicionar o produto, por favor tente nova mente',
+            icon: 'error',
+            confirmButtonText: 'Entendi'
+          })
     }
       
         }, 
         deleteProduto:(state, action)=>{
+            
             state.isFetching = false;
             
             state.produtos.splice(

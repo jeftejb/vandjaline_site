@@ -14,6 +14,7 @@ import {actPontos} from "./../redux/apiCalls"
 //import { useLocation } from "react-router-dom"
 import Estabelecimento from "../components/Estabelecimento"
 import "./../components/style.css"
+import Swal from "sweetalert2"
 const Container = styled.div`
 margin-top:200px ;
 `
@@ -254,12 +255,22 @@ if(ids.indexOf(id_user) === -1){
     adicionarIdUsuario();
 
 }else{
-    alert("Esteproduto ja foi recomedado")
+    Swal.fire({
+        title: 'Alerta',
+        text: 'Este produto já foi recomendado',
+        icon: 'info',
+        confirmButtonText: 'Entendi'
+      })
 }
 
 
 }else{
-    alert("Por favor faça o login para poder recomendar este produto")
+    Swal.fire({
+        title: 'Error!',
+        text: 'Por favor faça o login para poder recomendar este produto obrigado',
+        icon: 'error',
+        confirmButtonText: 'Entendi'
+      })
 }
     }
 
@@ -279,13 +290,26 @@ if(ids.indexOf(id_user) === -1){
             url_pro: url_pro
         }
         console.log(url_pro)
-        const mensagen = ()=>alert("O produto foi adicionado com sucesso na sua lista de produtos afiliados, verifique a sua lista de produtos afiliados no seu perfil.")
+        const mensagen = ()=>{
+            Swal.fire({
+                title: 'Tudo certo',
+                text: 'O produto foi adicionado com sucesso na sua lista de produtos afiliados, verifique a sua lista de produtos afiliados no seu perfil.',
+                icon: 'success',
+                confirmButtonText: 'Entendi'
+              })
+           
+        }
         const addProPubli = async ()=>{
             try{
                 await userRequest.post("/publicitar/insert", infAdd)
                 mensagen();
             }catch(error){
-                console.log("Varios Erros")
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Algo deu errado por favor tente mais tarde ou entre em contacto usando o e-mail uservandja@gmail.com ',
+                    icon: 'error',
+                    confirmButtonText: 'Entendi'
+                  })
             }
         }
         addProPubli();

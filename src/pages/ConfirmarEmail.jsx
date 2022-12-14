@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { logaut } from './../redux/userRedux'
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 
 
@@ -64,7 +65,13 @@ const nadelClickTerminar = ()=>{
   
  */
 
-  alert("Conta confirmada com sucesso ! por favor reinicie sua conta para gravar as alterações, clicando no botão 'sair' ")
+
+  Swal.fire({
+    icon: 'success',
+    title: 'Tudo certo',
+    text: "Conta confirmada com sucesso ! por favor reinicie sua conta para gravar as alterações, clicando no botão 'sair' ",
+    footer: '<button style={{padding:"10px 40px", borderRadius:"5px", backgroundColor:"#00A6A6"}} onClick={SairUs}>Sair</button>'
+  })
 }
 
 const SairUs = ()=>{
@@ -81,9 +88,7 @@ const SairUs = ()=>{
 
 <div style={{marginTop:"200px", padding:"50px" , justifyContent:"center", alignItems:"center" , fontFamily:"Titan one"}}  className="userTitleContainer">
     <h1 style={{padding:"20px"}} className="userTitle">Ultimo passo !</h1>
-    <button style={{padding:"10px 40px", borderRadius:"5px", backgroundColor:"#00A6A6"}} onClick={SairUs}>
-      Sair
-    </button>
+    <button style={{padding:"10px 40px", borderRadius:"5px", backgroundColor:"#00A6A6"}} onClick={SairUs}>Sair</button>
   </div>
 
 <div className="confirEmail">

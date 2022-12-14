@@ -10,6 +10,7 @@ import Rodape from "../components/Rodape";
 import "./../components/style.css"
 import { CircularProgress } from "@material-ui/core"
 import { PersonAdd} from "@material-ui/icons"
+import Swal from 'sweetalert2'
 
 
 
@@ -267,7 +268,12 @@ const CountUSer = () => {
            await novoUsuario(usuario)
            setLoading(false)
         }catch{
-            alert("Erro ao Cadastrar")
+          Swal.fire({
+            title: 'Error!',
+            text: 'Algo deu errado, por favor tente novamente',
+            icon: 'error',
+            confirmButtonText: 'Entendi'
+          })
             setLoading(false)
         }
            

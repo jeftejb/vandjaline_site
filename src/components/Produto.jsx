@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import {addUsuario} from  "./../redux/apiCalls"
 import {actPontos} from "./../redux/apiCalls"
 import { mobile } from '../responsive';
-
+import Swal from 'sweetalert2'
 
 
 const Text = styled.h6 `
@@ -118,7 +118,7 @@ top:0;
 
 width: 300px;
 height: 325px;
-
+background:cover;
 border-radius:5px ;
 ${mobile({  width: "295px", height:" 180px" })}
 
@@ -143,8 +143,10 @@ const Produto = ({item}) => {
     const id_user = JSON?.parse(JSON?.parse(localStorage?.getItem("persist:root")).user)?.currentUser?._id;
     const user = JSON?.parse(JSON?.parse(localStorage?.getItem("persist:root")).user)?.currentUser
     const _id = item._id;
-
  
+
+
+
 
     const handleClickRecomendar = (e) =>{
         e.preventDefault()
@@ -176,7 +178,12 @@ if(ids.indexOf(id_user) === -1){
 
 
 }else{
-    alert("Por favor faça o login para poder recomendar este produto")
+    Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to continue',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
 }
     }
    

@@ -47,6 +47,8 @@ const Image = styled.img`
 height: 100%;
 width: 100%;
 border-radius:5%;
+background-repeat: no-repeat;
+  background-size: cover;
 `
 
 const Nome = styled.h1`

@@ -6,7 +6,7 @@ import {mobile, tablet} from "../responsive"
 const Container = styled.div`
 position: fixed ;
 width:100% ;
-height: 10px;
+height: 10rem;
 background-color: #F49F0A;
 color: white;
 display: flex;

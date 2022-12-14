@@ -11,6 +11,7 @@ import { CircularProgress } from "@material-ui/core"
 
 
 import {Storefront } from "@material-ui/icons"
+import Swal from 'sweetalert2'
 
 
 
@@ -317,12 +318,23 @@ const CountLoja = () => {
                 
            
             }catch{
-                alert("Erro ao cadastrar")
+              Swal.fire({
+                title: 'Error!',
+                text: 'Algo deu errado, por favor tente novamente',
+                icon: 'error',
+                confirmButtonText: 'Entendi'
+              })
                 setLoading(false)
             }
        
         }else{ 
-            alert("Erro ao cadastrar Palvra passe incopativel!!")
+          Swal.fire({
+            title: 'Error!',
+            text: 'Palavra passe incompatíveis, por favor verifique e tente novamnet',
+            icon: 'error',
+            confirmButtonText: 'Entendi'
+          })
+       
             setConfirmPassErroLoja({state:"red"})
             setLoading(false)
             

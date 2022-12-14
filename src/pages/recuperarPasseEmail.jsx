@@ -3,6 +3,7 @@ import "./confirmarEmail/user.css";
 import Navbar from "./../components/Navbar";
 import Rodape from "./../components/Rodape";
 import { publicRequest } from './../requesteMetodos';
+import Swal from 'sweetalert2';
 
 
 
@@ -20,7 +21,12 @@ import { publicRequest } from './../requesteMetodos';
 const nadelClickTerminar = ()=>{
 const dados = input
 const alerta = ()=>{
-  alert("Email enviado com sucesso!")
+  Swal.fire({
+    title: 'Tudo certo!',
+    text: 'E-mail enviado com sucesso ',
+    icon: 'success',
+    confirmButtonText: 'Entendi'
+  })
 }
 if(dados !== undefined){
   const enviarEmail = async ()=>{
@@ -38,7 +44,12 @@ console.log(erro)
   enviarEmail();
   alerta()
 }else{
-    alert("Por favor insira o seu email!")
+  Swal.fire({
+    title: 'Alerta!',
+    text: 'Por favor informe seu e-mail ',
+    icon: 'info',
+    confirmButtonText: 'Entendi'
+  })
 }
  
 }

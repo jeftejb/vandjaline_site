@@ -18,6 +18,7 @@ import {
 
 
 import {publicRequest ,userRequest} from "../requesteMetodos"
+import Swal from "sweetalert2";
 
 
 
@@ -68,13 +69,23 @@ export const novoUsuario = async (usuario)=>{
     
     inserir();
     actualizarPontos()
-     alert("Cadastro feito com sucesso!");
+    Swal.fire({
+      title: 'Tudo certo!',
+      text: 'Cadastro feito com sucesso',
+      icon: 'success',
+      confirmButtonText: 'Entendi'
+    })
    
      refresh();
 
     }else{
         await publicRequest.post("/autenticacao/registro/usuario", usuario);
-        alert("Cadastro feito com sucesso!")
+        Swal.fire({
+          title: 'Tudo certo!',
+          text: 'Cadastro feito com sucesso',
+          icon: 'success',
+          confirmButtonText: 'Entendi'
+        })
         refresh();
     }
   }catch(erro){
@@ -89,7 +100,12 @@ export const updateUsuario = async ( usuario, _id)=>{
  await userRequest.put(`/users/${_id}`, usuario)
 
   }catch(erro){
-    alert("Erro ao Actualizar !! ",+erro)
+    Swal.fire({
+      title: 'Error',
+      text: 'Algo deu errado por favor tente mais tarde',
+      icon: 'error',
+      confirmButtonText: 'Entendi'
+    })
   }
 }
 
@@ -101,11 +117,21 @@ export const novoEstabelecimento = async ( estabelecimento)=>{
  const dados = {email:estabelecimento.emailLoja, nomeLoja:estabelecimento.nomeLoja}
 try{
 await publicRequest.post("/autenticacao/registro/estabelecimento", estabelecimento)
-  alert("Cadastro feito com sucesso!")
+Swal.fire({
+  title: 'Tudo certo!',
+  text: 'Cadastro feito com sucesso',
+  icon: 'success',
+  confirmButtonText: 'Entendi'
+})
   redireciona(dados);
  refresh();
 }catch(erro){
-  alert("Erro ao cadastrar Já existe um cadastro feitos com estes dados !! ",+erro)
+  Swal.fire({
+    title: 'Error',
+    text: 'Algo deu errado por favor tente novamente',
+    icon: 'error',
+    confirmButtonText: 'Entendi'
+  })
 }
 
 }
@@ -118,7 +144,12 @@ export const actPontos = async (id, rec)=>{
   try{
   await userRequest.put("/produtos/recomendacoes/"+id, rec)
   }catch(erro){
-    alert("Erro ao cadastrar Já existe um cadastro feitos com estes dados !! ",+erro)
+    Swal.fire({
+      title: 'Error!',
+      text: 'Algo deu errado por favor tente mais tarde',
+      icon: 'error',
+      confirmButtonText: 'Entendi'
+    })
   }
   
   }
@@ -129,9 +160,19 @@ export const actPontos = async (id, rec)=>{
     try{
       const dados ={userRec:idList}
     await userRequest.put("/produtos/adicionar/id/"+id, dados)
-      alert("Produto recomedado  com sucesso!")
+    Swal.fire({
+      title: 'Tudo certo!',
+      text: 'Produto recomendado com sucesso!',
+      icon: 'success',
+      confirmButtonText: 'Entendi'
+    })
     }catch(erro){
-      alert("Erro ao cadastrar Já existe um cadastro feitos com estes dados !! ",+erro)
+      Swal.fire({
+        title: 'Error',
+        text: 'Algo deu errado por favor tente mais tarde',
+        icon: 'error',
+        confirmButtonText: 'Entendi'
+      })
     }
     
     }

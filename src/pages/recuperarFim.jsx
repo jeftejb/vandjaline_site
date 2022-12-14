@@ -4,6 +4,7 @@ import Navbar from "./../components/Navbar";
 import Rodape from "./../components/Rodape";
 import { publicRequest } from './../requesteMetodos';
 import { useLocation } from 'react-router';
+import Swal from 'sweetalert2';
 
 
 
@@ -34,10 +35,27 @@ const dados = {...input , email : email}
   const enviarEmail = async ()=>{
      await publicRequest.put(`/users/mudar/pass/`, dados)
   }
-  enviarEmail().then(alert("Palavra passe Alterada com sucesso!!")).catch(alert("Houve algum erro ao mudar a palavra passe, verifique o seu email, caso continuar por favor entre em contacto  Email: uservandja@gmail.com"));
+  enviarEmail().then(Swal.fire({
+    title: 'Tudo certo!',
+    text: 'Palavra passe alterada com sucesso',
+    icon: 'success',
+    confirmButtonText: 'Entendi'
+  })).catch(
+    Swal.fire({
+      title: 'Error',
+      text: 'Algo deu errado por favor tente mais tarde',
+      icon: 'error',
+      confirmButtonText: 'Entendi'
+    })
+  );
 
 }else{
-    alert("Palavra passe Incopativeis")
+  Swal.fire({
+    title: 'Error!',
+    text: 'Palavra passe incompatíveis',
+    icon: 'error',
+    confirmButtonText: 'Entendi'
+  })
 }
 }
 

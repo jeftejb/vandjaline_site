@@ -19,6 +19,7 @@ import { logaut } from './../../redux/userRedux'
 import Rodape from "../../components/Rodape";
 import dotenv from "dotenv";
 import copy from "copy-to-clipboard"
+import Swal from "sweetalert2";
 
 //import {confirmarEmailCadastro} from "./../../data" 
 
@@ -88,11 +89,23 @@ getDadosInter((prev)=>{
       updateUsuario( dadosInterFinal, id_user)
   
     }else{
-      alert("voce ja e um intermediario")
+       
+      Swal.fire({
+        title: 'Alerta',
+        text: 'Voce já é um intermediario!',
+        icon: 'info',
+        confirmButtonText: 'Entendi'
+      })
     
     }
 
-  }else{alert("precisa de Preencher os dados")}
+  }else{  
+    Swal.fire({
+        title: 'Error',
+        text: 'Precisas preencher os dados!',
+        icon: 'error',
+        confirmButtonText: 'Entendi'
+      })}
 
   }
 
@@ -100,11 +113,26 @@ getDadosInter((prev)=>{
   
   
   const SairUs = ()=>{
-    if (window.confirm("Deseja sair de sua conta ?") === true) {
-      dispatch(logaut())
-    } else {
-     
-    }
+   
+
+    Swal.fire({
+      title: 'Terminar minha sessão?',
+      text: "",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(logaut())
+        Swal.fire(
+          'Sessão terminada!',
+          '',
+          'success'
+        )
+      }
+    })
 
 
 }
@@ -142,7 +170,13 @@ if(Number(pagamento.valor) <= Number(dados?.pontos)){
   }
 
   const notifica = ()=>{
-    alert("Solicitação feita com sucesso !!")
+    Swal.fire({
+      title: 'Tudo certo',
+      text: 'Solicitação feita com sucesso!',
+      icon: 'success',
+      confirmButtonText: 'Entendi'
+    })
+
   }
   const refress = ()=>{
     window.location.reload(false);
@@ -153,13 +187,33 @@ if(Number(pagamento.valor) <= Number(dados?.pontos)){
  refress()
 
 }else{
-  alert("Solicitação invalida não tem dinheiro suficiente")
+  Swal.fire({
+    title: 'Alerta',
+    text: 'Solicitação invalida, não tem dinheiro suficiente!',
+    icon: 'info',
+    confirmButtonText: 'Entendi'
+  })
+
 }
 
   }else{
-    alert("Solicitação invalida por favor selecione o valor que pretendes retirar!")
+ 
+    Swal.fire({
+      title: 'Alerta',
+      text: 'Solicitação invalida por favor selecione o valor que pretendes retirar!',
+      icon: 'info',
+      confirmButtonText: 'Entendi'
+    })
+
   }
-}else{alert("Atingiu o limite de saque de hoje!")
+}else{
+  Swal.fire({
+    title: 'Alerta',
+    text: 'Atingiu o limite de saque de hoje!',
+    icon: 'info',
+    confirmButtonText: 'Entendi'
+  })
+
 }
 
 }
@@ -176,13 +230,26 @@ const nadelClickEmail = (dados)=>{
      }
 
      const alerta = ()=>{
-      alert("E-mail enviado com sucesso!!")
+      Swal.fire({
+        title: 'Tudo certo',
+        text: 'E-mail enviado com sucesso!',
+        icon: 'success',
+        confirmButtonText: 'Entendi'
+      })
      }
 
      enviarEmail();
      alerta();
 
-  }catch{  alert("Não foi possivel enviar o email por favor tente mais tarde")}
+  }catch{  
+    
+    Swal.fire({
+      title: 'Error',
+      text: 'Não foi possivel enviar o email por favor tente mais tarde',
+      icon: 'error',
+      confirmButtonText: 'Entendi'
+    })
+  }
  
 
  
@@ -210,7 +277,14 @@ const copiar  = ()=>{
   copy(url)
 }
   const aviso = ()=>{
-    alert("Link copiado com sucesso")
+  
+    Swal.fire({
+      title: 'Tudo certo',
+      text: 'Link copiado com sucesso',
+      icon: 'success',
+      confirmButtonText: 'Entendi'
+    })
+   
   }
 
   copiar ();

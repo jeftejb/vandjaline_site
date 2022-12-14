@@ -51,7 +51,7 @@ const ListaDeProdutos = () => {
     const location = useLocation();
     const cat = location.pathname.split("/")[2]; 
     const [filters, setFilters] = useState({});
-    const [sort, setSort] = useState("news");
+
     const [categoria , getCategoria] = useState([]);
    
 
@@ -100,7 +100,7 @@ const ListaDeProdutos = () => {
                 </Filter>
                
             </FilterContainer>
-            <Produtos cat = {cat} filters = {filters} sort = {sort} />
+            <Produtos cat = {cat} filters = {filters}  />
             <NovasLetras/>
             <Rodape/>
         </Container>

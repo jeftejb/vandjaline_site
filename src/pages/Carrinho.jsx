@@ -2,6 +2,7 @@ import { Delete} from "@material-ui/icons"
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
+import Swal from "sweetalert2"
 import Rodape from "../components/Rodape"
 import { publicRequest } from "../requesteMetodos"
 import { mobile } from "../responsive"
@@ -207,18 +208,50 @@ const Carrinho = () => {
         }
 
         novaFatura(dispatch, dados)
-        alert("Pedido feito com sucesso!")
+         
+        Swal.fire({
+            title: 'Tudo certo',
+            text: 'Pedido realizado com sucesso!',
+            icon: 'success',
+            confirmButtonText: 'Entendi'
+          })
     }else{
-        alert("Precisas de efectuar o login")
+         
+        Swal.fire({
+            title: 'Error',
+            text: 'Precisa efectuar o login!',
+            icon: 'error',
+            confirmButtonText: 'Entendi'
+          })
     }
     }
    
     const handelDelite = async (dados)=>{
 
         const res = await publicRequest.get("/produtos/"+dados.id)
-        const quantidadeMais = res.data.quanti+ dados.quantidade
-         await dispatch(deleteProduto(dados))
-         await publicRequest.put("/produtos/menos/"+dados.id, {quanti:quantidadeMais } )
+        const quantidadeMais = res?.data.quanti+ dados.quantidade
+
+        Swal.fire({
+            title: 'Retirar este produto da sua lista?',
+            text: "Este produto será retirado da lista definitivamente!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim, retirar!'
+          }).then(async(result) => {
+            if (result.isConfirmed) {
+                await dispatch(deleteProduto(dados))
+                await publicRequest.put("/produtos/menos/"+dados.id, {quanti:quantidadeMais } )
+              Swal.fire(
+                'Retirado!',
+                'O produto foi retirado com sucesso.',
+                'success'
+              )
+            }
+          })
+      
+      
          
     }
    
@@ -228,16 +261,34 @@ const Carrinho = () => {
      const gerarPDF = async ()=>{
         try{
                 await userPdf(dados)
-               alert("Obrigado por utilizares o Vandjaine! o seu download será realizado em breve!.")
+                 
+            Swal.fire({
+                title: 'Tudo certo',
+                text: 'Obrigado por utilizares o vandjaline , a sua lista será baixada em breve!',
+                icon: 'success',
+                confirmButtonText: 'Entendi'
+              })
      
         }catch{
-            console.log("Houve algum erro!! Por favor entre em contacto caso o erro persistir para resolver obrigado.")
+              
+            Swal.fire({
+                title: 'Error',
+                text: 'Algo deu errado por favor tente novamente mais tarde!',
+                icon: 'error',
+                confirmButtonText: 'Entendi'
+              })
         }
      }
        
       gerarPDF();
     }else{
-        alert("Precisa efectuar o login")
+          
+        Swal.fire({
+            title: 'Alerta',
+            text: 'Presisas efectuar o login!',
+            icon: 'info',
+            confirmButtonText: 'Entendi'
+          })
 
     }
         

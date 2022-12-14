@@ -31,6 +31,7 @@ color:${color_text};
 size: 10px;
 font-size: 25px;
 margin: 15px;
+margin-top:45px ;
 font-family:'Titan One';
 ${tablet({ fontSize:"14px", margin:"50px 20px 10px 20px"})}
 `
@@ -146,7 +147,7 @@ height: 55% ;
 padding:0px 0px 20px 0px ;
 margin-top:30px ;
 margin-left:50px ;
-margin-bottom:40px;
+margin-bottom:20px;
 align-items: center ;
 justify-content: center ;
 
