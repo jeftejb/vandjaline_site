@@ -97,10 +97,8 @@ getDadosInter((prev)=>{
       }
 
 
-  const handelIntermediario = ()=>{
-    
-    
-  
+  const handelIntermediario = (e)=>{
+    e.preventDefault();
     const max = 1000000
     const  min = 50000
     const codigoInter = Math.floor(Math.random() * (max - min) + min)
@@ -144,7 +142,7 @@ getDadosInter((prev)=>{
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Sair da conta'
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(logaut())

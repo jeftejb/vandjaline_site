@@ -1,4 +1,4 @@
-
+import React from "react"
 import { useState } from "react"
 import styled from "styled-components"
 import Swal from "sweetalert2"
@@ -70,7 +70,11 @@ const Confirm = () => {
     const currentUser = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)?.currentUser
     const id = currentUser._id
     const email = currentUser.email
+
         
+    const redireciona = ()=>{
+        window.location.href =`/perfilUser/${currentUser?._id}/${currentUser?.codigoInter}`
+      } 
        
        
     const handleClickReq = (e)=>{
@@ -119,6 +123,7 @@ const Confirm = () => {
         if(confirm_codigo){
         confirmarCodigo({confirm_codigo, id})
         alerta()
+        redireciona()
         }
         else{
             

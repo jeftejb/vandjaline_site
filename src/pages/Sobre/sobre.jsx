@@ -1,13 +1,11 @@
 import React from "react";
 import Menu from "../../components/Navbar";
 import Rodape from "../../components/Rodape";
-import ElementOne from "../../components/ElementOne";
 import "./sobre.css";
 
 export default function Sobre() {
   return (
     <div>
-      <ElementOne/>
     <Menu/>
 
 <div className="principal">
