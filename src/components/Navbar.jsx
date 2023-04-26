@@ -15,7 +15,7 @@ import  {Link}  from 'react-router-dom'
 const ContainerNav = styled.div`
 
 width:100% ;
-height:15rem;
+height:8rem;
 margin-top: 0;
 margin-bottom:100px ;
 align-items:center ;
@@ -25,7 +25,7 @@ background-color:#F49F0A ;
 ${mobile({ height: "15rem" })}
 `
 const Wrapper = styled.div`
-padding:  10px 20px;
+padding:  5px 20px;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -83,7 +83,7 @@ justify-content: center;
 const MenuItem = styled.div`
 display:flex ;
 text-decoration:none ;
-font-size:17px ;
+font-size:13px ;
 cursor: pointer;
 margin-left: 15px;
 margin-bottom: 15px;
@@ -123,14 +123,14 @@ display: flex;
 
 const DivCircle = styled.div`
 position:relative ;
-width:50px ;
-height:35px ;
+width:40px ;
+height:40px ;
 border:2px solid #ccc ;
 border-radius:50% ;
 top:0px ;
 left: 40% ;
-align-items:center ;
-justify-content:center ;
+
+
 text-align:center ;
 background-color:#00A6A6 ;
 
@@ -140,7 +140,7 @@ ${tablet({ height:"35px" , width:"50px", left:"20%", padding:"0px"})}
 
 const ContainerElement = styled.div`
 width:100% ;
-height: 10rem;
+height: 3rem;
 background-color: #F49F0A;
 color: white;
 display: flex;
@@ -198,10 +198,6 @@ const Navbar = () => {
         <ContainerNav className='fixed-top' id='menuContainer'>
         <ContainerElement>
               <Link className='textNav' to ="/"> <Logo>Vandjaline</Logo> </Link> 
-           <TextElement>
-               
-                Venda ganhe e Cresça!
-                </TextElement>
        </ContainerElement>
             <Wrapper>
           
@@ -214,7 +210,7 @@ const Navbar = () => {
                <Link className='textNav'  style={{textDecoration:"none", color:"#042940"}} to ="/produtos" > <MenuItem>Produtos</MenuItem></Link>
                <Link className='textNav' style={{textDecoration:"none", color:"#042940"}}to ="/registro/:d"> <MenuItem>Cadastro</MenuItem> </Link>
                <div className="dropdown ">
-  <button className="btn btn-secondary dropdown-toggle" style={{backgroundColor:"transparent" , border:"none",color:"#042940", fontWeight:"bold" ,fontSize:"17px", textTransform:"uppercase"}} type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button className="btn btn-secondary dropdown-toggle" style={{backgroundColor:"transparent" , border:"none",color:"#042940", fontWeight:"bold" ,fontSize:"13px", textTransform:"uppercase"}} type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   Comércio 
   </button>
   <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -242,9 +238,9 @@ const Navbar = () => {
                </Link>
                 
                 <DivCircle>
-               {currentUser? <MenuItem> <Link className='textNav'style={{textDecoration:"none", color:"#042940",fontSize:"20px"}} to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
+               {currentUser? <MenuItem> <Link className='textNav'style={{textDecoration:"none", color:"#042940",fontSize:"10px"}} to={`/perfilUser/${currentUserD?._id}/${currentUserD?.codigoInter}`}>
                {currentUserD?.confirmado === true? `${[currentUserD.nomeCompleto][0][0]}` : [currentUserD.nomeCompleto][0][0] }</Link></MenuItem>
-           :<> <Link className='textNav'style={{textDecoration:"none", color:"#042940"}} to ="/login"><PermIdentity style={{fontSize:"30px"}}/></Link>
+           :<> <Link className='textNav'style={{textDecoration:"none", color:"#042940"}} to ="/login"><PermIdentity style={{fontSize:"20px"}}/></Link>
          
            </>
            }

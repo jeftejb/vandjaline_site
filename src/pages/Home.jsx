@@ -1,13 +1,15 @@
 import React from 'react'
-import Categorias from '../components/Categorias'
+//import Categorias from '../components/Categorias'
 import Navbar from '../components/Navbar'
 import NovasLetras from '../components/NovasLetras'
 import Produtos from '../components/Produtos'
 import ProdutoCampoTodos from '../components/ProdutoCampoTodosPrincipal'
 import Rodape from '../components/Rodape'
 import Slide from '../components/Slide'
+import SlideTurismo from '../components/SlideTurismo'
+import SlideProdutos from '../components/SlideProdutos'
 import styled from "styled-components"
-import Estabelecimentos from '../components/Estabelecimentos'
+//import Estabelecimentos from '../components/Estabelecimentos'
 import { tablet } from '../responsive'
 import "./../components/style.css"
 import reveal  from '../redux/style'
@@ -24,6 +26,7 @@ display: flex;
 overflow: hidden;
 justify-content: center;
 align-items: center;
+margin-top:40px;
 `
 
 const Text = styled.h1`
@@ -181,7 +184,7 @@ ${tablet({ width: "360px", height:"400px"})}
 
 const ContainerInfo = styled.div`
 display:flex;
-margin-top:25px ;
+margin-top:15px ;
 margin-bottom:25px;
 width:100% ;
 
@@ -196,15 +199,13 @@ margin-top:20px ;
 margin-left:20px ;
 margin-right:20px ;
 width:30% ;
-
-
-
+padding:"20px";
 `;
 
 const TitleContainer = styled.div``;
 const Title = styled.text`
 font-family:"Titan one";
-font-size:28px ;
+font-size:18px ;
 size:500 ;
 ${tablet({ fontSize:"10px"})}
 `;
@@ -214,15 +215,20 @@ const Icon = styled.div`
 
 
 `;
-const ContainerDescInf = styled.div``;
+const ContainerDescInf = styled.div`
+margin-bottom:20px;
+`;
 const DescInf = styled.text`
-font-size:18px ;
+font-size:12px ;
 font-weight:bold ;
 size:500 ;
 font-family:"Exo, sans-serif";
 ${tablet({ fontSize:"10px"})}
 `;
 
+
+
+const Img = styled.img``;
  const  Home = ()=> {
 
   reveal()
@@ -239,7 +245,7 @@ ${tablet({ fontSize:"10px"})}
              
             </Container>
 
-            <Categorias/>
+            
 
             <ContainerSlider>
               <ContainerT>
@@ -259,7 +265,7 @@ ${tablet({ fontSize:"10px"})}
 
             <Container>
              
-               <Text>PRODUTOS</Text>
+               <Text>PESQUISE PREÇOS DE PRODUTOS DIVERÇOS</Text>
            
             </Container>
             <Produtos/>
@@ -284,18 +290,116 @@ ${tablet({ fontSize:"10px"})}
                 
             <Container>
            
-               <Text>PRODUTOS DO CAMPO</Text>
+               <Text>DANDO MAIS VISIBILIDADE AOS PRODUTOS DO CAMPO</Text>
                
             </Container>
-            <ProdutoCampoTodos/>
-           
+          
+            
+            <ContainerInfo>
+            <InfoItem className="reveal fade-bottom">
+                <IconContainer>
+                    <Icon><Img src='image/fazendaSIkila.jpg' style={{width:"100%"}} /></Icon>
+                </IconContainer>
+
+                <TitleContainer>
+                    <Title>Fazenda Sikila - Lubango</Title>
+                </TitleContainer>
+                <ContainerDescInf>
+                    <DescInf>Entre em contacto com o estabelecimento se pretendes adquiri alguma informação, ou clique no botão Saber Mais para ter mais informações do estabelecimento </DescInf>
+                </ContainerDescInf>
+                <Link className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6",marginTop:"15px", textDecoration:"none", borderRadius:"5px", padding:"5px 10px"}} href="/sobre">Saber mais </Link>
+
+            </InfoItem>
+
+            <InfoItem className="reveal fade-bottom">
+                <IconContainer>
+                <Icon><Img src='image/fazendaCalani.jpeg' style={{width:"80%"}} /></Icon>
+                </IconContainer>
+
+                <TitleContainer>
+                    <Title>Fazenda Calani - Benguela</Title>
+                </TitleContainer>
+                <ContainerDescInf>
+                    <DescInf>Faça reserva de produtos, clique em Saber Mais veja os produtos ou serviços  que estao em distaque,  e faça reserva antes que eles se esgotem!  </DescInf>
+                </ContainerDescInf>
+                <Link className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6",marginTop:"15px", textDecoration:"none", borderRadius:"5px", padding:"5px 10px"}} href="/sobre">Saber mais </Link>
+
+            </InfoItem>
+
+            <InfoItem className="reveal fade-bottom">
+            <IconContainer>
+            <Icon><Img src='image/lubango6.jpg' style={{width:"100%"}} /></Icon>
+                </IconContainer>
+                <TitleContainer>
+                    <Title>Lubango C-Catedral</Title>
+                </TitleContainer>
+                <ContainerDescInf>
+                    <DescInf>Não precisas mais sair de sua casa para saber o preço de um produto ou serviço, faça a sua pesquisa aqui !!</DescInf>
+
+                </ContainerDescInf>
+              
+                    <Link className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6",marginTop:"15px", textDecoration:"none", borderRadius:"5px", padding:"5px 10px"}} href="/sobre">Saber mais </Link>
+
+                
+
+            </InfoItem>
+        </ContainerInfo>
+
 
             <Container>
                
-               <Text>Lojas</Text>
+               <Text>HOTELARIA E TURISMO</Text>
               
             </Container>
-             <Estabelecimentos/>
+            <ContainerInfo>
+            <InfoItem className="reveal fade-bottom">
+                <IconContainer>
+                    <Icon><Img src='image/leba.jpg' style={{width:"100%"}} /></Icon>
+                </IconContainer>
+
+                <TitleContainer>
+                    <Title>Namibe Serra da leba</Title>
+                </TitleContainer>
+                <ContainerDescInf>
+                    <DescInf>Entre em contacto com o estabelecimento se pretendes adquiri alguma informação, ou clique no botão Saber Mais para ter mais informações do estabelecimento </DescInf>
+                </ContainerDescInf>
+                <Link className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6",marginTop:"15px", textDecoration:"none", borderRadius:"5px", padding:"5px 10px"}} href="/sobre">Saber mais </Link>
+
+            </InfoItem>
+
+            <InfoItem className="reveal fade-bottom">
+                <IconContainer>
+                <Icon><Img src='image/lubango4.jpg' style={{width:"100%"}} /></Icon>
+                </IconContainer>
+
+                <TitleContainer>
+                    <Title>Lubango Cristo-Rei</Title>
+                </TitleContainer>
+                <ContainerDescInf>
+                    <DescInf>Faça reserva de produtos, clique em Saber Mais veja os produtos ou serviços  que estao em distaque,  e faça reserva antes que eles se esgotem!  </DescInf>
+                </ContainerDescInf>
+                <Link className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6",marginTop:"15px", textDecoration:"none", borderRadius:"5px", padding:"5px 10px"}} href="/sobre">Saber mais </Link>
+
+            </InfoItem>
+
+            <InfoItem className="reveal fade-bottom">
+            <IconContainer>
+            <Icon><Img src='image/lubango6.jpg' style={{width:"100%"}} /></Icon>
+                </IconContainer>
+                <TitleContainer>
+                    <Title>Lubango C-Catedral</Title>
+                </TitleContainer>
+                <ContainerDescInf>
+                    <DescInf>Não precisas mais sair de sua casa para saber o preço de um produto ou serviço, faça a sua pesquisa aqui !!</DescInf>
+
+                </ContainerDescInf>
+              
+                    <Link className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6",marginTop:"15px", textDecoration:"none", borderRadius:"5px", padding:"5px 10px"}} href="/sobre">Saber mais </Link>
+
+                
+
+            </InfoItem>
+        </ContainerInfo>
 
              <Container>
            
@@ -306,7 +410,7 @@ ${tablet({ fontSize:"10px"})}
              <ContainerInfo>
             <InfoItem className="reveal fade-bottom">
                 <IconContainer>
-                    <Icon><Storefront style={{fontSize:100}} /></Icon>
+                    <Icon><Storefront style={{fontSize:80}} /></Icon>
                 </IconContainer>
 
                 <TitleContainer>
@@ -315,11 +419,13 @@ ${tablet({ fontSize:"10px"})}
                 <ContainerDescInf>
                     <DescInf>Entre em contacto com o estabelecimento se pretendes adquiri alguma informação, ou clique no botão Saber Mais para ter mais informações do estabelecimento </DescInf>
                 </ContainerDescInf>
+                <Link className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6",marginTop:"15px", textDecoration:"none", borderRadius:"5px", padding:"5px 10px"}} href="/sobre">Saber mais </Link>
+
             </InfoItem>
 
             <InfoItem className="reveal fade-bottom">
                 <IconContainer>
-                <Icon><Storefront style={{fontSize:100}} /></Icon>
+                <Icon><Storefront style={{fontSize:80}} /></Icon>
                 </IconContainer>
 
                 <TitleContainer>
@@ -328,18 +434,26 @@ ${tablet({ fontSize:"10px"})}
                 <ContainerDescInf>
                     <DescInf>Faça reserva de produtos, clique em Saber Mais veja os produtos ou serviços  que estao em distaque,  e faça reserva antes que eles se esgotem!  </DescInf>
                 </ContainerDescInf>
+                <Link className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6",marginTop:"15px", textDecoration:"none", borderRadius:"5px", padding:"5px 10px"}} href="/sobre">Saber mais </Link>
+
             </InfoItem>
 
             <InfoItem className="reveal fade-bottom">
             <IconContainer>
-            <Icon><Storefront style={{fontSize:100}} /></Icon>
+            <Icon><Storefront style={{fontSize:80}} /></Icon>
                 </IconContainer>
                 <TitleContainer>
                     <Title>Pesquisa</Title>
                 </TitleContainer>
                 <ContainerDescInf>
                     <DescInf>Não precisas mais sair de sua casa para saber o preço de um produto ou serviço, faça a sua pesquisa aqui !!</DescInf>
+
                 </ContainerDescInf>
+              
+                    <Link className='tuttomInfo reveal fade-bottom' style={{ backgroundColor:"#00A6A6",marginTop:"15px", textDecoration:"none", borderRadius:"5px", padding:"5px 10px"}} href="/sobre">Saber mais </Link>
+
+                
+
             </InfoItem>
         </ContainerInfo>
             <NovasLetras/>

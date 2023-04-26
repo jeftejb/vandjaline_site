@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 //import {ArrowLeftOutlined , ArrowRightOutlined} from '@material-ui/icons'
 //import { useState } from 'react'
-import { sliderItemns } from '../data'
+import { sliderItemnsTurismo } from '../data'
 import { mobile } from '../responsive'
 
 import SwiperCore,{  EffectFade, Autoplay, A11y, Pagination, Scrollbar,Navigation} from 'swiper';
@@ -19,7 +19,7 @@ height: 70vh;
 display: flex;
 
 overflow: hidden;
-background-color:#F49F0A;
+
 margin-top:100px ;
 /*${mobile({ display: "none" })}*/
 `
@@ -66,6 +66,8 @@ text-decoration:none ;
 `
 
 const InfoContainer = styled.div`
+width:100%;
+height:100vh;
 position: absolute ;
 top:50px ;
 padding:100px;
@@ -97,7 +99,7 @@ ${mobile({ fontSize:"15px"})}
 
 
 
-const Slide = ()=> {
+const SlideTurismo = ()=> {
     /*
 const [slideIndex, setSlideIndex] = useState(0)
     const handleClick = (direction) =>{
@@ -132,25 +134,16 @@ const [slideIndex, setSlideIndex] = useState(0)
             
          
             <Wrapper /*slideIndex ={slideIndex}*/>
-                {sliderItemns.map((item,i)=>( 
+                {sliderItemnsTurismo.map((item,i)=>( 
                         <SwiperSlide key={i}> 
                 <Slider key={item.id}>
-                    <InfoContainer>
-                        <ContainerInfo>
-                        <Titulo> {item?.titulo}</Titulo>
-                        <Description>{item?.desc}</Description>
-                        <Link className='linkItem' id='LinkItem' to={`${item?.link}`} style={{
-                            textDecoration:"none",
-                            color:"#fff",
-                            fontFamily:"Exo, sans-serif",
-                            border:"2px solid #ccc" ,
-                            borderRadius:"5px",
-                            padding:"1rem 2rem",
-                            backgroundColor:"#00A6A6",
-                            
-                            }} ><Btn>{item?.but}</Btn></Link>
-                        </ContainerInfo>
+                     <InfoContainer style={{background: `#FFFFFF url(${item.img}) no-repeat right top fixed `}}> 
                     </InfoContainer>
+                    <ContainerInfo>
+                        <Titulo> {item?.titulo}</Titulo>
+                       
+                       
+                        </ContainerInfo>
                 </Slider>
                 </SwiperSlide>
                 ))}
@@ -164,4 +157,4 @@ const [slideIndex, setSlideIndex] = useState(0)
     )
 }
 
-export default Slide
+export default SlideTurismo

@@ -241,6 +241,117 @@ export const sliderItemns = [
         }
 ]
 
+
+
+
+export const sliderItemnsFazendas = [
+    {
+        id:6, 
+        img:"/image/baner-4.png", 
+        titulo:" Crie a sua loja virtual grátis", 
+        desc: "Para de perseguir o dinheiro e comece a perseguir o sucesso. Tony Hsieh",
+        bg:"",
+        link:"/registro/:%d",
+        but:"Criar Agora!!"
+    },
+        {
+            id:1, 
+            img:"/image/baner-1.png", 
+            titulo:"Não perca nem uma novidade", 
+            desc: "Pesquisa de preços para Produtos ou Serviços",
+            bg:"", 
+            link:"/estabelecimentos",
+            but:"Começasar a pesquisar"
+        }, 
+        
+        {
+            id:2, 
+            img:"/image/baner-7.jpg", 
+            titulo:"Organize suas compras!", 
+            desc: "Crie a sua lista de compras que te ajudará a organizar melhor as suas compras",
+            bg:"", 
+            link:"/sobre",
+            but:"Saber mais"
+        
+        }, 
+        {
+            id:3, 
+            img:"/image/baner-2.png", 
+            titulo:"Preços Baixos! ", 
+            desc: "Encontre e compare os preços dos principais produtos e serviços sem sair do conforto de sua casa",
+            bg:"",
+            link:"/produtos",
+            but:"Não perca tempo!!"
+
+        }, 
+       
+        {
+            id:5, 
+            img:"/image/baner-4.png", 
+            titulo:"Reservas", 
+            desc: "Faça reserva dos seus produtos preferidos atens que eles terminem!.Faça o seu registro para tornar tudo mais facil",
+            bg:"",
+            link:"/registro/:%d",
+            but:"Me Registrar Agora!"
+        },
+       {
+            id:7, 
+            img:"/image/baner-6.png", 
+            titulo:"Não perca tempo!", 
+            desc: "Venda, compre e poupe dinheiro com a vandjaline. Faça o seu registro para tornar tudo mais facil",
+            bg:"",
+            link:"/registro/:%d",
+            but:"Me Registrar Agora!"
+        }
+]
+
+
+
+
+export const sliderItemnsTurismo = [
+    {
+        id:6, 
+        img:"/image/lubango4.jpg", 
+        titulo:" Crie a sua loja virtual grátis", 
+        desc: "Para de perseguir o dinheiro e comece a perseguir o sucesso. Tony Hsieh",
+        bg:"",
+        link:"/registro/:%d",
+        but:"Criar Agora!!"
+    },
+        {
+            id:1, 
+            img:"/image/lubango6.jpg", 
+            titulo:"Não perca nem uma novidade", 
+            desc: "Pesquisa de preços para Produtos ou Serviços",
+            bg:"", 
+            link:"/estabelecimentos",
+            but:"Começasar a pesquisar"
+        }, 
+        
+        {
+            id:2, 
+            img:"/image/tundavala.jpg", 
+            titulo:"Organize suas compras!", 
+            desc: "Crie a sua lista de compras que te ajudará a organizar melhor as suas compras",
+            bg:"", 
+            link:"/sobre",
+            but:"Saber mais"
+        
+        }, 
+        {
+            id:3, 
+            img:"/image/leba.jpg", 
+            titulo:"Preços Baixos! ", 
+            desc: "Encontre e compare os preços dos principais produtos e serviços sem sair do conforto de sua casa",
+            bg:"",
+            link:"/produtos",
+            but:"Não perca tempo!!"
+
+        }, 
+       
+        
+]
+
 export const Paises =[
     {
         id:1,

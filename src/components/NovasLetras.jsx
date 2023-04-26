@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { mobile } from "../responsive"
 
 const Container = styled.div`
-height: 60vh;
+height: 40vh;
 background-color: #759EB8;
 display: flex;
 align-items: center;
@@ -11,6 +11,7 @@ justify-content: center;
 flex-direction: column;
 `
 const Titulo = styled.h1`
+margin-top:30px;
 font-size: 15px;
 margin-bottom: 20px;
 
@@ -40,6 +41,7 @@ border:1px solid #ccc;
 margin-top: 15px;
 width: 50%;
 padding: 30px;
+margin-bottom:20px;
 
 
 `

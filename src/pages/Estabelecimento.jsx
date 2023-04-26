@@ -113,7 +113,7 @@ getItem()
         <Container>
             <Navbar/>
             <ContainerImagem>
-                <Img src ={loja?.imagem}/>
+                <Img src={loja?.actuacao!= "Fazenda"? loja?.imagem   : "/image/fazendaSIkila.jpg"}/>
             </ContainerImagem>
             <Inf>
                 <DescContainer>

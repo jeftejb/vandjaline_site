@@ -19,7 +19,7 @@ font-weight: 500;
 
 const TextElement = styled.span`
 size: 10px;
-font-size: 35px;
+font-size: 25px;
 margin: 15px;
 font-family:'Corinthia';
 `
@@ -27,7 +27,7 @@ font-family:'Corinthia';
 const Logo = styled.h1`
 font-weight: bold;
 color: white;
-font-size:20px;
+font-size:17px;
 margin-top:10px;
 padding:0px 8px;
 ${mobile({ fontSize: "5px" })}

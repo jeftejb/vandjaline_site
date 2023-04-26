@@ -74,7 +74,7 @@ const  Estabelecimento = ({item}) => {
     return (
         <Container>
            <ContainerImage>
-                <Image src={item?.imagem}/>
+             <Image src={item.actuacao!= "Fazenda"? item.imagem   : "/image/fazendaSIkila.jpg"}/>
            </ContainerImage>
            <Info>
                <Nome>{item.nomeLoja}</Nome>

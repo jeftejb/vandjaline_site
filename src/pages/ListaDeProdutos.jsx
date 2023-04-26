@@ -98,7 +98,16 @@ const ListaDeProdutos = () => {
                 </Select>
                
                 </Filter>
-               
+
+                <Filter><FilterText>Prefencias</FilterText> 
+                <Select >
+                    <Option>  Preços mais baixos</Option>
+                     <Option>  Preços mais altos</Option>
+                 <Option> Produtos recentes</Option>
+                     <Option>   Mercado informal</Option>
+                     <Option>  Mercado formal</Option>
+                </Select>
+                </Filter>
             </FilterContainer>
             <Produtos cat = {cat} filters = {filters}  />
             <NovasLetras/>

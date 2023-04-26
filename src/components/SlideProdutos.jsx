@@ -19,7 +19,6 @@ height: 70vh;
 display: flex;
 
 overflow: hidden;
-background-color:#F49F0A;
 margin-top:100px ;
 /*${mobile({ display: "none" })}*/
 `
@@ -63,16 +62,20 @@ height: 100%;
 flex: 1;
 opacity:8;
 text-decoration:none ;
+
 `
 
 const InfoContainer = styled.div`
+width:100%;
+height:100vh;
 position: absolute ;
 top:50px ;
 padding:100px;
 ${mobile({ top:"100px", padding:"20px" })}
+
 `
 const Titulo = styled.h1`
-font-size: 30px;
+font-size: 20px;
 font-weight: 500;
 font-family:'Titan One';
 ${mobile({ fontSize:"18px" })}
@@ -97,7 +100,7 @@ ${mobile({ fontSize:"15px"})}
 
 
 
-const Slide = ()=> {
+const SlideProdutos = ()=> {
     /*
 const [slideIndex, setSlideIndex] = useState(0)
     const handleClick = (direction) =>{
@@ -135,20 +138,11 @@ const [slideIndex, setSlideIndex] = useState(0)
                 {sliderItemns.map((item,i)=>( 
                         <SwiperSlide key={i}> 
                 <Slider key={item.id}>
-                    <InfoContainer>
+                    <InfoContainer style={{background: `#FFFFFF url(${item.img}) no-repeat right top fixed `}}>
                         <ContainerInfo>
                         <Titulo> {item?.titulo}</Titulo>
-                        <Description>{item?.desc}</Description>
-                        <Link className='linkItem' id='LinkItem' to={`${item?.link}`} style={{
-                            textDecoration:"none",
-                            color:"#fff",
-                            fontFamily:"Exo, sans-serif",
-                            border:"2px solid #ccc" ,
-                            borderRadius:"5px",
-                            padding:"1rem 2rem",
-                            backgroundColor:"#00A6A6",
-                            
-                            }} ><Btn>{item?.but}</Btn></Link>
+                        
+                        
                         </ContainerInfo>
                     </InfoContainer>
                 </Slider>
@@ -164,4 +158,4 @@ const [slideIndex, setSlideIndex] = useState(0)
     )
 }
 
-export default Slide
+export default SlideProdutos

@@ -326,7 +326,7 @@ if( dados?.confirmEmail === true || dados?.confirmEmail === undefined ){
     
        
        <div style={{marginTop:"40px", padding:"50px" , justifyContent:"center", alignItems:"center" , fontFamily:"Titan one"}}  className="userTitleContainer">
-        <h1 style={{padding:"20px"}} className="userTitle">Perfil de Usuario</h1>
+        <h3 style={{padding:"20px"}} className="userTitle">Perfil de Usuario</h3>
         <button style={{padding:"10px 40px", borderRadius:"5px", backgroundColor:"#00A6A6"}} onClick={SairUs}>
           Sair
         </button>
