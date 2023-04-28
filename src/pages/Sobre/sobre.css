@@ -1,16 +1,19 @@
-.principal {
+html{
+  scroll-behavior: smooth;
+}
 
-margin-top: 200px;
-margin-left: 20px;
-margin-right: 20px;
+.principal {
+  margin-top: 200px;
+  margin-left: 20px;
+  margin-right: 20px;
   padding: 20px;
 
 }
 
 .menuSobreL {
-text-align: center;
-margin-bottom: 30px;
-  
+  text-align: center;
+  margin-bottom: 30px;
+
 
 }
 
@@ -19,7 +22,7 @@ margin-bottom: 30px;
   flex-wrap: wrap;
   align-items: center;
   text-align: center;
-  
+
 }
 
 .menuSobreL li {
@@ -27,7 +30,7 @@ margin-bottom: 30px;
   padding: 20px;
 }
 
-.menuSobreL li > a {
+.menuSobreL li>a {
   text-decoration: none;
   color: gray;
 }
@@ -37,6 +40,7 @@ margin-bottom: 30px;
   margin-top: 25px;
   text-align: center;
 }
+
 .sobreOvandja {
   margin-bottom: 25px;
 
@@ -53,5 +57,5 @@ margin-bottom: 30px;
 
 .conteudo {
   padding: 50px;
-  
+
 }
