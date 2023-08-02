@@ -40,7 +40,7 @@ const handelClick = (e)=>{
                 </div>
                 <div className="containerInfo">
                     <h3 className="titulo"> Pacote grátis  </h3>
-                    <span className="preco">Kz 0/100% de Deconto</span>
+                    <span className="preco">Kz 0/100% de Desconto</span>
                    
                     
                     <span className="descricao">

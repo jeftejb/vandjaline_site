@@ -45,8 +45,8 @@ body {
 }
 
 .swiper-slide {
-  font-size: 18px;
-  color: #042940;
+  font-size: 48px;
+  color: #fff;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 40px 150px;
@@ -260,3 +260,9 @@ body {
   display: block;
   width: 100%;
 }
+
+
+
+
+
+

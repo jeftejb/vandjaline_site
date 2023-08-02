@@ -124,7 +124,7 @@ padding: 20px ;
 margin:0px;
 border-radius:10px ;
 background-color: #FA7F08 ;
-box-shadow: 20px 15px 15px black;
+box-shadow: 15px 5px 5px black;
 align-items: center ;
 
 ${tablet({ width: "40px", height:"20px", display:"none"})}
@@ -137,7 +137,7 @@ padding:0px 0px 20px 0px ;
 margin:10px ;
 border-radius:10px ;
 background-color:#F24405 ;
-box-shadow: 35px 25px 25px black;
+box-shadow: 15px 5px 5px black;
 align-items: center ;
 justify-content: center ;
 
@@ -212,8 +212,7 @@ ${tablet({ fontSize:"10px"})}
 
 const IconContainer = styled.div``;
 const Icon = styled.div`
-
-
+border-radius:5px;
 `;
 const ContainerDescInf = styled.div`
 margin-bottom:20px;
@@ -346,6 +345,8 @@ const Img = styled.img``;
         </ContainerInfo>
 
 
+
+
             <Container>
                
                <Text>HOTELARIA E TURISMO</Text>
@@ -384,7 +385,7 @@ const Img = styled.img``;
 
             <InfoItem className="reveal fade-bottom">
             <IconContainer>
-            <Icon><Img src='image/lubango6.jpg' style={{width:"100%"}} /></Icon>
+            <Icon><Img src='image/lubango6.jpg' style={{width:"100%" }}  /></Icon>
                 </IconContainer>
                 <TitleContainer>
                     <Title>Lubango C-Catedral</Title>

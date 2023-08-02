@@ -17,9 +17,12 @@ const Container = styled.div`
 width: 100%;
 height: 70vh;
 display: flex;
-
+color:#ffff;
 overflow: hidden;
-background-color:#F49F0A;
+background:url("image/Huila.jpg") no-repeat center;
+
+background-size: cover;
+color: #fff;
 margin-top:100px ;
 /*${mobile({ display: "none" })}*/
 `
@@ -67,22 +70,24 @@ text-decoration:none ;
 
 const InfoContainer = styled.div`
 position: absolute ;
-top:50px ;
+height:100%;
 padding:100px;
+width:100%;
+background-color:rgba(0, 0, 0, 0.6);
 ${mobile({ top:"100px", padding:"20px" })}
 `
 const Titulo = styled.h1`
-font-size: 30px;
+font-size: 40px;
 font-weight: 500;
 font-family:'Titan One';
 ${mobile({ fontSize:"18px" })}
 `
 const Description = styled.p`
 margin: 20px 0px;
-font-size: 55px;
+font-size: 30px;
 font-weight: 500;
 letter-spacing: 3px;
-font-family: 'Six Caps', sans-serif;
+font-family: 'Titan One', sans-serif;
 ${mobile({ fontSize:"15px", fontFamily:"Exo, sans-serif"})}
 `
 
@@ -146,7 +151,7 @@ const [slideIndex, setSlideIndex] = useState(0)
                             border:"2px solid #ccc" ,
                             borderRadius:"5px",
                             padding:"1rem 2rem",
-                            backgroundColor:"#00A6A6",
+                            backgroundColor:"orange",
                             
                             }} ><Btn>{item?.but}</Btn></Link>
                         </ContainerInfo>
